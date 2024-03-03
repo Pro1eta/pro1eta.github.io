@@ -1,309 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Notes On Linear Algebra - 2</title>
-    <url>/2024/03/03/LA2/</url>
-    <content><![CDATA[<h2 id="一一些特殊矩阵">一、一些特殊矩阵</h2>
-<p>方阵是特殊的矩阵.</p>
-<blockquote>
-<p>定义 <strong>对角元</strong> 方阵中第 <span
-class="math inline">\(i\)</span> 行第 <span
-class="math inline">\(i\)</span> 列的元素.</p>
-</blockquote>
-<p>所以定义了一些方阵:</p>
-<blockquote>
-<p>定义 <strong>对角阵</strong></p>
-<p>主对角线以外都是零的<strong>方阵</strong>.</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-a_{11} &amp; 0      &amp; \cdots &amp; 0 \\
-0      &amp; a_{22} &amp; \cdots &amp; 0  \\
-\vdots &amp; \vdots &amp;        &amp; \vdots\\
-0      &amp; 0      &amp; \cdots &amp; a_{nn}
-\end{pmatrix}
-\]</span></p>
-<p><strong>注</strong> 对角元可为零, 也可以是其它数.</p>
-<blockquote>
-<p><strong>定义</strong> 数量矩阵</p>
-<p>对角线元素都相等的<strong>对角阵</strong>称为数量矩阵(或者纯量矩阵).</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-\lambda &amp; 0      &amp; \cdots &amp; 0 \\
-0      &amp; \lambda &amp; \cdots &amp; 0  \\
-\vdots &amp; \vdots &amp;        &amp; \vdots\\
-0      &amp; 0      &amp; \cdots &amp;\lambda
-\end{pmatrix} = \lambda\begin{pmatrix}
-1 &amp; 0      &amp; \cdots &amp; 0 \\
-0      &amp; 1 &amp; \cdots &amp; 0  \\
-\vdots &amp; \vdots &amp;        &amp; \vdots\\
-0      &amp; 0      &amp; \cdots &amp;1
-\end{pmatrix}
-\]</span></p>
-<blockquote>
-<p><strong>定义</strong> 单位矩阵</p>
-<p>对角线元素都是 $ 1$
-的<strong>对角阵</strong>称为<strong>单位矩阵</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong>定义</strong> 上三角矩阵</p>
-<p>对角线左下元素都是 $ 0$ 的<strong>方阵</strong>称为上三角矩阵.</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
-0      &amp; a_{22} &amp; \cdots &amp; a_{2n}  \\
-\vdots &amp; \vdots &amp;        &amp; \vdots\\
-0      &amp; 0      &amp; \cdots &amp; a_{nn}
-\end{pmatrix}
-\]</span></p>
-<p>类似地,</p>
-<blockquote>
-<p><strong>定义</strong> 下三角矩阵</p>
-<p>对角线右上元素都是 $ 0$ 的<strong>方阵</strong>称为下三角矩阵.</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-a_{11} &amp; 0 &amp; \cdots &amp; 0 \\
-a_{21}      &amp; a_{22} &amp; \cdots &amp; 0  \\
-\vdots &amp; \vdots &amp;        &amp; \vdots\\
-a_{n1}      &amp; a_{n2}      &amp; \cdots &amp; a_{nn}
-\end{pmatrix}
-\]</span></p>
-<blockquote>
-<p><strong>推论</strong> 上三角矩阵乘以上三角矩阵,
-仍然是上三角矩阵.下三角矩阵也满足.</p>
-</blockquote>
-<p><strong>分析</strong> 比较自然的结论.</p>
-<p><strong>证明</strong> 比如两个 <span class="math inline">\(n\)</span>
-阶上三角矩阵相乘. 考虑乘积的第一列, 应该是左乘矩阵的第一列的 <span
-class="math inline">\(k\)</span> 倍, 换言之乘积矩阵第一列不超过1行;
-考虑乘积矩阵的第二列, 应该是左乘矩阵的第一列和第二列的线性组合,
-换言之乘积矩阵的第二列不超过2行, 这是因为左乘矩阵的第一列,
-第二列最多只有两行...以此类推即可证明.</p>
-<hr />
-<h2 id="二矩阵的基本运算">二、矩阵的基本运算</h2>
-<p>矩阵的<strong>加法</strong>和<strong>数乘</strong>运算统称为<strong>线性运算</strong>.
-它们满足:</p>
-<ol type="1">
-<li>加法交换律: <span class="math inline">\(A+B=B+A\)</span></li>
-<li>加法结合律: <span
-class="math inline">\((A+B)+C=A+(B+C)\)</span></li>
-<li><span class="math inline">\(A+O=O+A=A\)</span></li>
-<li>加法消去律: <span class="math inline">\(A+C = B+C \Leftrightarrow
-A=B\)</span></li>
-<li>数乘的结合律: <span class="math inline">\((kl)A = k(lA) =
-l(kA)\)</span></li>
-<li>数乘的分配律: <span class="math inline">\(k(A+B)=kA+kB,
-(k+l)A=kA+lA\)</span></li>
-</ol>
-<hr />
-<p>假设有 <span class="math inline">\(m \times n\)</span> 矩阵和 <span
-class="math inline">\(n \times p\)</span> 矩阵, 则可以得到 <span
-class="math inline">\(m \times p\)</span> 的矩阵如下:</p>
-<p><span class="math display">\[
-\begin{bmatrix}
-a_{11}  &amp;   \cdots  &amp; a_{1n} \\
-\vdots  &amp;   \ddots  &amp; \vdots  \\
-a_{m1}  &amp;   \cdots  &amp;  a_{mn}  \end{bmatrix}
-\begin{bmatrix}
-b_{11}  &amp;   \cdots  &amp; b_{1n} \\
-\vdots  &amp;   \ddots  &amp; \vdots  \\
-b_{m1}  &amp;   \cdots  &amp;  b_{mn}  \end{bmatrix}=\biggl(  \sum\limits_la_{il}\cdot
-b_{lj} \biggr)_{m\times p}
-\]</span> <strong>注</strong> 矩阵形状适配时相乘, 一般不交换,
-且不满足消去律</p>
-<blockquote>
-<p><strong>定义</strong> 当两个矩阵 <span
-class="math inline">\(A\)</span> 与 <span
-class="math inline">\(B\)</span> 满足 <span
-class="math inline">\(AB=BA\)</span> 时, 称 <span
-class="math inline">\(A\)</span> 与 <span
-class="math inline">\(B\)</span> 可交换. 此时两者必为同阶方阵.</p>
-</blockquote>
-<p>还可以把方阵代入多项式.</p>
-<blockquote>
-<p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵, <span
-class="math inline">\(f(x)=a_0+a_1x+ \cdots+ a_n x^n\)</span> 为关于
-<span class="math inline">\(x\)</span> 的多项式, 定义 <span
-class="math inline">\(f(A)\)</span> 为 <span
-class="math inline">\(n\)</span> 阶方阵</p>
-<p><span class="math display">\[f(A)=a_0I+a_1A+ \cdots+ a_n
-A^n\]</span></p>
-</blockquote>
-<p><strong>注</strong> 一元多项式的恒等式代入 <span
-class="math inline">\(n\)</span> 阶方阵之后也是恒等式,例如</p>
-<p><span class="math display">\[
-(I-A)(I+A+A^2+\cdots+A^{n-1})=I-A^n
-\]</span></p>
-<hr />
-<blockquote>
-<p><strong>定义</strong> 把矩阵 <span class="math inline">\(A\)</span>
-的行与列交换得到的矩阵, 称为矩阵 <span class="math inline">\(A\)</span>
-的<strong>转置</strong></p>
-</blockquote>
-<p>容易发现有(假设运算都是有意义的):</p>
-<ol type="1">
-<li><span class="math inline">\((A^T)^T=A\)</span></li>
-<li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
-<li><span class="math inline">\((kA)^T=kA^T\)</span>, <span
-class="math inline">\(k\)</span> 是实数</li>
-</ol>
-<hr />
-<blockquote>
-<p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵, 如果 <span
-class="math inline">\(A\)</span> 满足 <span
-class="math inline">\(A^T=A\)</span> , 也就是说 <span
-class="math inline">\(A\)</span> 中的元素满足</p>
-<p><span class="math display">\[a_{ij}=a_{ji}\]</span>, <span
-class="math inline">\(i,j=1,2,\cdots,n\)</span></p>
-<p>则称 <span class="math inline">\(A\)</span> 是对称矩阵.</p>
-</blockquote>
-<p><strong>注</strong> 如果 <span class="math inline">\(A\)</span> 满足
-<span class="math inline">\(A^T=-A\)</span> , 则称 <span
-class="math inline">\(A\)</span> 是<strong>反对称矩阵</strong>.</p>
-<blockquote>
-<p><strong>命题</strong> 任何一个方阵 <span
-class="math inline">\(A\)</span>
-都可以唯一地表示为一个对称矩阵与一个反对称矩阵之和.</p>
-</blockquote>
-<p><strong>证明</strong> 设 <span class="math inline">\(A=X+Y\)</span>,
-其中 <span class="math inline">\(X\)</span> 为对称矩阵, <span
-class="math inline">\(Y\)</span> 为反对称矩阵. 所以 <span
-class="math display">\[
-A^T = X^T+Y^T=X-Y
-\]</span> 两个矩阵等式联立, 得唯一解, 其中 <span
-class="math inline">\(X\)</span> 是对称矩阵, <span
-class="math inline">\(Y\)</span> 是反对称矩阵. <span
-class="math display">\[
-X=\frac{1}{2}(A+A^T),\,\, Y=\frac{1}{2}(A-A^T)
-\]</span></p>
-<h2 id="三矩阵的分块">三、矩阵的分块</h2>
-<blockquote>
-<p><strong>定义</strong> (分块对角阵)</p>
-<p>分块对角阵 (partitioned diagonal matrix) 是指形如 <span
-class="math display">\[
-\begin{pmatrix}
-A_1   &amp;&amp;&amp;&amp;    \\
-&amp; A_2     \\
-&amp;&amp; \ddots \\
-&amp;&amp;&amp;A_S
-\end{pmatrix}
-\]</span> 其中 <span class="math inline">\(A_i\)</span> 是 <span
-class="math inline">\(n\)</span> 阶方阵, <span class="math inline">\(i=
-1,2,\cdots,s\)</span>, 其它位置上的块都是零矩阵的矩阵.</p>
-</blockquote>
-<p><strong>注</strong> 分块相加就是对应位置相加,
-相乘就是对应位置相乘</p>
-<h2 id="四矩阵的初等变换">四、矩阵的初等变换</h2>
-<blockquote>
-<p><strong>定义</strong> (可逆矩阵) 设 <span
-class="math inline">\(A\)</span> 是一个 <span
-class="math inline">\(n\)</span> 阶<strong>方阵</strong>， 若存在 <span
-class="math inline">\(n\)</span> 阶<strong>方阵</strong> <span
-class="math inline">\(B\)</span> , 使得 <span class="math display">\[
-AB=BA=I
-\]</span> 则称 <span class="math inline">\(A\)</span>
-是<strong>可逆矩阵</strong>(或<strong>非奇异矩阵</strong>),
-也称为可逆方阵或者可逆阵, 并称 <span class="math inline">\(B\)</span> 为
-<span class="math inline">\(A\)</span> 的逆矩阵. 若这样的 <span
-class="math inline">\(B\)</span> 不存在, 则称 <span
-class="math inline">\(A\)</span>
-为<strong>不可逆矩阵</strong>(或<strong>奇异矩阵</strong>).</p>
-</blockquote>
-<p>下面考虑一系列可逆矩阵的性质.</p>
-<blockquote>
-<p><strong>命题</strong> 可逆矩阵的逆唯一.</p>
-</blockquote>
-<p><strong>证明</strong> 设 <span class="math inline">\(A\)</span>
-的逆是 <span class="math inline">\(B,C\)</span>, 那么 <span
-class="math display">\[
-B=IB=(CA)B=C(AB)=CI=C
-\]</span> 这说明了唯一性. 由于逆是唯一的, 记 <span
-class="math inline">\(A\)</span> 的逆矩阵为 <span
-class="math inline">\(A^{-1}\)</span>.</p>
-<hr />
-<blockquote>
-<p><strong>命题</strong> 容易证明可逆矩阵有如下的基本性质</p>
-<p>设可逆矩阵 <span class="math inline">\(A,B\)</span> 阶数相同, 常数
-<span class="math inline">\(k \neq 0\)</span>, 则</p>
-<ol type="1">
-<li><p><span class="math inline">\((A^{-1})^{-1}=A\)</span></p></li>
-<li><p><span
-class="math inline">\((kA)^{-1}=\frac{1}{k}A^{-1}\)</span></p></li>
-<li><p><span
-class="math inline">\((A^T)^{-1}=(A^{-1})^{T}\)</span></p></li>
-<li><p><span
-class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span></p></li>
-<li><p>可逆矩阵可以从矩阵等式的同侧消去(此时 <span
-class="math inline">\(A,B\)</span> 不一定可逆), 即若 <span
-class="math inline">\(P\)</span> 可逆, 则</p></li>
-</ol>
-<p><span class="math display">\[
-PA = PB \Leftrightarrow A=B \\ AP = BP \Leftrightarrow A=B
-\]</span></p>
-</blockquote>
-<blockquote>
-<p><strong>命题</strong> 方阵 $ A $ 有一行或者一列为零, 那么 $ A $
-不可逆.</p>
-</blockquote>
-<p><strong>证明</strong> 假设 <span class="math inline">\(A\)</span>
-可逆, 逆矩阵为 <span class="math inline">\(B\)</span>. 设 <span
-class="math inline">\(A\)</span> 的第 <span
-class="math inline">\(i\)</span> 行为零.</p>
-<p>则 <span class="math inline">\(AB\)</span> 的第 <span
-class="math inline">\(i\)</span> 行为零, 与 <span
-class="math inline">\(AB=I\)</span> 矛盾.</p>
-<hr />
-<p>在这里补充介绍一些重要且简单的矩阵——初等矩阵.</p>
-<blockquote>
-<p><strong>定义</strong>(初等矩阵, elementary matrix)</p>
-<p>对 <span class="math inline">\(n\)</span> 阶单位矩阵施行一次初等行
-(列) 变换得到的矩阵叫作初等矩阵.</p>
-</blockquote>
-<p>有三种类型:</p>
-<ol type="1">
-<li>交换矩阵的第 <span class="math inline">\(i,j\)</span> 行或者列, 即
-<span class="math inline">\(P_I(i,j)\)</span>.</li>
-<li>将矩阵的第 <span class="math inline">\(i\)</span> 行或列乘 <span
-class="math inline">\(c \neq0\)</span>, 即 <span
-class="math inline">\(P_{II}(i, c)\)</span>.</li>
-<li>将矩阵的第 <span class="math inline">\(j\)</span> 行或列乘 <span
-class="math inline">\(c \neq0\)</span> 加在第 <span
-class="math inline">\(i\)</span> 行上, 即 <span
-class="math inline">\(P_{III}(i+j \cdot c)\)</span>.</li>
-</ol>
-<blockquote>
-<p><strong>命题</strong> 初等矩阵都是可逆矩阵</p>
-</blockquote>
-<p><strong>证明</strong> 初等变换是可逆的, 换言之,
-初等变换有对应的逆变换, 后者也是初等变换.
-那么显然初等矩阵存在对应的逆矩阵.</p>
-<p>我们回到之前对命题的证明.</p>
-<blockquote>
-<p><strong>定理</strong>(相抵标准型定理)</p>
-<p>任意一个 <span class="math inline">\(m \times n\)</span> 矩阵 <span
-class="math inline">\(A\)</span> 都可以通过初等变换化为如下形式: <span
-class="math display">\[
-\Lambda = \begin{pmatrix}
-I_r &amp; O \\
-O &amp; O\end{pmatrix}
-\]</span></p>
-</blockquote>
-<p><strong>证明</strong> 参见此前笔记.</p>
-<p>跟据此定理最终容易证明, 存在可逆矩阵 <span class="math inline">\(P,
-Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
-将矩阵 <span class="math inline">\(A\)</span>
-利用初等变换化为相抵标准型的方法称为矩阵的<strong>约化</strong>.</p>
-]]></content>
-      <categories>
-        <category>Linear Algebra</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Notes On Linear Algebra - 1</title>
     <url>/2024/03/03/LA1/</url>
     <content><![CDATA[<h2 id="高斯消元法">高斯消元法</h2>
@@ -447,6 +144,309 @@ class="math inline">\(\Rightarrow\)</span>
 </blockquote>
 <h2 id="矩阵的运算">矩阵的运算</h2>
 <p>略.</p>
+]]></content>
+      <categories>
+        <category>Linear Algebra</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Notes On Linear Algebra - 2</title>
+    <url>/2024/03/03/LA2/</url>
+    <content><![CDATA[<h2 id="一些特殊矩阵">一些特殊矩阵</h2>
+<p>方阵是特殊的矩阵.</p>
+<blockquote>
+<p>定义 <strong>对角元</strong> 方阵中第 <span
+class="math inline">\(i\)</span> 行第 <span
+class="math inline">\(i\)</span> 列的元素.</p>
+</blockquote>
+<p>所以定义了一些方阵:</p>
+<blockquote>
+<p>定义 <strong>对角阵</strong></p>
+<p>主对角线以外都是零的<strong>方阵</strong>.</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{pmatrix}
+a_{11} &amp; 0      &amp; \cdots &amp; 0 \\
+0      &amp; a_{22} &amp; \cdots &amp; 0  \\
+\vdots &amp; \vdots &amp;        &amp; \vdots\\
+0      &amp; 0      &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\]</span></p>
+<p><strong>注</strong> 对角元可为零, 也可以是其它数.</p>
+<blockquote>
+<p><strong>定义</strong> 数量矩阵</p>
+<p>对角线元素都相等的<strong>对角阵</strong>称为数量矩阵(或者纯量矩阵).</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{pmatrix}
+\lambda &amp; 0      &amp; \cdots &amp; 0 \\
+0      &amp; \lambda &amp; \cdots &amp; 0  \\
+\vdots &amp; \vdots &amp;        &amp; \vdots\\
+0      &amp; 0      &amp; \cdots &amp;\lambda
+\end{pmatrix} = \lambda\begin{pmatrix}
+1 &amp; 0      &amp; \cdots &amp; 0 \\
+0      &amp; 1 &amp; \cdots &amp; 0  \\
+\vdots &amp; \vdots &amp;        &amp; \vdots\\
+0      &amp; 0      &amp; \cdots &amp;1
+\end{pmatrix}
+\]</span></p>
+<blockquote>
+<p><strong>定义</strong> 单位矩阵</p>
+<p>对角线元素都是 $ 1$
+的<strong>对角阵</strong>称为<strong>单位矩阵</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong>定义</strong> 上三角矩阵</p>
+<p>对角线左下元素都是 $ 0$ 的<strong>方阵</strong>称为上三角矩阵.</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+0      &amp; a_{22} &amp; \cdots &amp; a_{2n}  \\
+\vdots &amp; \vdots &amp;        &amp; \vdots\\
+0      &amp; 0      &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\]</span></p>
+<p>类似地,</p>
+<blockquote>
+<p><strong>定义</strong> 下三角矩阵</p>
+<p>对角线右上元素都是 $ 0$ 的<strong>方阵</strong>称为下三角矩阵.</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{pmatrix}
+a_{11} &amp; 0 &amp; \cdots &amp; 0 \\
+a_{21}      &amp; a_{22} &amp; \cdots &amp; 0  \\
+\vdots &amp; \vdots &amp;        &amp; \vdots\\
+a_{n1}      &amp; a_{n2}      &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\]</span></p>
+<blockquote>
+<p><strong>推论</strong> 上三角矩阵乘以上三角矩阵,
+仍然是上三角矩阵.下三角矩阵也满足.</p>
+</blockquote>
+<p><strong>分析</strong> 比较自然的结论.</p>
+<p><strong>证明</strong> 比如两个 <span class="math inline">\(n\)</span>
+阶上三角矩阵相乘. 考虑乘积的第一列, 应该是左乘矩阵的第一列的 <span
+class="math inline">\(k\)</span> 倍, 换言之乘积矩阵第一列不超过1行;
+考虑乘积矩阵的第二列, 应该是左乘矩阵的第一列和第二列的线性组合,
+换言之乘积矩阵的第二列不超过2行, 这是因为左乘矩阵的第一列,
+第二列最多只有两行...以此类推即可证明.</p>
+<hr />
+<h2 id="矩阵的基本运算">矩阵的基本运算</h2>
+<p>矩阵的<strong>加法</strong>和<strong>数乘</strong>运算统称为<strong>线性运算</strong>.
+它们满足:</p>
+<ol type="1">
+<li>加法交换律: <span class="math inline">\(A+B=B+A\)</span></li>
+<li>加法结合律: <span
+class="math inline">\((A+B)+C=A+(B+C)\)</span></li>
+<li><span class="math inline">\(A+O=O+A=A\)</span></li>
+<li>加法消去律: <span class="math inline">\(A+C = B+C \Leftrightarrow
+A=B\)</span></li>
+<li>数乘的结合律: <span class="math inline">\((kl)A = k(lA) =
+l(kA)\)</span></li>
+<li>数乘的分配律: <span class="math inline">\(k(A+B)=kA+kB,
+(k+l)A=kA+lA\)</span></li>
+</ol>
+<hr />
+<p>假设有 <span class="math inline">\(m \times n\)</span> 矩阵和 <span
+class="math inline">\(n \times p\)</span> 矩阵, 则可以得到 <span
+class="math inline">\(m \times p\)</span> 的矩阵如下:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+a_{11}  &amp;   \cdots  &amp; a_{1n} \\
+\vdots  &amp;   \ddots  &amp; \vdots  \\
+a_{m1}  &amp;   \cdots  &amp;  a_{mn}  \end{bmatrix}
+\begin{bmatrix}
+b_{11}  &amp;   \cdots  &amp; b_{1n} \\
+\vdots  &amp;   \ddots  &amp; \vdots  \\
+b_{m1}  &amp;   \cdots  &amp;  b_{mn}  \end{bmatrix}=\biggl(  \sum\limits_la_{il}\cdot
+b_{lj} \biggr)_{m\times p}
+\]</span> <strong>注</strong> 矩阵形状适配时相乘, 一般不交换,
+且不满足消去律</p>
+<blockquote>
+<p><strong>定义</strong> 当两个矩阵 <span
+class="math inline">\(A\)</span> 与 <span
+class="math inline">\(B\)</span> 满足 <span
+class="math inline">\(AB=BA\)</span> 时, 称 <span
+class="math inline">\(A\)</span> 与 <span
+class="math inline">\(B\)</span> 可交换. 此时两者必为同阶方阵.</p>
+</blockquote>
+<p>还可以把方阵代入多项式.</p>
+<blockquote>
+<p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
+<span class="math inline">\(n\)</span> 阶方阵, <span
+class="math inline">\(f(x)=a_0+a_1x+ \cdots+ a_n x^n\)</span> 为关于
+<span class="math inline">\(x\)</span> 的多项式, 定义 <span
+class="math inline">\(f(A)\)</span> 为 <span
+class="math inline">\(n\)</span> 阶方阵</p>
+<p><span class="math display">\[f(A)=a_0I+a_1A+ \cdots+ a_n
+A^n\]</span></p>
+</blockquote>
+<p><strong>注</strong> 一元多项式的恒等式代入 <span
+class="math inline">\(n\)</span> 阶方阵之后也是恒等式,例如</p>
+<p><span class="math display">\[
+(I-A)(I+A+A^2+\cdots+A^{n-1})=I-A^n
+\]</span></p>
+<hr />
+<blockquote>
+<p><strong>定义</strong> 把矩阵 <span class="math inline">\(A\)</span>
+的行与列交换得到的矩阵, 称为矩阵 <span class="math inline">\(A\)</span>
+的<strong>转置</strong></p>
+</blockquote>
+<p>容易发现有(假设运算都是有意义的):</p>
+<ol type="1">
+<li><span class="math inline">\((A^T)^T=A\)</span></li>
+<li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
+<li><span class="math inline">\((kA)^T=kA^T\)</span>, <span
+class="math inline">\(k\)</span> 是实数</li>
+</ol>
+<hr />
+<blockquote>
+<p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
+<span class="math inline">\(n\)</span> 阶方阵, 如果 <span
+class="math inline">\(A\)</span> 满足 <span
+class="math inline">\(A^T=A\)</span> , 也就是说 <span
+class="math inline">\(A\)</span> 中的元素满足</p>
+<p><span class="math display">\[a_{ij}=a_{ji}\]</span>, <span
+class="math inline">\(i,j=1,2,\cdots,n\)</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 是对称矩阵.</p>
+</blockquote>
+<p><strong>注</strong> 如果 <span class="math inline">\(A\)</span> 满足
+<span class="math inline">\(A^T=-A\)</span> , 则称 <span
+class="math inline">\(A\)</span> 是<strong>反对称矩阵</strong>.</p>
+<blockquote>
+<p><strong>命题</strong> 任何一个方阵 <span
+class="math inline">\(A\)</span>
+都可以唯一地表示为一个对称矩阵与一个反对称矩阵之和.</p>
+</blockquote>
+<p><strong>证明</strong> 设 <span class="math inline">\(A=X+Y\)</span>,
+其中 <span class="math inline">\(X\)</span> 为对称矩阵, <span
+class="math inline">\(Y\)</span> 为反对称矩阵. 所以 <span
+class="math display">\[
+A^T = X^T+Y^T=X-Y
+\]</span> 两个矩阵等式联立, 得唯一解, 其中 <span
+class="math inline">\(X\)</span> 是对称矩阵, <span
+class="math inline">\(Y\)</span> 是反对称矩阵. <span
+class="math display">\[
+X=\frac{1}{2}(A+A^T),\,\, Y=\frac{1}{2}(A-A^T)
+\]</span></p>
+<h2 id="矩阵的分块">矩阵的分块</h2>
+<blockquote>
+<p><strong>定义</strong> (分块对角阵)</p>
+<p>分块对角阵 (partitioned diagonal matrix) 是指形如 <span
+class="math display">\[
+\begin{pmatrix}
+A_1   &amp;&amp;&amp;&amp;    \\
+&amp; A_2     \\
+&amp;&amp; \ddots \\
+&amp;&amp;&amp;A_S
+\end{pmatrix}
+\]</span> 其中 <span class="math inline">\(A_i\)</span> 是 <span
+class="math inline">\(n\)</span> 阶方阵, <span class="math inline">\(i=
+1,2,\cdots,s\)</span>, 其它位置上的块都是零矩阵的矩阵.</p>
+</blockquote>
+<p><strong>注</strong> 分块相加就是对应位置相加,
+相乘就是对应位置相乘</p>
+<h2 id="矩阵的初等变换">矩阵的初等变换</h2>
+<blockquote>
+<p><strong>定义</strong> (可逆矩阵) 设 <span
+class="math inline">\(A\)</span> 是一个 <span
+class="math inline">\(n\)</span> 阶<strong>方阵</strong>， 若存在 <span
+class="math inline">\(n\)</span> 阶<strong>方阵</strong> <span
+class="math inline">\(B\)</span> , 使得 <span class="math display">\[
+AB=BA=I
+\]</span> 则称 <span class="math inline">\(A\)</span>
+是<strong>可逆矩阵</strong>(或<strong>非奇异矩阵</strong>),
+也称为可逆方阵或者可逆阵, 并称 <span class="math inline">\(B\)</span> 为
+<span class="math inline">\(A\)</span> 的逆矩阵. 若这样的 <span
+class="math inline">\(B\)</span> 不存在, 则称 <span
+class="math inline">\(A\)</span>
+为<strong>不可逆矩阵</strong>(或<strong>奇异矩阵</strong>).</p>
+</blockquote>
+<p>下面考虑一系列可逆矩阵的性质.</p>
+<blockquote>
+<p><strong>命题</strong> 可逆矩阵的逆唯一.</p>
+</blockquote>
+<p><strong>证明</strong> 设 <span class="math inline">\(A\)</span>
+的逆是 <span class="math inline">\(B,C\)</span>, 那么 <span
+class="math display">\[
+B=IB=(CA)B=C(AB)=CI=C
+\]</span> 这说明了唯一性. 由于逆是唯一的, 记 <span
+class="math inline">\(A\)</span> 的逆矩阵为 <span
+class="math inline">\(A^{-1}\)</span>.</p>
+<hr />
+<blockquote>
+<p><strong>命题</strong> 容易证明可逆矩阵有如下的基本性质</p>
+<p>设可逆矩阵 <span class="math inline">\(A,B\)</span> 阶数相同, 常数
+<span class="math inline">\(k \neq 0\)</span>, 则</p>
+<ol type="1">
+<li><p><span class="math inline">\((A^{-1})^{-1}=A\)</span></p></li>
+<li><p><span
+class="math inline">\((kA)^{-1}=\frac{1}{k}A^{-1}\)</span></p></li>
+<li><p><span
+class="math inline">\((A^T)^{-1}=(A^{-1})^{T}\)</span></p></li>
+<li><p><span
+class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span></p></li>
+<li><p>可逆矩阵可以从矩阵等式的同侧消去(此时 <span
+class="math inline">\(A,B\)</span> 不一定可逆), 即若 <span
+class="math inline">\(P\)</span> 可逆, 则</p></li>
+</ol>
+<p><span class="math display">\[
+PA = PB \Leftrightarrow A=B \\ AP = BP \Leftrightarrow A=B
+\]</span></p>
+</blockquote>
+<blockquote>
+<p><strong>命题</strong> 方阵 $ A $ 有一行或者一列为零, 那么 $ A $
+不可逆.</p>
+</blockquote>
+<p><strong>证明</strong> 假设 <span class="math inline">\(A\)</span>
+可逆, 逆矩阵为 <span class="math inline">\(B\)</span>. 设 <span
+class="math inline">\(A\)</span> 的第 <span
+class="math inline">\(i\)</span> 行为零.</p>
+<p>则 <span class="math inline">\(AB\)</span> 的第 <span
+class="math inline">\(i\)</span> 行为零, 与 <span
+class="math inline">\(AB=I\)</span> 矛盾.</p>
+<hr />
+<p>在这里补充介绍一些重要且简单的矩阵——初等矩阵.</p>
+<blockquote>
+<p><strong>定义</strong>(初等矩阵, elementary matrix)</p>
+<p>对 <span class="math inline">\(n\)</span> 阶单位矩阵施行一次初等行
+(列) 变换得到的矩阵叫作初等矩阵.</p>
+</blockquote>
+<p>有三种类型:</p>
+<ol type="1">
+<li>交换矩阵的第 <span class="math inline">\(i,j\)</span> 行或者列, 即
+<span class="math inline">\(P_I(i,j)\)</span>.</li>
+<li>将矩阵的第 <span class="math inline">\(i\)</span> 行或列乘 <span
+class="math inline">\(c \neq0\)</span>, 即 <span
+class="math inline">\(P_{II}(i, c)\)</span>.</li>
+<li>将矩阵的第 <span class="math inline">\(j\)</span> 行或列乘 <span
+class="math inline">\(c \neq0\)</span> 加在第 <span
+class="math inline">\(i\)</span> 行上, 即 <span
+class="math inline">\(P_{III}(i+j \cdot c)\)</span>.</li>
+</ol>
+<blockquote>
+<p><strong>命题</strong> 初等矩阵都是可逆矩阵</p>
+</blockquote>
+<p><strong>证明</strong> 初等变换是可逆的, 换言之,
+初等变换有对应的逆变换, 后者也是初等变换.
+那么显然初等矩阵存在对应的逆矩阵.</p>
+<p>我们回到之前对命题的证明.</p>
+<blockquote>
+<p><strong>定理</strong>(相抵标准型定理)</p>
+<p>任意一个 <span class="math inline">\(m \times n\)</span> 矩阵 <span
+class="math inline">\(A\)</span> 都可以通过初等变换化为如下形式: <span
+class="math display">\[
+\Lambda = \begin{pmatrix}
+I_r &amp; O \\
+O &amp; O\end{pmatrix}
+\]</span></p>
+</blockquote>
+<p><strong>证明</strong> 参见此前笔记.</p>
+<p>跟据此定理最终容易证明, 存在可逆矩阵 <span class="math inline">\(P,
+Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
+将矩阵 <span class="math inline">\(A\)</span>
+利用初等变换化为相抵标准型的方法称为矩阵的<strong>约化</strong>.</p>
 ]]></content>
       <categories>
         <category>Linear Algebra</category>
