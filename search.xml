@@ -1,155 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Notes On Linear Algebra - 1</title>
-    <url>/2024/03/03/LA1/</url>
-    <content><![CDATA[<h2 id="高斯消元法">高斯消元法</h2>
-<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
-<ol type="1">
-<li>交换方程次序.</li>
-<li>以不等于0的数乘某个方程.</li>
-<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
-<blockquote>
-<p><strong>定义</strong> 矩阵</p>
-<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span
-class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
-排成的 <span class="math inline">\(m\)</span> 行 <span
-class="math inline">\(n\)</span> 列<strong>数表</strong></p>
-<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
-a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
-a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
-\vdots &amp; \vdots &amp; &amp;\vdots  \\
-a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
-\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
-行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span
-class="math inline">\(m\times n\)</span> 矩阵.</p>
-<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span
-class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵.</p>
-</blockquote>
-<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
-某一行构成的行矩阵称为<strong>行向量</strong>.</p>
-<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span
-class="math inline">\(0,0_{m\times n}\)</span> 或者 <span
-class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 单位矩阵</p>
-<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
-<span class="math inline">\(I\)</span> 或者 <span
-class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span
-class="math inline">\(I_n\)</span> 或者 <span
-class="math inline">\(E_n\)</span>.</p>
-</blockquote>
-<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
-<blockquote>
-<p><strong>系数矩阵</strong>
-将线性方程组未知量的系数按次序排列得到的矩阵.</p>
-</blockquote>
-<blockquote>
-<p><strong>增广矩阵</strong>
-将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
-</blockquote>
-<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
-<ol type="1">
-<li>交换矩阵的两行.</li>
-<li>以不等于0的数去乘矩阵的某行.</li>
-<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<p>同理也有三类<strong>初等列变换</strong>.
-它们统称为矩阵的<strong>初等变换</strong>.</p>
-<p>在化简中将会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
-0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
-0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
-0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
-\end{pmatrix}\)</span></p>
-<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
-一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
-<ol type="1">
-<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
-<li>元素不全为0的行(非零行),
-从左数第一个不为0的元素称为<strong>主元</strong>.
-各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
-</ol>
-<p>在化简中也会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
-\end{pmatrix}\)</span></p>
-<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
-<ol type="1">
-<li>它是<strong>阶梯形矩阵</strong></li>
-<li>每个<strong>非零行的主元都是1</strong></li>
-<li>每个<strong>主元所在列的其余元素都是0</strong></li>
-</ol>
-<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
-如果作初等变换, 则总可以把矩阵化为诸如:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}\)</span></p>
-<p>称为<strong>相抵标准型</strong>. 简记为 <span
-class="math inline">\(\begin{bmatrix}
-I_3          &amp; O_{3\times2}     \\
-O_{1\times3} &amp; O_{1\times2}
-\end{bmatrix}\)</span> 或者直接写成 <span
-class="math inline">\(\begin{bmatrix}
-I &amp; O       \\
-O &amp; O
-\end{bmatrix}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span
-class="math inline">\(1\)</span>
-的个数称为矩阵的<strong>秩(rank)</strong></p>
-</blockquote>
-<p><strong>注</strong>: 秩是一个非常深刻的概念,
-在之后我们将经常遇到.</p>
-<h2
-id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
-<p>线性方程组按照解的多少分为三种情况:</p>
-<ol type="1">
-<li>无解</li>
-<li>有唯一解</li>
-<li>有无穷多组解</li>
-</ol>
-<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
-<ol type="1">
-<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span>
-<strong>无解</strong></p></li>
-<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
-此时,</p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span>
-<strong>有无穷多组解</strong></p></li>
-</ol>
-<p>引入如下概念:</p>
-<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
-常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
-<blockquote>
-<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
-一定有<strong>非零解</strong>.</p>
-</blockquote>
-<h2 id="矩阵的运算">矩阵的运算</h2>
-<p>略.</p>
-]]></content>
-      <categories>
-        <category>Linear Algebra</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Notes On Linear Algebra - 2</title>
     <url>/2024/03/03/LA2/</url>
     <content><![CDATA[<h2 id="一些特殊矩阵">一些特殊矩阵</h2>
@@ -459,6 +310,155 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
 ]]></content>
       <categories>
         <category>Life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Notes On Linear Algebra - 1</title>
+    <url>/2024/03/03/LA1/</url>
+    <content><![CDATA[<h2 id="高斯消元法">高斯消元法</h2>
+<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
+<ol type="1">
+<li>交换方程次序.</li>
+<li>以不等于0的数乘某个方程.</li>
+<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
+倍.</li>
+</ol>
+<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
+<blockquote>
+<p><strong>定义</strong> 矩阵</p>
+<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span
+class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
+排成的 <span class="math inline">\(m\)</span> 行 <span
+class="math inline">\(n\)</span> 列<strong>数表</strong></p>
+<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
+a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
+\vdots &amp; \vdots &amp; &amp;\vdots  \\
+a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
+\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
+行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span
+class="math inline">\(m\times n\)</span> 矩阵.</p>
+<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span
+class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
+<span class="math inline">\(n\)</span> 阶方阵.</p>
+</blockquote>
+<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
+某一行构成的行矩阵称为<strong>行向量</strong>.</p>
+<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span
+class="math inline">\(0,0_{m\times n}\)</span> 或者 <span
+class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 单位矩阵</p>
+<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
+<span class="math inline">\(I\)</span> 或者 <span
+class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span
+class="math inline">\(I_n\)</span> 或者 <span
+class="math inline">\(E_n\)</span>.</p>
+</blockquote>
+<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
+<blockquote>
+<p><strong>系数矩阵</strong>
+将线性方程组未知量的系数按次序排列得到的矩阵.</p>
+</blockquote>
+<blockquote>
+<p><strong>增广矩阵</strong>
+将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
+</blockquote>
+<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
+<ol type="1">
+<li>交换矩阵的两行.</li>
+<li>以不等于0的数去乘矩阵的某行.</li>
+<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
+倍.</li>
+</ol>
+<p>同理也有三类<strong>初等列变换</strong>.
+它们统称为矩阵的<strong>初等变换</strong>.</p>
+<p>在化简中将会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
+0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
+0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
+0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
+\end{pmatrix}\)</span></p>
+<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
+一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
+<ol type="1">
+<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
+<li>元素不全为0的行(非零行),
+从左数第一个不为0的元素称为<strong>主元</strong>.
+各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
+</ol>
+<p>在化简中也会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+\end{pmatrix}\)</span></p>
+<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
+<ol type="1">
+<li>它是<strong>阶梯形矩阵</strong></li>
+<li>每个<strong>非零行的主元都是1</strong></li>
+<li>每个<strong>主元所在列的其余元素都是0</strong></li>
+</ol>
+<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
+如果作初等变换, 则总可以把矩阵化为诸如:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span></p>
+<p>称为<strong>相抵标准型</strong>. 简记为 <span
+class="math inline">\(\begin{bmatrix}
+I_3          &amp; O_{3\times2}     \\
+O_{1\times3} &amp; O_{1\times2}
+\end{bmatrix}\)</span> 或者直接写成 <span
+class="math inline">\(\begin{bmatrix}
+I &amp; O       \\
+O &amp; O
+\end{bmatrix}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span
+class="math inline">\(1\)</span>
+的个数称为矩阵的<strong>秩(rank)</strong></p>
+</blockquote>
+<p><strong>注</strong>: 秩是一个非常深刻的概念,
+在之后我们将经常遇到.</p>
+<h2
+id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
+<p>线性方程组按照解的多少分为三种情况:</p>
+<ol type="1">
+<li>无解</li>
+<li>有唯一解</li>
+<li>有无穷多组解</li>
+</ol>
+<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
+<ol type="1">
+<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span>
+<strong>无解</strong></p></li>
+<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
+此时,</p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
+class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
+class="math inline">\(\Rightarrow\)</span>
+<strong>有无穷多组解</strong></p></li>
+</ol>
+<p>引入如下概念:</p>
+<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
+常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
+<blockquote>
+<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
+一定有<strong>非零解</strong>.</p>
+</blockquote>
+<h2 id="矩阵的运算">矩阵的运算</h2>
+<p>略.</p>
+]]></content>
+      <categories>
+        <category>Linear Algebra</category>
       </categories>
   </entry>
 </search>
