@@ -150,6 +150,15 @@ class="math inline">\(\Rightarrow\)</span>
       </categories>
   </entry>
   <entry>
+    <title>The Third Blog</title>
+    <url>/2024/03/03/My-third-Blog/</url>
+    <content><![CDATA[<p>这个blog终于搭建好了。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Notes On Linear Algebra - 2</title>
     <url>/2024/03/03/LA2/</url>
     <content><![CDATA[<h2 id="一些特殊矩阵">一些特殊矩阵</h2>
@@ -450,15 +459,6 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
 ]]></content>
       <categories>
         <category>Linear Algebra</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>The Third Blog</title>
-    <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<p>这个blog终于搭建好了。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
-]]></content>
-      <categories>
-        <category>Life</category>
       </categories>
   </entry>
 </search>
