@@ -453,15 +453,6 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
       </tags>
   </entry>
   <entry>
-    <title>The Third Blog</title>
-    <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
-]]></content>
-      <tags>
-        <tag>Life</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Notes On Linear Algebra - 3</title>
     <url>/2024/03/04/LA3/</url>
     <content><![CDATA[<h1 id="前言">前言</h1>
@@ -681,6 +672,15 @@ class="math display">\[rank \begin{pmatrix}
     <title>Just One Experiment...</title>
     <url>/2024/03/04/justoneexperiment/</url>
     <content><![CDATA[<p>今天下午是实验课，头一次摸示波器这种贵重的东西，多做两次实验之后倒也熟练了。不过有些时候波形会乱，调不好，今天测一个数据直接调烦了，我尝试伪造一个数据，结果被老师一眼看穿（</p>
+]]></content>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Third Blog</title>
+    <url>/2024/03/03/My-third-Blog/</url>
+    <content><![CDATA[<p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
 ]]></content>
       <tags>
         <tag>Life</tag>
