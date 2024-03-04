@@ -145,9 +145,9 @@ class="math inline">\(\Rightarrow\)</span>
 <h2 id="矩阵的运算">矩阵的运算</h2>
 <p>略.</p>
 ]]></content>
-      <categories>
-        <category>Linear Algebra</category>
-      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
   </entry>
   <entry>
     <title>Notes On Linear Algebra - 2</title>
@@ -448,9 +448,18 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
 将矩阵 <span class="math inline">\(A\)</span>
 利用初等变换化为相抵标准型的方法称为矩阵的<strong>约化</strong>.</p>
 ]]></content>
-      <categories>
-        <category>Linear Algebra</category>
-      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Third Blog</title>
+    <url>/2024/03/03/My-third-Blog/</url>
+    <content><![CDATA[<p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+]]></content>
+      <tags>
+        <tag>Life</tag>
+      </tags>
   </entry>
   <entry>
     <title>Notes On Linear Algebra - 3</title>
@@ -664,17 +673,17 @@ class="math display">\[rank \begin{pmatrix}
    \end{pmatrix}
     \ge rank(A)+rank(B)\]</span></p>
 ]]></content>
-      <categories>
-        <category>Linear Algebra</category>
-      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
   </entry>
   <entry>
-    <title>The Third Blog</title>
-    <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+    <title>Just One Experiment...</title>
+    <url>/2024/03/04/justoneexperiment/</url>
+    <content><![CDATA[<p>今天下午是实验课，头一次摸示波器这种贵重的东西，多做两次实验之后倒也熟练了。不过有些时候波形会乱，调不好，今天测一个数据直接调烦了，我尝试伪造一个数据，结果被老师一眼看穿（</p>
 ]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
   </entry>
 </search>
