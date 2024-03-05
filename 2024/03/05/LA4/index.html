@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pro1eta.github.io/2024/03/05/LA4/LA4_1.png">
 <meta property="article:published_time" content="2024-03-05T05:18:07.000Z">
-<meta property="article:modified_time" content="2024-03-05T05:27:28.811Z">
+<meta property="article:modified_time" content="2024-03-05T06:22:20.366Z">
 <meta property="article:author" content="Proleta">
 <meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-03-05 13:18:07 / Modified: 13:27:28" itemprop="dateCreated datePublished" datetime="2024-03-05T13:18:07+08:00">2024-03-05</time>
+              <time title="Created: 2024-03-05 13:18:07 / Modified: 14:22:20" itemprop="dateCreated datePublished" datetime="2024-03-05T13:18:07+08:00">2024-03-05</time>
             </span>
 
           <br>
@@ -229,14 +229,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -358,7 +358,70 @@ class="math inline">\(X\)</span> 的时候, 记作 <span
 class="math inline">\(X^n\)</span>. 称为集合 <span
 class="math inline">\(X\)</span> 的 <span
 class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
-<p><img src="LA4_1.png" /></p>
+<p>笛卡尔积集有一些性质：</p>
+<blockquote>
+<ol type="1">
+<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span
+class="math inline">\(X\)</span> 或者 <span
+class="math inline">\(Y\)</span> 为空集.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
+\cup Z) \times Y\)</span>.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cap (X&#39; \times
+Y&#39;) = (X \times X&#39;) \times (Y \times Y&#39;)\)</span>,
+如图</p></li>
+</ol>
+</blockquote>
+<img src="/2024/03/05/LA4/LA4_1.png" class="">
+<hr />
+<h3 id="映射">映射</h3>
+<p>首先是映射的相关定义.</p>
+<blockquote>
+<p><strong>定义</strong> 映射</p>
+<p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
+如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
+,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span
+class="math inline">\(x\)</span>, 在集合 <span
+class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span
+class="math inline">\(y\)</span> 与之对应, 那么称 <span
+class="math inline">\(f:X \to Y\)</span> 为从集合 <span
+class="math inline">\(X\)</span> 到 <span
+class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
+</blockquote>
+<p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
+<span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
+<span class="math inline">\(x \longmapsto y\)</span> 表示 <span
+class="math inline">\(X\)</span> 中的元素 <span
+class="math inline">\(x\)</span> 对应到 <span
+class="math inline">\(Y\)</span> 中的元素 <span
+class="math inline">\(y\)</span>, 这时 <span
+class="math inline">\(y\)</span> 叫作 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span
+class="math inline">\(f(x)\)</span>, <span
+class="math inline">\(x\)</span> 叫做 <span
+class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
+<blockquote>
+<p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
+Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span
+class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
+<span class="math inline">\(Y\)</span>​
+叫做<strong>目标域</strong>(target)或者陪域.<span
+class="math inline">\(x\)</span> 的象 <span
+class="math inline">\(y\)</span>, 也写作 <span
+class="math inline">\(f(x)\)</span>,也被叫做 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x\)</span> 处的值. <span
+class="math inline">\(X\)</span> 的所有元素在 <span
+class="math inline">\(f\)</span> 之下的象的集合构成 <span
+class="math inline">\(Y\)</span> 的一个子集, 记作 <span
+class="math display">\[
+Im(f) = \{f(x)|x \in X\} \subseteq Y
+\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span
+class="math inline">\(f\)</span>
+的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
+</blockquote>
+<p>值域是目标域的子集.</p>
+<p>(未完待续)</p>
 
     </div>
 
@@ -456,7 +519,7 @@ class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%8E%E6%98%A0%E5%B0%84"><span class="nav-number">1.</span> <span class="nav-text">集合与映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82%E9%9B%86"><span class="nav-number">1.1.</span> <span class="nav-text">幂集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">集合的基本运算</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%8E%E6%98%A0%E5%B0%84"><span class="nav-number">1.</span> <span class="nav-text">集合与映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82%E9%9B%86"><span class="nav-number">1.1.</span> <span class="nav-text">幂集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">集合的基本运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E5%B0%84"><span class="nav-number">1.3.</span> <span class="nav-text">映射</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
