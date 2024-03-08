@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"pro1eta.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Propositional Logic 命题逻辑 命题 Proposition  Definition proposition 命题  a statement(i.e. a declarative sentence) - with some definite meaning, (not vague or ambiguhous) having a truth value that">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DM1">
+<meta property="og:url" content="https://pro1eta.github.io/2024/03/09/DM1/index.html">
+<meta property="og:site_name" content="Proleta&#39;s Blog">
+<meta property="og:description" content="Propositional Logic 命题逻辑 命题 Proposition  Definition proposition 命题  a statement(i.e. a declarative sentence) - with some definite meaning, (not vague or ambiguhous) having a truth value that">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-08T17:44:36.000Z">
+<meta property="article:modified_time" content="2024-03-08T18:06:16.706Z">
+<meta property="article:author" content="Proleta">
+<meta property="article:tag" content="Discrete Mathematics">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://pro1eta.github.io/2024/03/09/DM1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>DM1 | Proleta's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Proleta's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">(｀･ω･´)ﾉ Welcome</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags - /Discrete Mathematics/ - /Life/ - /Linear Algebras/ - /Circuitry/ - /Stm32/ - /Reverse/ fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://pro1eta.github.io/2024/03/09/DM1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/3.png">
+      <meta itemprop="name" content="Proleta">
+      <meta itemprop="description" content="栏杆拍遍">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Proleta's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DM1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-03-09 01:44:36 / Modified: 02:06:16" itemprop="dateCreated datePublished" datetime="2024-03-09T01:44:36+08:00">2024-03-09</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>6.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>12 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="propositional-logic-命题逻辑">Propositional Logic 命题逻辑</h1>
+<h2 id="命题">命题</h2>
+<p><strong><em>Proposition</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>proposition 命题</strong></p>
+<ul>
+<li>a statement(i.e. a declarative sentence) - with some definite
+meaning, (not vague or ambiguhous)</li>
+<li>having a truth value that is either true of false, but not both</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Atoms</strong> <strong>原子命题</strong>: Corresponds with
+<strong>simple</strong> English sentences.</li>
+<li><strong>Compound propositions</strong> <strong>复合命题</strong>:
+build up from atoms using operators.</li>
+</ul>
+<p>if <span class="math inline">\(p \to q\)</span>,</p>
+<ul>
+<li><span class="math inline">\(p \to q\)</span> is the
+<strong>converse(逆命题)</strong> of it.</li>
+<li><span class="math inline">\(\neg q \to \neg p\)</span> is the
+<strong>contrapositive(逆否命题)</strong> of it.</li>
+<li><span class="math inline">\(\neg p \to \neg q\)</span>​ is the
+<strong>inverse(否命题)</strong> fof it.</li>
+</ul>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>formula 命题公式</strong></p>
+<ul>
+<li>All atomes are formulas.</li>
+<li>If <span class="math inline">\(p\)</span> is a formula, then <span
+class="math inline">\(\neg p\)</span> is a formula.</li>
+<li>If <span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> is a formula, then the following are
+formulas: <span class="math inline">\(p \land q\)</span> <span
+class="math inline">\(p\lor q\)</span> <span class="math inline">\(p
+\oplus q\)</span> <span class="math inline">\(p \to q\)</span> <span
+class="math inline">\(p \leftrightarrow q\)</span> e.g.</li>
+</ul>
+</blockquote>
+<h2 id="命题变量">命题变量</h2>
+<p><strong><em>Propositional variables</em></strong></p>
+<p>We use letters to denote propositional variables (or statement
+variables).The conventional letters used for propositional variables are
+p, q, r, s, ...</p>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<p><strong><em>Operators / Connectives</em></strong></p>
+<p>An operator or connective combines n operand expressions into a
+larger expression. <strong>Unary</strong> operators take 1 operand while
+<strong>binary</strong> operators take 2 operands.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Formal Name</th>
+<th style="text-align: center;">Nickname</th>
+<th style="text-align: center;">Arity</th>
+<th style="text-align: center;">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Negation operator</td>
+<td style="text-align: center;">NOT</td>
+<td style="text-align: center;">Unary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\neg\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Conjunction operator</td>
+<td style="text-align: center;">AND</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\land\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Disjunction operator</td>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\lor\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Exclusive - OR operator</td>
+<td style="text-align: center;">XOR</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\oplus\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Implication operator</td>
+<td style="text-align: center;">IMPLIES</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\to\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Biconditional operator</td>
+<td style="text-align: center;">IFF</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span
+class="math inline">\(\leftrightarrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="否定-非">否定, 非</h3>
+<p><strong><em>The Negation Operator</em></strong></p>
+<p>The unary negation operator transforms a prop. into its negation.</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>if <span class="math inline">\(p=\)</span> "I have brown hair."</p>
+<p>then <span class="math inline">\(\neg p=\)</span> "I do
+<strong>not</strong> have brown hair."</p>
+</blockquote>
+<h3 id="合取-与">合取, 与</h3>
+<p><strong><em>The Conjunction Operator</em></strong></p>
+<p>The binary conjunction operator "<span
+class="math inline">\(\land\)</span>"(AND) combines two propositions to
+form their logical conjunction.</p>
+<ul>
+<li><strong>In fact, <span class="math inline">\(\neg\)</span> and <span
+class="math inline">\(\land\)</span> are sufficient to express any
+Boolean truth table.</strong></li>
+</ul>
+<h3 id="析取-或">析取, 或</h3>
+<p><strong><em>The Disjunction Operator</em></strong></p>
+<p>The binary disjunction operator "<span
+class="math inline">\(\lor\)</span>"(OR) conbines two prop. to form
+their logical disjunction.</p>
+<h3 id="异或">异或</h3>
+<p><strong><em>The Exclusive-or Operator</em></strong></p>
+<p>The binary exclusive-or operator "<span
+class="math inline">\(\oplus\)</span>"(XOR) combines two propositions to
+form their logical "exlusive or".</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p><span class="math inline">\(p=\)</span> "I will earn an A in this
+course,"</p>
+<p><span class="math inline">\(q=\)</span> "I will either earn an A in
+this course,"</p>
+<p><span class="math inline">\(p \oplus q=\)</span> "I will either earn
+an A in this course, or I will drop it(<strong>but not
+both</strong>)."</p>
+</blockquote>
+<p>"Or" in English can be ambiguous regarding the
+"<strong>both</strong>" case.</p>
+<h3 id="蕴涵">蕴涵</h3>
+<p><strong><em>The Implication Operator</em></strong></p>
+<p>The implication <span class="math inline">\(p \to q\)</span> states
+that <span class="math inline">\(p\)</span> implies <span
+class="math inline">\(q\)</span>.</p>
+<p><em>I.e.</em> If <span class="math inline">\(p\)</span> is true then
+<span class="math inline">\(q\)</span> is true. However, if <span
+class="math inline">\(p\)</span> is <strong>not</strong> true, then q
+could be either true or false.</p>
+<ul>
+<li><span class="math inline">\(p \to q\)</span> is flase
+<strong>only</strong> when <span class="math inline">\(p\)</span> is
+true but <span class="math inline">\(q\)</span> is false.</li>
+<li><span class="math inline">\(p \to q\)</span> does not mean that
+<span class="math inline">\(p\)</span> causes <span
+class="math inline">\(q\)</span>.</li>
+</ul>
+<h4 id="different-ways-of-expressing-p-to-q">Different Ways of
+Expressing <span class="math inline">\(p \to q\)</span></h4>
+<ul>
+<li><p><span class="math inline">\(p\)</span> implies <span
+class="math inline">\(q\)</span></p></li>
+<li><p>if <span class="math inline">\(p\)</span>, then <span
+class="math inline">\(q\)</span></p></li>
+<li><p>if <span class="math inline">\(p\)</span>, <span
+class="math inline">\(q\)</span></p></li>
+<li><p>when <span class="math inline">\(p\)</span>, <span
+class="math inline">\(q\)</span></p></li>
+<li><p>whenever <span class="math inline">\(p\)</span>, <span
+class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> if <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> when <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> whenever <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(p\)</span> only if <span
+class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> is necessary for <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> follows from <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> is implied by <span
+class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> unless <span
+class="math inline">\(\neg p\)</span>​</p></li>
+</ul>
+<h3 id="同或-逻辑等价">同或, 逻辑等价</h3>
+<p><strong><em>The Biconditional Operator</em></strong></p>
+<p>The biconditional <span class="math inline">\(p \leftrightarrow
+q\)</span> states that <span class="math inline">\(p\)</span> is true
+<strong>if and only if</strong> q is true.</p>
+<h3 id="真值表汇总">真值表汇总</h3>
+<p><strong><em>The Truth Table of Boolean Operations</em></strong></p>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 10%" />
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 15%" />
+<col style="width: 11%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg
+p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \land
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p\lor
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \oplus
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \to
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p
+\leftrightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<h3 id="优先级">优先级</h3>
+<p><strong><em>Precedence of Logical Operators</em></strong></p>
+<ul>
+<li>It's important to use <strong>parenthesis</strong> to group
+sub_expressions</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">operator</th>
+<th style="text-align: center;">Predence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(\neg\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(\land\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(\lor\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(\to\)</span></td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(\leftrightarrow\)</span></td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一致系统规范说明">一致系统规范说明</h3>
+<p><strong><em>Consistent System Specifications</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Consistent System Specifications
+一致系统规范说明</strong></p>
+<ul>
+<li>A list of propositions is <strong>consistent</strong> if it is
+possible to assign truth values to the proposition variables so that
+each proposition is true.</li>
+</ul>
+<p>系统规范说明是<strong>一致的</strong>,
+如果可以为所有的<strong>命题变量</strong>设定真值,
+使得命题变量构成的每一个<strong>命题</strong>均为<strong>真</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>Let <span class="math inline">\(p\)</span>:“The diagnostic message is
+stored in the buffer.”</p>
+<p>设 <span class="math inline">\(p\)</span>:
+诊断信息被存储在缓冲区中.</p>
+<p><span class="math inline">\(q\)</span>: “The diagnostic message is
+retransmitted.”</p>
+<p><span class="math inline">\(q\)</span>: 诊断信息被重新发送.</p>
+<p>for <span class="math inline">\(p\lor q\)</span>, <span
+class="math inline">\(p \to q\)</span>, <span class="math inline">\(\neg
+p\)</span>,</p>
+<p>If <span class="math inline">\(p\)</span> is flase while <span
+class="math inline">\(q\)</span> is true, then all three prop. are true,
+so <strong>the specification is consistent</strong>.</p>
+</blockquote>
+<hr />
+<h1 id="命题等价式">命题等价式</h1>
+<p><strong><em>Propositional Equivalences</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Tautology, contradiction, contingency</strong></p>
+<p><strong>永真式, 永假式, 可能式</strong></p>
+<ul>
+<li><p>A compound proposition that is always true, no matter what the
+truth values of the propositional variables that occur in it, is called
+a <strong>tautology(永真式, 或者重言式)</strong>.</p></li>
+<li><p>A compound proposition that is always false is called a
+<strong>contradiction(永假式, 或者矛盾式)</strong>.</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Rule of substitution</strong> <strong>置换规则</strong></p>
+<p>Suppose <span class="math inline">\(P\)</span> is a tautology, if
+<span class="math inline">\(p\)</span> is a primitive statement in <span
+class="math inline">\(P\)</span> and we can replace <span
+class="math inline">\(p\)</span> with the statement <span
+class="math inline">\(q\)</span>, then the new statement <span
+class="math inline">\(P&#39;\)</span> is also a tautology.</p>
+<p>在一个永真公式中, 任何一个命题变元 <span
+class="math inline">\(R\)</span> 出现的每一处,
+用另一个命题公式代入,所得命题公式仍然是永真式.</p>
+</blockquote>
+<blockquote>
+<p><strong>Rule of replacement</strong> <strong>代入规则</strong></p>
+<p>Within the context of a logical proof, logically equivalent
+expressions may replace each other.</p>
+<p>给定公式 <span class="math inline">\(A\)</span>, 其所有子公式为 <span
+class="math inline">\(a_1,a_2,\dots,a_n\)</span>, 设 <span
+class="math inline">\(a_i \equiv b_i\)</span>, 用 <span
+class="math inline">\(b_i\)</span> 替换 <span
+class="math inline">\(a_i\)</span>, 所得公式为 <span
+class="math inline">\(B\)</span>, 则 <span class="math inline">\(A
+\equiv B\)</span>.</p>
+</blockquote>
+<h2 id="逻辑等价式">逻辑等价式</h2>
+<p><strong><em>Logical Equibalences</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Logical Equibalences 逻辑等价式</strong></p>
+<p>Compound propositions that <strong>have the same truth values in all
+possible cases</strong> are called <strong>logically
+equivalent</strong>. The notation <span class="math display">\[
+p \equiv  q
+\]</span> or <span class="math display">\[
+p \Leftrightarrow q
+\]</span> donates that <span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> are <strong>logically
+equivalences</strong>.</p>
+</blockquote>
+<ul>
+<li><strong>tips</strong>: We will also say: they express <strong>the
+same truth function</strong> or the same function from values for atoms
+to values for the whole formula.In other words, two syntactically
+compound propositions may be semantically identical.</li>
+<li><strong>tips</strong>: The symbol <span
+class="math inline">\(\equiv\)</span> is <strong>NOT</strong> a logical
+connective, and <span class="math inline">\(p \equiv  q\)</span> is not
+a compound proposition but rather is the statement that <span
+class="math inline">\(p \leftrightarrow q\)</span> is a tautology.</li>
+</ul>
+<h2 id="等价规则">等价规则</h2>
+<p><strong><em>Equivalence Laws</em></strong></p>
+<p>To shorten the length, let's make <span
+class="math inline">\(\mathbf{T}\)</span> short for
+<strong>tautology</strong> and <span
+class="math display">\[\mathbf{F}\]</span> for
+<strong>contradiction</strong>. There's some logical equibalences.</p>
+<table>
+<colgroup>
+<col style="width: 61%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Equivalence</em></th>
+<th><em>Name</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p \land \mathbf{T} \equiv
+p\)</span></td>
+<td>Identity laws<br />同一律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \lor \mathbf{F} \equiv p\)</span></td>
+<td>Identity laws<br />同一律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor \mathbf{T} \equiv
+\mathbf{T}\)</span></td>
+<td>Domination laws<br />零律, 支配律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land \mathbf{F} \equiv
+\mathbf{F}\)</span></td>
+<td>Domination laws<br />零律, 支配律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \land p \equiv p\)</span></td>
+<td>Idempotent laws<br />等幂律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \lor p \equiv p\)</span></td>
+<td>Idempotent laws<br />等幂律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\neg (\neg)p \equiv p\)</span></td>
+<td>Double negation law<br />双重否定律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land q \equiv q \land p\)</span></td>
+<td>Commutativive laws<br />交换律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor q \equiv q \lor p\)</span></td>
+<td>Commutativive laws<br />交换律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \lor q) \lor r\equiv q \lor (p \lor
+r)\)</span></td>
+<td>Associative laws<br />结合律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((p \lor q) \land r\equiv (p \lor q)
+\land (p \lor r)\)</span></td>
+<td>Distributive laws<br />分配律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \land q) \lor r\equiv (p \land q)
+\lor (p \land r)\)</span></td>
+<td>Distributive laws<br />分配律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\neg(p \land q) \equiv \neg q \lor\neg
+p\)</span></td>
+<td>De Morgan's laws<br />德·摩根律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\neg(p \lor q) \equiv \neg q \land\neg
+p\)</span></td>
+<td>De Morgan's laws<br />德·摩根律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor (p \land q ) \equiv
+p\)</span></td>
+<td>Absorption laws<br />吸收率</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land (p \lor q ) \equiv
+p\)</span></td>
+<td>Absorption laws<br />吸收率</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor  \neg p\equiv
+\mathbf{T}\)</span></td>
+<td>Tautology<br />排中律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land \neg p\equiv
+\mathbf{F}\)</span></td>
+<td>Contradiction<br />矛盾律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((p \to q \equiv \neg p \land
+q)\)</span></td>
+<td>Implication<br />蕴涵等价式</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \to q) \land (q \to p) \equiv p
+\leftrightarrow q\)</span></td>
+<td>Equivalence<br />等价</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((p \to q) \land (p \to \neg q) \equiv
+\neg p\)</span></td>
+<td>Absurdity<br />归谬</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \to q \equiv \neg q \to \neg
+p\)</span></td>
+<td>Contrapositive<br />蕴涵逆反式</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \land q \to r \equiv p \to (q\to
+r)\)</span></td>
+<td>Exportation<br />输出律</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnf-cnf-e.g.">DNF, CNF e.g.</h2>
+<h3 id="析取范式-合取范式-范式的存在性定理">析取范式, 合取范式,
+范式的存在性定理</h3>
+<p>这一部分用中文写, 因为原教材和百科中基本没有对这一段的提及,
+或者百科内容与教师讲授内容与原教材内容不一致.
+出于这些原因用中文较好.</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>基本和(子句)</strong></p>
+<p>由有限个命题变量或其否定析取, 构成的析取式,
+称为<strong>基本和</strong>, 或者<strong>简单析取式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>基本积</strong></p>
+<p>由有限个命题变量或其否定合取, 构成的合取式,
+称为<strong>基本积</strong>, 或者<strong>简单合取式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>E.g.</em></strong> <span class="math inline">\(\neg p
+\lor q \lor p \lor r\)</span>​ 是<strong>简单析取式</strong>.</p>
+</blockquote>
+<p><strong>tips</strong>: 一个变量本身可以看作基本和或者基本积.</p>
+<p>然后, 引入析取范式与合取范式.</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>析取范式(disjunctive normal form, or DNF)</strong></p>
+<p>A logical formula is considered to be in DNF if it is a disjunction
+of one or more conjunctions of one or more
+<strong>literal</strong>s.</p>
+<p>由有限个简单合取式(基本积)析取,构成的析取式,称为<strong>析取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>合取范式(consjunctive normal form, or CNF)</strong></p>
+</blockquote>
+<p>tips: a literal is an atomic formula (also known as an atom or prime
+formula) or its negation.
+<strong>文字</strong>是一个原子命题或者它的否定.</p>
+<p>我怀疑"简单析取式"和"简单合取式"这两个概念是国内生造出来的,
+这两个概念的作用似乎只是为了定义DNF和CNF,
+而后两者的定义是可以用<strong>文字</strong>来做到的.
+引入这两个概念可能是直接翻译比较拗口?与"基本和",
+"基本积"基本一样的概念是<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句</em></strong><em>(clause)</em></a>.</p>
+<p>(未完待续)</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Proleta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://pro1eta.github.io/2024/03/09/DM1/" title="DM1">https://pro1eta.github.io/2024/03/09/DM1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Discrete-Mathematics/" rel="tag"># Discrete Mathematics</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/03/05/LA4/" rel="prev" title="LA4">
+      <i class="fa fa-chevron-left"></i> LA4
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#propositional-logic-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91"><span class="nav-number">1.</span> <span class="nav-text">Propositional Logic 命题逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">命题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E9%A2%98%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">命题变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">逻辑运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%A6%E5%AE%9A-%E9%9D%9E"><span class="nav-number">1.3.1.</span> <span class="nav-text">否定, 非</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%8F%96-%E4%B8%8E"><span class="nav-number">1.3.2.</span> <span class="nav-text">合取, 与</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E5%8F%96-%E6%88%96"><span class="nav-number">1.3.3.</span> <span class="nav-text">析取, 或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">1.3.4.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%95%B4%E6%B6%B5"><span class="nav-number">1.3.5.</span> <span class="nav-text">蕴涵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#different-ways-of-expressing-p-to-q"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">Different Ways of
+Expressing \(p \to q\)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%88%96-%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7"><span class="nav-number">1.3.6.</span> <span class="nav-text">同或, 逻辑等价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8%E6%B1%87%E6%80%BB"><span class="nav-number">1.3.7.</span> <span class="nav-text">真值表汇总</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.3.8.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E7%B3%BB%E7%BB%9F%E8%A7%84%E8%8C%83%E8%AF%B4%E6%98%8E"><span class="nav-number">1.3.9.</span> <span class="nav-text">一致系统规范说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E9%A2%98%E7%AD%89%E4%BB%B7%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">命题等价式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑等价式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">等价规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnf-cnf-e.g."><span class="nav-number">2.3.</span> <span class="nav-text">DNF, CNF e.g.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F-%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F-%E8%8C%83%E5%BC%8F%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.1.</span> <span class="nav-text">析取范式, 合取范式,
+范式的存在性定理</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Proleta"
+      src="/images/3.png">
+  <p class="site-author-name" itemprop="name">Proleta</p>
+  <div class="site-description" itemprop="description">栏杆拍遍</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:jarose8gz@outlook.com" title="E-Mail → mailto:jarose8gz@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Proleta</span>
+</div>
+  <div class="powered-by">
+    <!--Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> -->
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.4' zIndex='-1' count='40' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+  <script type="text/javascript" src="dist/canvas-nest.js"></script>
+</body>
+</html>
