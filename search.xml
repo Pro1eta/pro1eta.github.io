@@ -3,7 +3,17 @@
   <entry>
     <title>Notes On Discrete Mathematics - 1</title>
     <url>/2024/03/09/DM1/</url>
-    <content><![CDATA[<h1 id="propositional-logic-命题逻辑">Propositional Logic 命题逻辑</h1>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
+<p>这是离散数学的笔记. 实际上这一部分还是相当有意思的.</p>
+<p>什么, 你说我为什么用英文写? 我的Engilsh very poor.</p>
+<p>但是我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数学及其应用.Eighth edition.">[1]</span></a></sup>,
+考试都是英文, 用英文写的一大目的就是用来记单词. 什么,
+你问为什么这里面还参杂了中文? 哈哈,
+当然是因为<del>我英语超级烂</del>方便读者观看啦​.​​</p>
+<h1 id="命题逻辑">命题逻辑</h1>
+<p><strong><em>Propositional Logic</em></strong></p>
 <h2 id="命题">命题</h2>
 <p><strong><em>Proposition</em></strong></p>
 <blockquote>
@@ -16,8 +26,10 @@ meaning, (not vague or ambiguhous)</li>
 </ul>
 </blockquote>
 <ul>
-<li><strong>Atoms</strong> <strong>原子命题</strong>: Corresponds with
-<strong>simple</strong> English sentences.</li>
+<li><strong>Atoms</strong> <strong>原子命题</strong>: formula with no
+deeper propositional structure, that is, a formula that contains no
+logical connectives or equivalently a formula that has no strict
+subformulas.</li>
 <li><strong>Compound propositions</strong> <strong>复合命题</strong>:
 build up from atoms using operators.</li>
 </ul>
@@ -419,7 +431,7 @@ class="math inline">\(p \leftrightarrow q\)</span> is a tautology.</li>
 <p>To shorten the length, let's make <span
 class="math inline">\(\mathbf{T}\)</span> short for
 <strong>tautology</strong> and <span
-class="math display">\[\mathbf{F}\]</span> for
+class="math inline">\(\mathbf{F}\)</span> for
 <strong>contradiction</strong>. There's some logical equibalences.</p>
 <table>
 <colgroup>
@@ -518,14 +530,14 @@ p\)</span></td>
 <td>Contradiction<br />矛盾律</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\((p \to q \equiv \neg p \land
-q)\)</span></td>
+<td><span class="math inline">\(p \to q \equiv \neg p \land
+q\)</span></td>
 <td>Implication<br />蕴涵等价式</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\((p \to q) \land (q \to p) \equiv p
 \leftrightarrow q\)</span></td>
-<td>Equivalence<br />等价</td>
+<td>Equivalence<br />同或等价式</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\((p \to q) \land (p \to \neg q) \equiv
@@ -544,9 +556,7 @@ r)\)</span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="dnf-cnf-e.g.">DNF, CNF e.g.</h2>
-<h3 id="析取范式-合取范式-范式的存在性定理">析取范式, 合取范式,
-范式的存在性定理</h3>
+<h2 id="范式的存在性定理">范式的存在性定理</h2>
 <p>这一部分用中文写, 因为原教材和百科中基本没有对这一段的提及,
 或者百科内容与教师讲授内容与原教材内容不一致.
 出于这些原因用中文较好.</p>
@@ -554,13 +564,13 @@ r)\)</span></td>
 <p><strong><em>Definition</em></strong></p>
 <p><strong>基本和(子句)</strong></p>
 <p>由有限个命题变量或其否定析取, 构成的析取式,
-称为<strong>基本和</strong>, 或者<strong>简单析取式</strong>.</p>
+称为<strong>基本和</strong>, 或者<strong>(简单)析取式</strong>.</p>
 </blockquote>
 <blockquote>
 <p><strong><em>Definition</em></strong></p>
-<p><strong>基本积</strong></p>
+<p><strong>product term</strong> <strong>基本积</strong></p>
 <p>由有限个命题变量或其否定合取, 构成的合取式,
-称为<strong>基本积</strong>, 或者<strong>简单合取式</strong>.</p>
+称为<strong>基本积</strong>, 或者<strong>(简单)合取式</strong>.</p>
 </blockquote>
 <blockquote>
 <p><strong><em>E.g.</em></strong> <span class="math inline">\(\neg p
@@ -574,22 +584,230 @@ r)\)</span></td>
 <p>A logical formula is considered to be in DNF if it is a disjunction
 of one or more conjunctions of one or more
 <strong>literal</strong>s.</p>
-<p>由有限个简单合取式(基本积)析取,构成的析取式,称为<strong>析取范式</strong>.</p>
+<p>由有限个简单合取式(基本积)析取,构成的析取式,
+称为<strong>析取范式</strong>.</p>
 </blockquote>
 <blockquote>
 <p><strong><em>Definition</em></strong></p>
 <p><strong>合取范式(consjunctive normal form, or CNF)</strong></p>
+<p>a formula is in CNF if it is a conjunction of one or more clauses,
+where a clause is a disjunction of <strong>literal</strong>s.</p>
+<p>由有限个简单析取式(基本和)合取, 构成的合取式,
+称为<strong>合取范式</strong>.</p>
 </blockquote>
-<p>tips: a literal is an atomic formula (also known as an atom or prime
-formula) or its negation.
-<strong>文字</strong>是一个原子命题或者它的否定.</p>
-<p>我怀疑"简单析取式"和"简单合取式"这两个概念是国内生造出来的,
-这两个概念的作用似乎只是为了定义DNF和CNF,
-而后两者的定义是可以用<strong>文字</strong>来做到的.
-引入这两个概念可能是直接翻译比较拗口?与"基本和",
-"基本积"基本一样的概念是<a
-href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句</em></strong><em>(clause)</em></a>.</p>
-<p>(未完待续)</p>
+<p><strong>tips</strong>: Let's add a <strong>concept</strong>:</p>
+<p>a <strong>literal</strong> is an atomic formula (also known as an
+atom or prime formula) or its negation.</p>
+<p><strong>文字</strong>是一个原子命题或者它的否定.</p>
+<p>"简单析取式"和"简单合取式"这两个概念没有在百科找到.
+这两个概念的作用似乎只是为了定义DNF和CNF. 与"基本和",
+"基本积"相似的概念可以参见<a
+href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句（clause）-
+Wikipedia</em></strong></a>和 <a
+href="https://en.wikipedia.org/wiki/Product_term"><strong><em>Product
+term - Wikipedia</em></strong></a>.</p>
+<blockquote>
+<p><strong><em>Theorem</em></strong></p>
+<p><strong>范式存在定理</strong></p>
+<p>any Boolean function has a CNF, and a DNF form.</p>
+<p>任意的命题公式均存在一个与之等值的析取范式和合取范式.</p>
+</blockquote>
+<p>The proof is very trivial.</p>
+<p><strong>tips</strong>: 析取范式和合取范式不唯一.</p>
+<h2 id="主范式">主范式</h2>
+<p><strong><em>Principal Normal Forms</em></strong></p>
+<h3 id="极小项-极大项">极小项, 极大项</h3>
+<p><strong><em>Minterm and Maxterm</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Minterm </strong> <strong>极小项</strong></p>
+<p>For a boolean function of <span class="math inline">\(n\)</span>
+variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a
+product term in which each of the <span class="math inline">\(n\)</span>​
+variables appears once (either in its complemented or uncomplemented
+form) and appears in order is called a <strong>minterm</strong>.</p>
+<p>设简单合取式中有 <span class="math inline">\(n\)</span> 个命题变量
+<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
+并且仅出现一次, 这样的公式称为<strong>极小项</strong>.</p>
+</blockquote>
+<ul>
+<li><p><strong>indexing minterm</strong>
+<strong>极小项的编码</strong></p>
+<p>Minterms are often numbered by a binary encoding of the
+complementation pattern of the variables, where the variables are
+written in a standard order, usually alphabetical.</p>
+<p>极小项的命题变量的常常按下标排列(或者字典序列排列).</p>
+<p>若给变量 <span class="math inline">\(x_i\)</span> 赋值二进制值 <span
+class="math inline">\(1\)</span>, 给 <span class="math inline">\(\neg
+x_i\)</span> 赋值二进制值 <span class="math inline">\(0\)</span>,
+那么可以给出一个 <span class="math inline">\(n\)</span>
+位二进制编码来表示极小项, 比如可以记作 <span
+class="math inline">\(m_{101\dots}\)</span>.</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong> we can notate minterm just like:</p>
+<p><span class="math inline">\(m_0 = m_{00 \dots00}=\neg p_1 \land \neg
+p_2 \land \cdots \land \neg p_n\)</span>​​</p>
+<p><span class="math inline">\(m_3 = m_{0 \dots011}=\neg p_1 \land \neg
+p_2 \land \cdots \land  \neg p_{n-2} \land p_{n-1} \land
+p_n\)</span></p>
+</blockquote>
+<p>显然, 极小式的下标值(十进制)为:</p></li>
+</ul>
+<p><span class="math display">\[
+\sum_{i=1}^{n}2^{i-1}value(x_i)
+\]</span></p>
+<ul>
+<li>极小项的性质
+<ol type="1">
+<li>每一个<strong>极小项</strong>, 当其赋值与编码相同的时候, 真值为
+<span class="math inline">\(\mathbf{T}\)</span>, 否则一定为 <span
+class="math inline">\(\mathbf{F}\)</span>.</li>
+<li>任意<strong>不同</strong>极小项的<strong>合取永假</strong>.</li>
+<li><strong>所有极小项</strong>的<strong>析取永真</strong>.</li>
+<li>没有两个极大项是等价的.</li>
+</ol></li>
+</ul>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Maxterm</strong> <strong>极大项</strong></p>
+<p>For a boolean function of <span class="math inline">\(n\)</span>
+variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a sum
+term or clause in which each of the <span
+class="math inline">\(n\)</span> variables appears once (either in its
+complemented or uncomplemented form) is called a
+<strong>maxterm</strong>.</p>
+<p>设简单析取式中有 <span class="math inline">\(n\)</span> 个命题变量
+<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
+并且仅出现一次, 这样的公式称为<strong>极大项</strong>.</p>
+</blockquote>
+<ul>
+<li><p><strong>indexing Maxterm</strong> <strong>极大项的编码</strong>
+类似地, 极大项也可以编码, 规则与极小项基本一致. 不同的是将 <span
+class="math inline">\(p_i\)</span> 记为 <span
+class="math inline">\(0\)</span>, 将 <span class="math inline">\(\neg
+p_i\)</span> 记为 <span class="math inline">\(1\)</span>.
+极大项的记法与极小项完全一致.</p></li>
+<li><p>极大项的性质</p>
+<ol type="1">
+<li>每一个<strong>极大项</strong>, 当其赋值与编码相同的时候, 真值为
+<span class="math inline">\(\mathbf{F}\)</span>, 否则一定为 <span
+class="math inline">\(\mathbf{T}\)</span>​.</li>
+<li>任意<strong>不同</strong>极大项的<strong>析取永真</strong>.</li>
+<li><strong>所有极大项</strong>的<strong>合取永假</strong>.</li>
+<li>没有两个极大项是等价的.</li>
+</ol></li>
+</ul>
+<h3 id="主析取范式-主合取范式">主析取范式, 主合取范式</h3>
+<p><strong><em>Principal Disjunctive and Conjunctive Normal
+Forms</em></strong></p>
+<p>Now it's time for our main characters to come on stage!</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Principal disjunctive normal form or PDNF</strong></p>
+<p><strong>主析取范式</strong></p>
+<p>A formula is in principal disjunctive normal form if it a disjunction
+of minterns.</p>
+<p>若干个不同的极小项的析取式, 称为<strong>主析取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Principal conjunctive normal form or PCNF</strong></p>
+<p><strong>主合取范式</strong></p>
+<p>A formula is in principal disjunctive normal form if it a conjunction
+of maxterns.</p>
+<p>若干个不同的极大项的合取式, 称为<strong>主合取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Theorem</em></strong></p>
+<p>任何一个公式均存在一个与之等值的<strong>主析取范式</strong>,
+而且是<strong>唯一</strong>的.</p>
+<p>任何一个公式均存在一个与之等值的<strong>主合取范式</strong>,
+而且是<strong>唯一</strong>的.</p>
+</blockquote>
+<p>The proof is very trivial.</p>
+<p><strong>tips</strong>: 不难发现,
+<strong>永假式(controdiction)</strong>的主合取范式含有 <span
+class="math inline">\(\dots\land p \land \cdots \land\neg p\)</span>
+这样的因子. 而<strong>永真式(Tautology)</strong>的主合取范式 <span
+class="math inline">\(\dots\lor p \lor \cdots \lor\neg p\)</span>
+这样的因子.</p>
+<h3 id="求取主范式">求取主范式</h3>
+<p><strong><em>Find The Principal Form</em></strong></p>
+<p>主要有两种方法.</p>
+<h4 id="真值表法">真值表法</h4>
+<p><strong><em>Using the truth table</em></strong></p>
+<ul>
+<li>主析取范式 简而言之, 跟据公式的真值表,
+找出能够使公式为<strong>真</strong>的赋值, 写出对应的极小项,
+然后将它们析取而成即可.</li>
+<li>主合取范式 跟据公式的真值表,
+找出能够使公式为<strong>假</strong>的赋值, 写出对应的极大项,
+然后将它们析取而成即可.</li>
+</ul>
+<p>这样做的主要依据是极小项和极大项的性质, 以及主范式的唯一性.</p>
+<h4 id="等值演算">等值演算</h4>
+<p><strong><em>Reasoning</em></strong></p>
+<p>对于求取<strong>主析取范式(PDNF)</strong>, 主要是以下步骤:</p>
+<ol type="1">
+<li>利用<strong>逻辑等价式</strong>, 将逻辑运算符全部转化为 <span
+class="math inline">\(\neg, \land, \lor\)</span>.</li>
+<li>利用<strong>De Morgan's laws</strong>, 将所有 <span
+class="math inline">\(\neg\)</span> 转移至单个命题变量之前.</li>
+<li>将命题公式转化为析取范式, 例如 <span class="math inline">\(P_1 \land
+P_2 \land P_3 \land \cdots \land P_n\)</span> 的形式, 注意其中的 <span
+class="math inline">\(P_i\)</span> 是简单合取式,
+即仅由<strong>文字</strong>合取而成.</li>
+<li>设 <span class="math inline">\(P_i = p_{i1} \lor p_{i2} \lor \cdots
+\lor p_{im}\)</span>, 其中 <span class="math inline">\(p_{ij}\)</span>
+是<strong>文字(literal)</strong>, 如果某项重复,
+利用<strong>交换律</strong>抵消即可; 如果缺少某一项(设为 <span
+class="math inline">\(p_{ik}\)</span>), 可以在 <span
+class="math inline">\(P_i\)</span>
+中添加<strong>重言式(tautology)</strong> <span
+class="math inline">\(p_{ik} \lor \neg p_{ik}\)</span>,
+再利用<strong>分配律</strong>展开即可.</li>
+<li>合并重复的极小项</li>
+</ol>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>(等待补充)</p>
+</blockquote>
+<p>对于求取<strong>主合取范式(PCNF)</strong>, 类比即可, 不赘述.</p>
+<hr />
+<h2 id="可满足性">可满足性</h2>
+<p><strong><em>Satisfiability</em></strong></p>
+<p>A compound proposition is <strong>satisfiable</strong> if there is an
+assignment of truth values to its variables that makes it true (that is,
+when it is a tautology or a contingency). When no such assignments
+exists, that is, when the compound proposition is false for all
+assignments of truth values to its variables, the compound proposition
+is <strong>unsatisfiable</strong>.</p>
+<p>复合命题是<strong>可满足的</strong>, 如果能够对其所有命题变量赋真值,
+使得原复合命题为真. (换句话说, 这个复合命题是重言式或可能式).
+若所有真值赋值的情况下, 复合命题均为假,
+则是<strong>不可满足的</strong>.</p>
+<h3 id="n-皇后问题"><span class="math inline">\(n\)</span> 皇后问题</h3>
+<p><strong><em>The <span class="math inline">\(n\)</span>​-Queens
+Problem</em></strong></p>
+<h3 id="数独">数独</h3>
+<p><strong><em>Sudoku</em></strong></p>
+<p>(最后两个Satisifiability的例子等待补充<del>我会补充的,
+信我</del>)</p>
+<div id="footnotes">
+<hr>
+<div id="footnotelist">
+<ol style="list-style: none; padding-left: 0; margin-left: 40px">
+<li id="fn:1">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Kenneth
+H. Rosen.Discrete Mathematics and Its
+Applications.离散数学及其应用.Eighth
+edition.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
+</li>
+</ol>
+</div>
+</div>
 ]]></content>
       <tags>
         <tag>Discrete Mathematics</tag>
@@ -598,7 +816,7 @@ href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句</em></str
   <entry>
     <title>Notes On Linear Algebra - 1</title>
     <url>/2024/03/03/LA1/</url>
-    <content><![CDATA[<h2 id="高斯消元法">高斯消元法</h2>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
 <p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
 <ol type="1">
 <li>交换方程次序.</li>
@@ -747,7 +965,7 @@ class="math inline">\(\Rightarrow\)</span>
   <entry>
     <title>Notes On Linear Algebra - 2</title>
     <url>/2024/03/03/LA2/</url>
-    <content><![CDATA[<h2 id="一些特殊矩阵">一些特殊矩阵</h2>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="一些特殊矩阵">一些特殊矩阵</h2>
 <p>方阵是特殊的矩阵.</p>
 <blockquote>
 <p>定义 <strong>对角元</strong> 方阵中第 <span
@@ -1048,9 +1266,206 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
       </tags>
   </entry>
   <entry>
+    <title>Notes On Linear Algebra - 4</title>
+    <url>/2024/03/05/LA4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
+<h3 id="幂集">幂集</h3>
+<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span
+class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span
+class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span
+class="math inline">\(A\)</span> 是一个非空集合. 进一步,
+我们可以用空集构造含有 <span
+class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span
+class="math display">\[
+\varnothing, \{\varnothing\}, \{\varnothing,\{\varnothing\} \},
+\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\} \},\cdots
+\]</span> 设 <span class="math inline">\(X\)</span> 是一个集合, 那么考虑
+<span class="math inline">\(X\)</span> 所有可能的子集,
+那么这些自己也构成集合, 记为 <span class="math inline">\(2^X\)</span>
+或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span
+class="math display">\[
+2^X=\{B|B \subset X\},
+\]</span> 称之为<strong>幂集</strong>.</p>
+<blockquote>
+<p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
+正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span
+class="math inline">\(Card(X)\)</span> 表示 <span
+class="math inline">\(X\)</span> 的元素个数.</p>
+</blockquote>
+<h3 id="集合的基本运算">集合的基本运算</h3>
+<p>我们在此补充一些运算.</p>
+<blockquote>
+<p><strong>定义</strong> 差集</p>
+<p>一般地, 由属于集合 <span class="math inline">\(A\)</span>
+并且不属于集合 <span class="math inline">\(B\)</span>
+的所有元素组成的集合, 称为 <span class="math inline">\(A\)</span> 与
+<span class="math inline">\(B\)</span> 的差集, 记作 <span
+class="math inline">\(A-B\)</span> 或者 <span
+class="math inline">\(A\setminus B\)</span></p>
+</blockquote>
+<p>我们接着定义全集和补集.</p>
+<blockquote>
+<p><strong>定义</strong> 全集</p>
+<p>如果一个集合含有我们所研究问题中涉及的所有元素,
+那么就称这个集合为全集, 通常记作 <span
+class="math inline">\(\cal{U}\)</span>.</p>
+</blockquote>
+<blockquote>
+<p><strong>定义</strong> 补集</p>
+<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span
+class="math inline">\(\cal{U}\)</span> 中不属于集合 <span
+class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span
+class="math inline">\(A\)</span> 相对于全集 <span
+class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span
+class="math inline">\(A\)</span> 的补集, 记为 <span
+class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span
+class="math display">\[
+\complement_{\mathcal{U}}A = \{x|x\in \mathcal{U}\;and\;x\notin A\}
+\]</span></p>
+</blockquote>
+<p>因此引出两条性质</p>
+<blockquote>
+<p><strong>德·摩根定律</strong> <span class="math display">\[
+\complement_{\mathcal{U}}(A\cup
+B)=(\complement_{\mathcal{U}}A)\cap(\complement_{\mathcal{U}}B).
+\]</span></p>
+<p><span class="math display">\[
+\complement_{\mathcal{U}}(A\cap
+B)=(\complement_{\mathcal{U}}A)\cup(\complement_{\mathcal{U}}B).
+\]</span></p>
+</blockquote>
+<p>同时不难得到 <span class="math display">\[
+Card(A \cup B) = Card(A)+Card(B)-Card(A \cap B)
+\]</span></p>
+<blockquote>
+<p><strong>定义</strong> 不交并</p>
+<p>设集合 <span class="math inline">\(X\)</span>, <span
+class="math inline">\(A,B\)</span> 为 <span
+class="math inline">\(X\)</span> 的两个子集, 如果 <span
+class="math inline">\(A \cup B=X\)</span> 且 <span
+class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span
+class="math inline">\(X\)</span> 为 <span
+class="math inline">\(A\)</span> 和 <span
+class="math inline">\(B\)</span> 的不交并, 记为 <span
+class="math display">\[
+X=A\sqcup B
+\]</span></p>
+</blockquote>
+<p>另外补充一个重要的概念: <strong>笛卡尔积</strong>.</p>
+<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span
+class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span
+class="math inline">\((x,y)\)</span>
+叫做一个<strong>有序对</strong>.</p>
+<p>两个有序对 <span class="math inline">\((x_1,y_1)=(x_2,y_2) \quad iff
+\quad x_1=x_2,y_1=y_2\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 笛卡尔积</p>
+<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span
+class="math display">\[
+X \times Y = \{(x,y)|x \in X, y\in Y\}
+\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span
+class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
+1596-1650).</p>
+</blockquote>
+<p>类似可以定义 <span class="math inline">\(n\)</span> 个集合的笛卡尔积.
+设 <span class="math inline">\(X_1,X_2,\dots,X_n(n\geq 2)\)</span>
+是非空集合, <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>
+的笛卡尔积就是: <span class="math display">\[
+X_1\times X_2\times\cdots\times X_n=\{(x_1, x_2,\cdots, x_n)|x_i \in
+X_i, 1 \le i \le n\}
+\]</span> 特别地, 这些集合都等于同一个集合 <span
+class="math inline">\(X\)</span> 的时候, 记作 <span
+class="math inline">\(X^n\)</span>. 称为集合 <span
+class="math inline">\(X\)</span> 的 <span
+class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
+<p>笛卡尔积集有一些性质：</p>
+<blockquote>
+<ol type="1">
+<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span
+class="math inline">\(X\)</span> 或者 <span
+class="math inline">\(Y\)</span> 为空集.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
+\cup Z) \times Y\)</span>.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cap (X&#39; \times
+Y&#39;) = (X \times X&#39;) \times (Y \times Y&#39;)\)</span>,
+如图</p></li>
+</ol>
+</blockquote>
+<img src="/2024/03/05/LA4/LA4_1.png" class="">
+<hr />
+<h3 id="映射">映射</h3>
+<p>首先是映射的相关定义.</p>
+<blockquote>
+<p><strong>定义</strong> 映射</p>
+<p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
+如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
+,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span
+class="math inline">\(x\)</span>, 在集合 <span
+class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span
+class="math inline">\(y\)</span> 与之对应, 那么称 <span
+class="math inline">\(f:X \to Y\)</span> 为从集合 <span
+class="math inline">\(X\)</span> 到 <span
+class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
+</blockquote>
+<p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
+<span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
+<span class="math inline">\(x \longmapsto y\)</span> 表示 <span
+class="math inline">\(X\)</span> 中的元素 <span
+class="math inline">\(x\)</span> 对应到 <span
+class="math inline">\(Y\)</span> 中的元素 <span
+class="math inline">\(y\)</span>, 这时 <span
+class="math inline">\(y\)</span> 叫作 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span
+class="math inline">\(f(x)\)</span>, <span
+class="math inline">\(x\)</span> 叫做 <span
+class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
+<blockquote>
+<p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
+Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span
+class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
+<span class="math inline">\(Y\)</span>​
+叫做<strong>目标域</strong>(target)或者陪域.<span
+class="math inline">\(x\)</span> 的象 <span
+class="math inline">\(y\)</span>, 也写作 <span
+class="math inline">\(f(x)\)</span>,也被叫做 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x\)</span> 处的值. <span
+class="math inline">\(X\)</span> 的所有元素在 <span
+class="math inline">\(f\)</span> 之下的象的集合构成 <span
+class="math inline">\(Y\)</span> 的一个子集, 记作 <span
+class="math display">\[
+Im(f) = \{f(x)|x \in X\} \subseteq Y
+\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span
+class="math inline">\(f\)</span>
+的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
+</blockquote>
+<p>值域是目标域的子集.</p>
+<p><strong>注</strong> 在代数学中, 两个映射被视作相等的映射,
+必须有相同的定义域, 目标域, 以及对应法则. 但是在高等数学中,
+人们称具有相同定义域、值域、对应法则,
+但目标域不一定相同的函数称为相等函数.</p>
+<p><strong>注</strong> 对于对应法则有更加严格的处理方式.
+可以定义对应法则 <span class="math inline">\(f\)</span> 为笛卡尔积集
+<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span
+class="math inline">\((x, y) \in f\)</span>, 那么称 <span
+class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span
+class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
+就需要满足可以多对一, 但不能一对多的条件.</p>
+<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span
+class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span
+class="math inline">\(Y\)</span> 的一个子集, 称为 <span
+class="math inline">\(A\)</span> 在 <span
+class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
+]]></content>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes On Linear Algebra - 3</title>
     <url>/2024/03/04/LA3/</url>
-    <content><![CDATA[<h1 id="前言">前言</h1>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
 <p>这是初学线代时整理的，实践证明，当初学的有多认真，现在忘得就有多快（</p>
 <hr />
 <blockquote>
@@ -1264,215 +1679,9 @@ class="math display">\[rank \begin{pmatrix}
       </tags>
   </entry>
   <entry>
-    <title>Notes On Linear Algebra - 4</title>
-    <url>/2024/03/05/LA4/</url>
-    <content><![CDATA[<h2 id="集合与映射">集合与映射</h2>
-<h3 id="幂集">幂集</h3>
-<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span
-class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span
-class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span
-class="math inline">\(A\)</span> 是一个非空集合. 进一步,
-我们可以用空集构造含有 <span
-class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span
-class="math display">\[
-\varnothing, \{\varnothing\}, \{\varnothing,\{\varnothing\} \},
-\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\} \},\cdots
-\]</span> 设 <span class="math inline">\(X\)</span> 是一个集合, 那么考虑
-<span class="math inline">\(X\)</span> 所有可能的子集,
-那么这些自己也构成集合, 记为 <span class="math inline">\(2^X\)</span>
-或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span
-class="math display">\[
-2^X=\{B|B \subset X\},
-\]</span> 称之为<strong>幂集</strong>.</p>
-<blockquote>
-<p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
-正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span
-class="math inline">\(Card(X)\)</span> 表示 <span
-class="math inline">\(X\)</span> 的元素个数.</p>
-</blockquote>
-<h3 id="集合的基本运算">集合的基本运算</h3>
-<p>我们在此补充一些运算.</p>
-<blockquote>
-<p><strong>定义</strong> 差集</p>
-<p>一般地, 由属于集合 <span class="math inline">\(A\)</span>
-并且不属于集合 <span class="math inline">\(B\)</span>
-的所有元素组成的集合, 称为 <span class="math inline">\(A\)</span> 与
-<span class="math inline">\(B\)</span> 的差集, 记作 <span
-class="math inline">\(A-B\)</span> 或者 <span
-class="math inline">\(A\setminus B\)</span></p>
-</blockquote>
-<p>我们接着定义全集和补集.</p>
-<blockquote>
-<p><strong>定义</strong> 全集</p>
-<p>如果一个集合含有我们所研究问题中涉及的所有元素,
-那么就称这个集合为全集, 通常记作 <span
-class="math inline">\(\cal{U}\)</span>.</p>
-</blockquote>
-<blockquote>
-<p><strong>定义</strong> 补集</p>
-<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span
-class="math inline">\(\cal{U}\)</span> 中不属于集合 <span
-class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span
-class="math inline">\(A\)</span> 相对于全集 <span
-class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span
-class="math inline">\(A\)</span> 的补集, 记为 <span
-class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span
-class="math display">\[
-\complement_{\mathcal{U}}A = \{x|x\in \mathcal{U}\;and\;x\notin A\}
-\]</span></p>
-</blockquote>
-<p>因此引出两条性质</p>
-<blockquote>
-<p><strong>德·摩根定律</strong> <span class="math display">\[
-\complement_{\mathcal{U}}(A\cup
-B)=(\complement_{\mathcal{U}}A)\cap(\complement_{\mathcal{U}}B).
-\]</span></p>
-<p><span class="math display">\[
-\complement_{\mathcal{U}}(A\cap
-B)=(\complement_{\mathcal{U}}A)\cup(\complement_{\mathcal{U}}B).
-\]</span></p>
-</blockquote>
-<p>同时不难得到 <span class="math display">\[
-Card(A \cup B) = Card(A)+Card(B)-Card(A \cap B)
-\]</span></p>
-<blockquote>
-<p><strong>定义</strong> 不交并</p>
-<p>设集合 <span class="math inline">\(X\)</span>, <span
-class="math inline">\(A,B\)</span> 为 <span
-class="math inline">\(X\)</span> 的两个子集, 如果 <span
-class="math inline">\(A \cup B=X\)</span> 且 <span
-class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span
-class="math inline">\(X\)</span> 为 <span
-class="math inline">\(A\)</span> 和 <span
-class="math inline">\(B\)</span> 的不交并, 记为 <span
-class="math display">\[
-X=A\sqcup B
-\]</span></p>
-</blockquote>
-<p>另外补充一个重要的概念: <strong>笛卡尔积</strong>.</p>
-<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span
-class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span
-class="math inline">\((x,y)\)</span>
-叫做一个<strong>有序对</strong>.</p>
-<p>两个有序对 <span class="math inline">\((x_1,y_1)=(x_2,y_2) \quad iff
-\quad x_1=x_2,y_1=y_2\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 笛卡尔积</p>
-<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span
-class="math display">\[
-X \times Y = \{(x,y)|x \in X, y\in Y\}
-\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span
-class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
-1596-1650).</p>
-</blockquote>
-<p>类似可以定义 <span class="math inline">\(n\)</span> 个集合的笛卡尔积.
-设 <span class="math inline">\(X_1,X_2,\dots,X_n(n\geq 2)\)</span>
-是非空集合, <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>
-的笛卡尔积就是: <span class="math display">\[
-X_1\times X_2\times\cdots\times X_n=\{(x_1, x_2,\cdots, x_n)|x_i \in
-X_i, 1 \le i \le n\}
-\]</span> 特别地, 这些集合都等于同一个集合 <span
-class="math inline">\(X\)</span> 的时候, 记作 <span
-class="math inline">\(X^n\)</span>. 称为集合 <span
-class="math inline">\(X\)</span> 的 <span
-class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
-<p>笛卡尔积集有一些性质：</p>
-<blockquote>
-<ol type="1">
-<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span
-class="math inline">\(X\)</span> 或者 <span
-class="math inline">\(Y\)</span> 为空集.</p></li>
-<li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
-\cup Z) \times Y\)</span>.</p></li>
-<li><p><span class="math inline">\((X \times Y) \cap (X&#39; \times
-Y&#39;) = (X \times X&#39;) \times (Y \times Y&#39;)\)</span>,
-如图</p></li>
-</ol>
-</blockquote>
-<img src="/2024/03/05/LA4/LA4_1.png" class="">
-<hr />
-<h3 id="映射">映射</h3>
-<p>首先是映射的相关定义.</p>
-<blockquote>
-<p><strong>定义</strong> 映射</p>
-<p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
-如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
-,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span
-class="math inline">\(x\)</span>, 在集合 <span
-class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span
-class="math inline">\(y\)</span> 与之对应, 那么称 <span
-class="math inline">\(f:X \to Y\)</span> 为从集合 <span
-class="math inline">\(X\)</span> 到 <span
-class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
-</blockquote>
-<p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
-<span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
-<span class="math inline">\(x \longmapsto y\)</span> 表示 <span
-class="math inline">\(X\)</span> 中的元素 <span
-class="math inline">\(x\)</span> 对应到 <span
-class="math inline">\(Y\)</span> 中的元素 <span
-class="math inline">\(y\)</span>, 这时 <span
-class="math inline">\(y\)</span> 叫作 <span
-class="math inline">\(x\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span
-class="math inline">\(f(x)\)</span>, <span
-class="math inline">\(x\)</span> 叫做 <span
-class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
-<blockquote>
-<p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
-Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span
-class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
-<span class="math inline">\(Y\)</span>​
-叫做<strong>目标域</strong>(target)或者陪域.<span
-class="math inline">\(x\)</span> 的象 <span
-class="math inline">\(y\)</span>, 也写作 <span
-class="math inline">\(f(x)\)</span>,也被叫做 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x\)</span> 处的值. <span
-class="math inline">\(X\)</span> 的所有元素在 <span
-class="math inline">\(f\)</span> 之下的象的集合构成 <span
-class="math inline">\(Y\)</span> 的一个子集, 记作 <span
-class="math display">\[
-Im(f) = \{f(x)|x \in X\} \subseteq Y
-\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span
-class="math inline">\(f\)</span>
-的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
-</blockquote>
-<p>值域是目标域的子集.</p>
-<p><strong>注</strong> 在代数学中, 两个映射被视作相等的映射,
-必须有相同的定义域, 目标域, 以及对应法则. 但是在高等数学中,
-人们称具有相同定义域、值域、对应法则,
-但目标域不一定相同的函数称为相等函数.</p>
-<p><strong>注</strong> 对于对应法则有更加严格的处理方式.
-可以定义对应法则 <span class="math inline">\(f\)</span> 为笛卡尔积集
-<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span
-class="math inline">\((x, y) \in f\)</span>, 那么称 <span
-class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span
-class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
-就需要满足可以多对一, 但不能一对多的条件.</p>
-<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span
-class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span
-class="math inline">\(Y\)</span> 的一个子集, 称为 <span
-class="math inline">\(A\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
-]]></content>
-      <tags>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The Third Blog</title>
     <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
-]]></content>
-      <tags>
-        <tag>Life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Just One Experiment...</title>
-    <url>/2024/03/04/justoneexperiment/</url>
-    <content><![CDATA[<p>今天下午是实验课，头一次摸示波器这种贵重的东西，多做两次实验之后倒也熟练了。不过有些时候波形会乱，调不好，今天测一个数据直接调烦了，我尝试伪造一个数据，结果被老师一眼看穿（</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
 ]]></content>
       <tags>
         <tag>Life</tag>

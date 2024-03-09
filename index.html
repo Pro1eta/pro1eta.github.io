@@ -213,10 +213,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-03-09 01:44:36 / Modified: 02:13:51" itemprop="dateCreated datePublished" datetime="2024-03-09T01:44:36+08:00">2024-03-09</time>
+              <time title="Created: 2024-03-09 01:44:36" itemprop="dateCreated datePublished" datetime="2024-03-09T01:44:36+08:00">2024-03-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-10 00:24:05" itemprop="dateModified" datetime="2024-03-10T00:24:05+08:00">2024-03-10</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -224,14 +230,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.7k</span>
+              <span>10k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>12 mins.</span>
+              <span>19 mins.</span>
             </span>
 
         </div>
@@ -243,24 +249,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="propositional-logic-命题逻辑">Propositional Logic 命题逻辑</h1>
-<h2 id="命题">命题</h2>
-<p><strong><em>Proposition</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>proposition 命题</strong></p>
-<ul>
-<li>a statement(i.e. a declarative sentence) - with some definite
-meaning, (not vague or ambiguhous)</li>
-<li>having a truth value that is either true of false, but not both</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Atoms</strong> <strong>原子命题</strong>: Corresponds with
-<strong>simple</strong> English sentences.</li>
-<li><strong>Compound propositions</strong> <strong>复合命题</strong>:
-build up from atoms using operators.</li>
-</ul>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
+<p>这是离散数学的笔记. 实际上这一部分还是相当有意思的.</p>
+<p>什么, 你说我为什么用英文写? 我的Engilsh very poor.</p>
+<p>但是我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数学及其应用.Eighth edition.">[1]</span></a></sup>,
+考试都是英文, 用英文写的一大目的就是用来记单词. 什么,
+你问为什么这里面还参杂了中文? 哈哈,
+当然是因为<del>我英语超级烂</del>方便读者观看啦​.​​</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/09/DM1/#more" rel="contents">
@@ -346,7 +341,7 @@ build up from atoms using operators.</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="集合与映射">集合与映射</h2>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
 <h3 id="幂集">幂集</h3>
 <p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span class="math inline">\(A\)</span> 是一个非空集合. 进一步,
 我们可以用空集构造含有 <span class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span class="math display">\[
@@ -362,7 +357,6 @@ build up from atoms using operators.</li>
 <p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
 正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span class="math inline">\(Card(X)\)</span> 表示 <span class="math inline">\(X\)</span> 的元素个数.</p>
 </blockquote>
-<h3 id="集合的基本运算">集合的基本运算</h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/05/LA4/#more" rel="contents">
@@ -448,14 +442,13 @@ build up from atoms using operators.</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="前言">前言</h1>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
 <p>这是初学线代时整理的，实践证明，当初学的有多认真，现在忘得就有多快（</p>
 <hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A\)</span>,
 <span class="math inline">\(B\)</span> 为 <span class="math inline">\(n\)</span> 阶方阵，<span class="math inline">\(AB=0\)</span> ，则有 <span class="math display">\[rank(A) + rank(B)\le n\]</span></p>
 </blockquote>
-<p><strong>分析</strong> 线性映射基本定理的简单应用。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/04/LA3/#more" rel="contents">
@@ -464,85 +457,6 @@ build up from atoms using operators.</li>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://pro1eta.github.io/2024/03/04/justoneexperiment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Proleta">
-      <meta itemprop="description" content="栏杆拍遍">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Proleta's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/03/04/justoneexperiment/" class="post-title-link" itemprop="url">Just One Experiment...</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-03-04 01:26:07" itemprop="dateCreated datePublished" datetime="2024-03-04T01:26:07+08:00">2024-03-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-03-05 00:56:51" itemprop="dateModified" datetime="2024-03-05T00:56:51+08:00">2024-03-05</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>86</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天下午是实验课，头一次摸示波器这种贵重的东西，多做两次实验之后倒也熟练了。不过有些时候波形会乱，调不好，今天测一个数据直接调烦了，我尝试伪造一个数据，结果被老师一眼看穿（</p>
-
       
     </div>
 
@@ -620,7 +534,7 @@ build up from atoms using operators.</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
 
       
     </div>
@@ -699,16 +613,12 @@ build up from atoms using operators.</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一些特殊矩阵">一些特殊矩阵</h2>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="一些特殊矩阵">一些特殊矩阵</h2>
 <p>方阵是特殊的矩阵.</p>
 <blockquote>
 <p>定义 <strong>对角元</strong> 方阵中第 <span class="math inline">\(i\)</span> 行第 <span class="math inline">\(i\)</span> 列的元素.</p>
 </blockquote>
 <p>所以定义了一些方阵:</p>
-<blockquote>
-<p>定义 <strong>对角阵</strong></p>
-<p>主对角线以外都是零的<strong>方阵</strong>.</p>
-</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/03/LA2/#more" rel="contents">
@@ -794,7 +704,7 @@ build up from atoms using operators.</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="高斯消元法">高斯消元法</h2>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
 <p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
 <ol type="1">
 <li>交换方程次序.</li>
@@ -803,20 +713,6 @@ build up from atoms using operators.</li>
 倍.</li>
 </ol>
 <h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
-<blockquote>
-<p><strong>定义</strong> 矩阵</p>
-<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
-排成的 <span class="math inline">\(m\)</span> 行 <span class="math inline">\(n\)</span> 列<strong>数表</strong></p>
-<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
-a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
-a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
-\vdots &amp; \vdots &amp; &amp;\vdots  \\
-a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
-\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
-行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span class="math inline">\(m\times n\)</span> 矩阵.</p>
-<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵.</p>
-</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/03/LA1/#more" rel="contents">
@@ -907,7 +803,7 @@ a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
