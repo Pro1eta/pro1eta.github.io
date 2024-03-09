@@ -5,13 +5,14 @@
     <url>/2024/03/09/DM1/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
 <p>这是离散数学的笔记. 实际上这一部分还是相当有意思的.</p>
-<p>什么, 你说我为什么用英文写? 我的Engilsh very poor.</p>
-<p>但是我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
+<p>什么, 你说我为什么用英文写?</p>
+<p>虽然我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
 class="hint--top hint--error hint--medium hint--rounded hint--bounce"
 aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数学及其应用.Eighth edition.">[1]</span></a></sup>,
-考试都是英文, 用英文写的一大目的就是用来记单词. 什么,
-你问为什么这里面还参杂了中文? 哈哈,
-当然是因为<del>我英语超级烂</del>方便读者观看啦​.​​</p>
+考试都是英文, 我的Engilsh very poor,
+用英文写的一大目的就是用来记单词.</p>
+<p>什么, 你问为什么这里面还参杂了中文?</p>
+<p>哈哈, 当然是因为<del>我英语超级烂</del>方便读者观看啦.</p>
 <h1 id="命题逻辑">命题逻辑</h1>
 <p><strong><em>Propositional Logic</em></strong></p>
 <h2 id="命题">命题</h2>
@@ -21,8 +22,9 @@ aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数
 <p><strong>proposition 命题</strong></p>
 <ul>
 <li>a statement(i.e. a declarative sentence) - with some definite
-meaning, (not vague or ambiguhous)</li>
-<li>having a truth value that is either true of false, but not both</li>
+meaning, (not vague or ambiguous).</li>
+<li>having a truth value that is either true of false, but not
+both.</li>
 </ul>
 </blockquote>
 <ul>
@@ -33,18 +35,18 @@ subformulas.</li>
 <li><strong>Compound propositions</strong> <strong>复合命题</strong>:
 build up from atoms using operators.</li>
 </ul>
-<p>if <span class="math inline">\(p \to q\)</span>,</p>
+<p>if <span class="math inline">\(p \to q\)</span>, then</p>
 <ul>
 <li><span class="math inline">\(p \to q\)</span> is the
 <strong>converse(逆命题)</strong> of it.</li>
 <li><span class="math inline">\(\neg q \to \neg p\)</span> is the
 <strong>contrapositive(逆否命题)</strong> of it.</li>
 <li><span class="math inline">\(\neg p \to \neg q\)</span>​ is the
-<strong>inverse(否命题)</strong> fof it.</li>
+<strong>inverse(否命题)</strong> of it.</li>
 </ul>
 <blockquote>
 <p><strong><em>Definition</em></strong></p>
-<p><strong>formula 命题公式</strong></p>
+<p><strong>formula (命题)公式</strong></p>
 <ul>
 <li>All atomes are formulas.</li>
 <li>If <span class="math inline">\(p\)</span> is a formula, then <span
@@ -374,6 +376,8 @@ truth values of the propositional variables that occur in it, is called
 a <strong>tautology(永真式, 或者重言式)</strong>.</p></li>
 <li><p>A compound proposition that is always false is called a
 <strong>contradiction(永假式, 或者矛盾式)</strong>.</p></li>
+<li><p>A compound proposition that is neither a tautology nor a
+contradiction is called a <strong>contingency(可能式)</strong></p></li>
 </ul>
 </blockquote>
 <blockquote>
@@ -385,8 +389,8 @@ class="math inline">\(p\)</span> with the statement <span
 class="math inline">\(q\)</span>, then the new statement <span
 class="math inline">\(P&#39;\)</span> is also a tautology.</p>
 <p>在一个永真公式中, 任何一个命题变元 <span
-class="math inline">\(R\)</span> 出现的每一处,
-用另一个命题公式代入,所得命题公式仍然是永真式.</p>
+class="math inline">\(R\)</span> 出现的每一处, 用另一个命题公式代入,
+所得命题公式仍然是永真式.</p>
 </blockquote>
 <blockquote>
 <p><strong>Rule of replacement</strong> <strong>代入规则</strong></p>
@@ -512,12 +516,12 @@ p\)</span></td>
 <tr class="odd">
 <td><span class="math inline">\(p \lor (p \land q ) \equiv
 p\)</span></td>
-<td>Absorption laws<br />吸收率</td>
+<td>Absorption laws<br />吸收律</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(p \land (p \lor q ) \equiv
 p\)</span></td>
-<td>Absorption laws<br />吸收率</td>
+<td>Absorption laws<br />吸收律</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(p \lor  \neg p\equiv
@@ -568,7 +572,7 @@ r)\)</span></td>
 </blockquote>
 <blockquote>
 <p><strong><em>Definition</em></strong></p>
-<p><strong>product term</strong> <strong>基本积</strong></p>
+<p><strong>基本积</strong></p>
 <p>由有限个命题变量或其否定合取, 构成的合取式,
 称为<strong>基本积</strong>, 或者<strong>(简单)合取式</strong>.</p>
 </blockquote>
@@ -583,7 +587,7 @@ r)\)</span></td>
 <p><strong>析取范式(disjunctive normal form, or DNF)</strong></p>
 <p>A logical formula is considered to be in DNF if it is a disjunction
 of one or more conjunctions of one or more
-<strong>literal</strong>s.</p>
+<strong>literals</strong>.</p>
 <p>由有限个简单合取式(基本积)析取,构成的析取式,
 称为<strong>析取范式</strong>.</p>
 </blockquote>
@@ -595,7 +599,7 @@ where a clause is a disjunction of <strong>literal</strong>s.</p>
 <p>由有限个简单析取式(基本和)合取, 构成的合取式,
 称为<strong>合取范式</strong>.</p>
 </blockquote>
-<p><strong>tips</strong>: Let's add a <strong>concept</strong>:</p>
+<p><strong>tips</strong>: Let's add a concept:</p>
 <p>a <strong>literal</strong> is an atomic formula (also known as an
 atom or prime formula) or its negation.</p>
 <p><strong>文字</strong>是一个原子命题或者它的否定.</p>
@@ -615,7 +619,7 @@ term - Wikipedia</em></strong></a>.</p>
 <p>The proof is very trivial.</p>
 <p><strong>tips</strong>: 析取范式和合取范式不唯一.</p>
 <h2 id="主范式">主范式</h2>
-<p><strong><em>Principal Normal Forms</em></strong></p>
+<p><strong><em>Principal Normal Form</em></strong></p>
 <h3 id="极小项-极大项">极小项, 极大项</h3>
 <p><strong><em>Minterm and Maxterm</em></strong></p>
 <blockquote>
@@ -657,14 +661,14 @@ p_n\)</span></p>
 \sum_{i=1}^{n}2^{i-1}value(x_i)
 \]</span></p>
 <ul>
-<li>极小项的性质
+<li><strong>极小项的性质</strong>
 <ol type="1">
 <li>每一个<strong>极小项</strong>, 当其赋值与编码相同的时候, 真值为
 <span class="math inline">\(\mathbf{T}\)</span>, 否则一定为 <span
 class="math inline">\(\mathbf{F}\)</span>.</li>
 <li>任意<strong>不同</strong>极小项的<strong>合取永假</strong>.</li>
 <li><strong>所有极小项</strong>的<strong>析取永真</strong>.</li>
-<li>没有两个极大项是等价的.</li>
+<li>没有两个极小项是等价的.</li>
 </ol></li>
 </ul>
 <blockquote>
@@ -687,7 +691,7 @@ class="math inline">\(p_i\)</span> 记为 <span
 class="math inline">\(0\)</span>, 将 <span class="math inline">\(\neg
 p_i\)</span> 记为 <span class="math inline">\(1\)</span>.
 极大项的记法与极小项完全一致.</p></li>
-<li><p>极大项的性质</p>
+<li><p><strong>极大项的性质</strong></p>
 <ol type="1">
 <li>每一个<strong>极大项</strong>, 当其赋值与编码相同的时候, 真值为
 <span class="math inline">\(\mathbf{F}\)</span>, 否则一定为 <span
@@ -762,11 +766,11 @@ class="math inline">\(P_i\)</span> 是简单合取式,
 是<strong>文字(literal)</strong>, 如果某项重复,
 利用<strong>交换律</strong>抵消即可; 如果缺少某一项(设为 <span
 class="math inline">\(p_{ik}\)</span>), 可以在 <span
-class="math inline">\(P_i\)</span>
-中添加<strong>重言式(tautology)</strong> <span
-class="math inline">\(p_{ik} \lor \neg p_{ik}\)</span>,
+class="math inline">\(P_i\)</span> 中添加 <span
+class="math inline">\(p_{ik} \lor \neg p_{ik}\)</span>
+这一<strong>重言式(tautology)</strong>,
 再利用<strong>分配律</strong>展开即可.</li>
-<li>合并重复的极小项</li>
+<li>合并重复的极小项.</li>
 </ol>
 <blockquote>
 <p><strong><em>E.g.</em></strong></p>
@@ -791,8 +795,7 @@ is <strong>unsatisfiable</strong>.</p>
 Problem</em></strong></p>
 <h3 id="数独">数独</h3>
 <p><strong><em>Sudoku</em></strong></p>
-<p>(最后两个Satisifiability的例子等待补充<del>我会补充的,
-信我</del>)</p>
+<p>(等待补充<del>我会补充的, 信我</del>)</p>
 <div id="footnotes">
 <hr>
 <div id="footnotelist">
@@ -811,155 +814,6 @@ edition.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
 ]]></content>
       <tags>
         <tag>Discrete Mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes On Linear Algebra - 1</title>
-    <url>/2024/03/03/LA1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
-<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
-<ol type="1">
-<li>交换方程次序.</li>
-<li>以不等于0的数乘某个方程.</li>
-<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
-<blockquote>
-<p><strong>定义</strong> 矩阵</p>
-<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span
-class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
-排成的 <span class="math inline">\(m\)</span> 行 <span
-class="math inline">\(n\)</span> 列<strong>数表</strong></p>
-<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
-a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
-a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
-\vdots &amp; \vdots &amp; &amp;\vdots  \\
-a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
-\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
-行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span
-class="math inline">\(m\times n\)</span> 矩阵.</p>
-<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span
-class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵.</p>
-</blockquote>
-<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
-某一行构成的行矩阵称为<strong>行向量</strong>.</p>
-<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span
-class="math inline">\(0,0_{m\times n}\)</span> 或者 <span
-class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 单位矩阵</p>
-<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
-<span class="math inline">\(I\)</span> 或者 <span
-class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span
-class="math inline">\(I_n\)</span> 或者 <span
-class="math inline">\(E_n\)</span>.</p>
-</blockquote>
-<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
-<blockquote>
-<p><strong>系数矩阵</strong>
-将线性方程组未知量的系数按次序排列得到的矩阵.</p>
-</blockquote>
-<blockquote>
-<p><strong>增广矩阵</strong>
-将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
-</blockquote>
-<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
-<ol type="1">
-<li>交换矩阵的两行.</li>
-<li>以不等于0的数去乘矩阵的某行.</li>
-<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<p>同理也有三类<strong>初等列变换</strong>.
-它们统称为矩阵的<strong>初等变换</strong>.</p>
-<p>在化简中将会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
-0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
-0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
-0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
-\end{pmatrix}\)</span></p>
-<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
-一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
-<ol type="1">
-<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
-<li>元素不全为0的行(非零行),
-从左数第一个不为0的元素称为<strong>主元</strong>.
-各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
-</ol>
-<p>在化简中也会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
-\end{pmatrix}\)</span></p>
-<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
-<ol type="1">
-<li>它是<strong>阶梯形矩阵</strong></li>
-<li>每个<strong>非零行的主元都是1</strong></li>
-<li>每个<strong>主元所在列的其余元素都是0</strong></li>
-</ol>
-<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
-如果作初等变换, 则总可以把矩阵化为诸如:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}\)</span></p>
-<p>称为<strong>相抵标准型</strong>. 简记为 <span
-class="math inline">\(\begin{bmatrix}
-I_3          &amp; O_{3\times2}     \\
-O_{1\times3} &amp; O_{1\times2}
-\end{bmatrix}\)</span> 或者直接写成 <span
-class="math inline">\(\begin{bmatrix}
-I &amp; O       \\
-O &amp; O
-\end{bmatrix}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span
-class="math inline">\(1\)</span>
-的个数称为矩阵的<strong>秩(rank)</strong></p>
-</blockquote>
-<p><strong>注</strong>: 秩是一个非常深刻的概念,
-在之后我们将经常遇到.</p>
-<h2
-id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
-<p>线性方程组按照解的多少分为三种情况:</p>
-<ol type="1">
-<li>无解</li>
-<li>有唯一解</li>
-<li>有无穷多组解</li>
-</ol>
-<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
-<ol type="1">
-<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span>
-<strong>无解</strong></p></li>
-<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
-此时,</p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span>
-<strong>有无穷多组解</strong></p></li>
-</ol>
-<p>引入如下概念:</p>
-<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
-常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
-<blockquote>
-<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
-一定有<strong>非零解</strong>.</p>
-</blockquote>
-<h2 id="矩阵的运算">矩阵的运算</h2>
-<p>略.</p>
-]]></content>
-      <tags>
-        <tag>Linear Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -1266,6 +1120,155 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
       </tags>
   </entry>
   <entry>
+    <title>Notes On Linear Algebra - 1</title>
+    <url>/2024/03/03/LA1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
+<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
+<ol type="1">
+<li>交换方程次序.</li>
+<li>以不等于0的数乘某个方程.</li>
+<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
+倍.</li>
+</ol>
+<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
+<blockquote>
+<p><strong>定义</strong> 矩阵</p>
+<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span
+class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
+排成的 <span class="math inline">\(m\)</span> 行 <span
+class="math inline">\(n\)</span> 列<strong>数表</strong></p>
+<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
+a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
+\vdots &amp; \vdots &amp; &amp;\vdots  \\
+a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
+\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
+行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span
+class="math inline">\(m\times n\)</span> 矩阵.</p>
+<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span
+class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
+<span class="math inline">\(n\)</span> 阶方阵.</p>
+</blockquote>
+<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
+某一行构成的行矩阵称为<strong>行向量</strong>.</p>
+<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span
+class="math inline">\(0,0_{m\times n}\)</span> 或者 <span
+class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 单位矩阵</p>
+<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
+<span class="math inline">\(I\)</span> 或者 <span
+class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span
+class="math inline">\(I_n\)</span> 或者 <span
+class="math inline">\(E_n\)</span>.</p>
+</blockquote>
+<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
+<blockquote>
+<p><strong>系数矩阵</strong>
+将线性方程组未知量的系数按次序排列得到的矩阵.</p>
+</blockquote>
+<blockquote>
+<p><strong>增广矩阵</strong>
+将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
+</blockquote>
+<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
+<ol type="1">
+<li>交换矩阵的两行.</li>
+<li>以不等于0的数去乘矩阵的某行.</li>
+<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
+倍.</li>
+</ol>
+<p>同理也有三类<strong>初等列变换</strong>.
+它们统称为矩阵的<strong>初等变换</strong>.</p>
+<p>在化简中将会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
+0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
+0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
+0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
+\end{pmatrix}\)</span></p>
+<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
+一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
+<ol type="1">
+<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
+<li>元素不全为0的行(非零行),
+从左数第一个不为0的元素称为<strong>主元</strong>.
+各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
+</ol>
+<p>在化简中也会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+\end{pmatrix}\)</span></p>
+<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
+<ol type="1">
+<li>它是<strong>阶梯形矩阵</strong></li>
+<li>每个<strong>非零行的主元都是1</strong></li>
+<li>每个<strong>主元所在列的其余元素都是0</strong></li>
+</ol>
+<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
+如果作初等变换, 则总可以把矩阵化为诸如:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span></p>
+<p>称为<strong>相抵标准型</strong>. 简记为 <span
+class="math inline">\(\begin{bmatrix}
+I_3          &amp; O_{3\times2}     \\
+O_{1\times3} &amp; O_{1\times2}
+\end{bmatrix}\)</span> 或者直接写成 <span
+class="math inline">\(\begin{bmatrix}
+I &amp; O       \\
+O &amp; O
+\end{bmatrix}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span
+class="math inline">\(1\)</span>
+的个数称为矩阵的<strong>秩(rank)</strong></p>
+</blockquote>
+<p><strong>注</strong>: 秩是一个非常深刻的概念,
+在之后我们将经常遇到.</p>
+<h2
+id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
+<p>线性方程组按照解的多少分为三种情况:</p>
+<ol type="1">
+<li>无解</li>
+<li>有唯一解</li>
+<li>有无穷多组解</li>
+</ol>
+<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
+<ol type="1">
+<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span>
+<strong>无解</strong></p></li>
+<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
+此时,</p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
+class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
+class="math inline">\(\Rightarrow\)</span>
+<strong>有无穷多组解</strong></p></li>
+</ol>
+<p>引入如下概念:</p>
+<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
+常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
+<blockquote>
+<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
+一定有<strong>非零解</strong>.</p>
+</blockquote>
+<h2 id="矩阵的运算">矩阵的运算</h2>
+<p>略.</p>
+]]></content>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes On Linear Algebra - 4</title>
     <url>/2024/03/05/LA4/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
@@ -1460,6 +1463,15 @@ class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
 ]]></content>
       <tags>
         <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Third Blog</title>
+    <url>/2024/03/03/My-third-Blog/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+]]></content>
+      <tags>
+        <tag>Life</tag>
       </tags>
   </entry>
   <entry>
@@ -1676,15 +1688,6 @@ class="math display">\[rank \begin{pmatrix}
 ]]></content>
       <tags>
         <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The Third Blog</title>
-    <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
-]]></content>
-      <tags>
-        <tag>Life</tag>
       </tags>
   </entry>
 </search>
