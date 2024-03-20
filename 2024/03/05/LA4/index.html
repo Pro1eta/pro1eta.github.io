@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"pro1eta.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="集合与映射 幂集 定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 \(A&#x3D;\{\varnothing\}\), 这个时候 \(A\) 中有了一个元素, 就是空集. 所以 \(A\) 是一个非空集合. 进一步, 我们可以用空集构造含有 \(n&#x3D;0,1,2,3,...\) 个元素的集合, 如 \[ \varnothing, \{\varnothing\}, \{\varnothi">
+  <meta name="description" content="集合与映射 幂集 定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 \(A&#x3D;\{\varnothing\}\), 这个时候 \(A\) 中有了一个元素, 就是空集. 所以 \(A\) 是一个非空集合. 进一步, 我们可以用空集构造含有 \(n&#x3D;0,1,2,3,...\) 个元素的集合, 如 \[ \varnothing, \{\varnothing\}, \{\varnothing,\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notes On Linear Algebra - 4">
 <meta property="og:url" content="https://pro1eta.github.io/2024/03/05/LA4/index.html">
 <meta property="og:site_name" content="Proleta&#39;s Blog">
-<meta property="og:description" content="集合与映射 幂集 定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 \(A&#x3D;\{\varnothing\}\), 这个时候 \(A\) 中有了一个元素, 就是空集. 所以 \(A\) 是一个非空集合. 进一步, 我们可以用空集构造含有 \(n&#x3D;0,1,2,3,...\) 个元素的集合, 如 \[ \varnothing, \{\varnothing\}, \{\varnothi">
+<meta property="og:description" content="集合与映射 幂集 定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 \(A&#x3D;\{\varnothing\}\), 这个时候 \(A\) 中有了一个元素, 就是空集. 所以 \(A\) 是一个非空集合. 进一步, 我们可以用空集构造含有 \(n&#x3D;0,1,2,3,...\) 个元素的集合, 如 \[ \varnothing, \{\varnothing\}, \{\varnothing,\">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pro1eta.github.io/2024/03/05/LA4/LA4_1.png">
 <meta property="article:published_time" content="2024-03-05T05:18:07.000Z">
@@ -83,7 +83,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -256,27 +258,19 @@
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
 <h3 id="幂集">幂集</h3>
-<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span
-class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span
-class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span
-class="math inline">\(A\)</span> 是一个非空集合. 进一步,
-我们可以用空集构造含有 <span
-class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span
-class="math display">\[
+<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span class="math inline">\(A\)</span> 是一个非空集合. 进一步,
+我们可以用空集构造含有 <span class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span class="math display">\[
 \varnothing, \{\varnothing\}, \{\varnothing,\{\varnothing\} \},
 \{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\} \},\cdots
 \]</span> 设 <span class="math inline">\(X\)</span> 是一个集合, 那么考虑
 <span class="math inline">\(X\)</span> 所有可能的子集,
 那么这些自己也构成集合, 记为 <span class="math inline">\(2^X\)</span>
-或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span
-class="math display">\[
+或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span class="math display">\[
 2^X=\{B|B \subset X\},
 \]</span> 称之为<strong>幂集</strong>.</p>
 <blockquote>
 <p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
-正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span
-class="math inline">\(Card(X)\)</span> 表示 <span
-class="math inline">\(X\)</span> 的元素个数.</p>
+正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span class="math inline">\(Card(X)\)</span> 表示 <span class="math inline">\(X\)</span> 的元素个数.</p>
 </blockquote>
 <h3 id="集合的基本运算">集合的基本运算</h3>
 <p>我们在此补充一些运算.</p>
@@ -285,27 +279,17 @@ class="math inline">\(X\)</span> 的元素个数.</p>
 <p>一般地, 由属于集合 <span class="math inline">\(A\)</span>
 并且不属于集合 <span class="math inline">\(B\)</span>
 的所有元素组成的集合, 称为 <span class="math inline">\(A\)</span> 与
-<span class="math inline">\(B\)</span> 的差集, 记作 <span
-class="math inline">\(A-B\)</span> 或者 <span
-class="math inline">\(A\setminus B\)</span></p>
+<span class="math inline">\(B\)</span> 的差集, 记作 <span class="math inline">\(A-B\)</span> 或者 <span class="math inline">\(A\setminus B\)</span></p>
 </blockquote>
 <p>我们接着定义全集和补集.</p>
 <blockquote>
 <p><strong>定义</strong> 全集</p>
 <p>如果一个集合含有我们所研究问题中涉及的所有元素,
-那么就称这个集合为全集, 通常记作 <span
-class="math inline">\(\cal{U}\)</span>.</p>
+那么就称这个集合为全集, 通常记作 <span class="math inline">\(\cal{U}\)</span>.</p>
 </blockquote>
 <blockquote>
 <p><strong>定义</strong> 补集</p>
-<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span
-class="math inline">\(\cal{U}\)</span> 中不属于集合 <span
-class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span
-class="math inline">\(A\)</span> 相对于全集 <span
-class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span
-class="math inline">\(A\)</span> 的补集, 记为 <span
-class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span
-class="math display">\[
+<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span class="math inline">\(\cal{U}\)</span> 中不属于集合 <span class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span class="math inline">\(A\)</span> 相对于全集 <span class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span class="math inline">\(A\)</span> 的补集, 记为 <span class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span class="math display">\[
 \complement_{\mathcal{U}}A = \{x|x\in \mathcal{U}\;and\;x\notin A\}
 \]</span></p>
 </blockquote>
@@ -325,32 +309,20 @@ Card(A \cup B) = Card(A)+Card(B)-Card(A \cap B)
 \]</span></p>
 <blockquote>
 <p><strong>定义</strong> 不交并</p>
-<p>设集合 <span class="math inline">\(X\)</span>, <span
-class="math inline">\(A,B\)</span> 为 <span
-class="math inline">\(X\)</span> 的两个子集, 如果 <span
-class="math inline">\(A \cup B=X\)</span> 且 <span
-class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span
-class="math inline">\(X\)</span> 为 <span
-class="math inline">\(A\)</span> 和 <span
-class="math inline">\(B\)</span> 的不交并, 记为 <span
-class="math display">\[
+<p>设集合 <span class="math inline">\(X\)</span>, <span class="math inline">\(A,B\)</span> 为 <span class="math inline">\(X\)</span> 的两个子集, 如果 <span class="math inline">\(A \cup B=X\)</span> 且 <span class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 的不交并, 记为 <span class="math display">\[
 X=A\sqcup B
 \]</span></p>
 </blockquote>
 <p>另外补充一个重要的概念: <strong>笛卡尔积</strong>.</p>
-<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span
-class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span
-class="math inline">\((x,y)\)</span>
+<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span class="math inline">\((x,y)\)</span>
 叫做一个<strong>有序对</strong>.</p>
 <p>两个有序对 <span class="math inline">\((x_1,y_1)=(x_2,y_2) \quad iff
 \quad x_1=x_2,y_1=y_2\)</span>.</p>
 <blockquote>
 <p><strong>定义</strong> 笛卡尔积</p>
-<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span
-class="math display">\[
+<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span class="math display">\[
 X \times Y = \{(x,y)|x \in X, y\in Y\}
-\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span
-class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
+\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
 1596-1650).</p>
 </blockquote>
 <p>类似可以定义 <span class="math inline">\(n\)</span> 个集合的笛卡尔积.
@@ -359,71 +331,38 @@ class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
 的笛卡尔积就是: <span class="math display">\[
 X_1\times X_2\times\cdots\times X_n=\{(x_1, x_2,\cdots, x_n)|x_i \in
 X_i, 1 \le i \le n\}
-\]</span> 特别地, 这些集合都等于同一个集合 <span
-class="math inline">\(X\)</span> 的时候, 记作 <span
-class="math inline">\(X^n\)</span>. 称为集合 <span
-class="math inline">\(X\)</span> 的 <span
-class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
+\]</span> 特别地, 这些集合都等于同一个集合 <span class="math inline">\(X\)</span> 的时候, 记作 <span class="math inline">\(X^n\)</span>. 称为集合 <span class="math inline">\(X\)</span> 的 <span class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
 <p>笛卡尔积集有一些性质：</p>
 <blockquote>
 <ol type="1">
-<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span
-class="math inline">\(X\)</span> 或者 <span
-class="math inline">\(Y\)</span> 为空集.</p></li>
+<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span class="math inline">\(X\)</span> 或者 <span class="math inline">\(Y\)</span> 为空集.</p></li>
 <li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
 \cup Z) \times Y\)</span>.</p></li>
-<li><p><span class="math inline">\((X \times Y) \cap (X&#39; \times
-Y&#39;) = (X \times X&#39;) \times (Y \times Y&#39;)\)</span>,
+<li><p><span class="math inline">\((X \times Y) \cap (X' \times
+Y') = (X \times X') \times (Y \times Y')\)</span>,
 如图</p></li>
 </ol>
 </blockquote>
 <img src="/2024/03/05/LA4/LA4_1.png" class="">
-<hr />
+<hr>
 <h3 id="映射">映射</h3>
 <p>首先是映射的相关定义.</p>
 <blockquote>
 <p><strong>定义</strong> 映射</p>
 <p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
 如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
-,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span
-class="math inline">\(x\)</span>, 在集合 <span
-class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span
-class="math inline">\(y\)</span> 与之对应, 那么称 <span
-class="math inline">\(f:X \to Y\)</span> 为从集合 <span
-class="math inline">\(X\)</span> 到 <span
-class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
+,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span class="math inline">\(x\)</span>, 在集合 <span class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span class="math inline">\(y\)</span> 与之对应, 那么称 <span class="math inline">\(f:X \to Y\)</span> 为从集合 <span class="math inline">\(X\)</span> 到 <span class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
 </blockquote>
 <p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
 <span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
-<span class="math inline">\(x \longmapsto y\)</span> 表示 <span
-class="math inline">\(X\)</span> 中的元素 <span
-class="math inline">\(x\)</span> 对应到 <span
-class="math inline">\(Y\)</span> 中的元素 <span
-class="math inline">\(y\)</span>, 这时 <span
-class="math inline">\(y\)</span> 叫作 <span
-class="math inline">\(x\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span
-class="math inline">\(f(x)\)</span>, <span
-class="math inline">\(x\)</span> 叫做 <span
-class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
+<span class="math inline">\(x \longmapsto y\)</span> 表示 <span class="math inline">\(X\)</span> 中的元素 <span class="math inline">\(x\)</span> 对应到 <span class="math inline">\(Y\)</span> 中的元素 <span class="math inline">\(y\)</span>, 这时 <span class="math inline">\(y\)</span> 叫作 <span class="math inline">\(x\)</span> 在 <span class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(x\)</span> 叫做 <span class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
 <blockquote>
 <p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
-Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span
-class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
+Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
 <span class="math inline">\(Y\)</span>​
-叫做<strong>目标域</strong>(target)或者陪域.<span
-class="math inline">\(x\)</span> 的象 <span
-class="math inline">\(y\)</span>, 也写作 <span
-class="math inline">\(f(x)\)</span>,也被叫做 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x\)</span> 处的值. <span
-class="math inline">\(X\)</span> 的所有元素在 <span
-class="math inline">\(f\)</span> 之下的象的集合构成 <span
-class="math inline">\(Y\)</span> 的一个子集, 记作 <span
-class="math display">\[
+叫做<strong>目标域</strong>(target)或者陪域.<span class="math inline">\(x\)</span> 的象 <span class="math inline">\(y\)</span>, 也写作 <span class="math inline">\(f(x)\)</span>,也被叫做 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x\)</span> 处的值. <span class="math inline">\(X\)</span> 的所有元素在 <span class="math inline">\(f\)</span> 之下的象的集合构成 <span class="math inline">\(Y\)</span> 的一个子集, 记作 <span class="math display">\[
 Im(f) = \{f(x)|x \in X\} \subseteq Y
-\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span
-class="math inline">\(f\)</span>
+\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span class="math inline">\(f\)</span>
 的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
 </blockquote>
 <p>值域是目标域的子集.</p>
@@ -433,16 +372,9 @@ class="math inline">\(f\)</span>
 但目标域不一定相同的函数称为相等函数.</p>
 <p><strong>注</strong> 对于对应法则有更加严格的处理方式.
 可以定义对应法则 <span class="math inline">\(f\)</span> 为笛卡尔积集
-<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span
-class="math inline">\((x, y) \in f\)</span>, 那么称 <span
-class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span
-class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
+<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span class="math inline">\((x, y) \in f\)</span>, 那么称 <span class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
 就需要满足可以多对一, 但不能一对多的条件.</p>
-<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span
-class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span
-class="math inline">\(Y\)</span> 的一个子集, 称为 <span
-class="math inline">\(A\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
+<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span class="math inline">\(Y\)</span> 的一个子集, 称为 <span class="math inline">\(A\)</span> 在 <span class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
 
     </div>
 

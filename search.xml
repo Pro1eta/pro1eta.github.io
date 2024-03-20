@@ -1,819 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Notes On Discrete Mathematics - 1</title>
-    <url>/2024/03/09/DM1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
-<p>这是离散数学的笔记. 实际上这一部分还是相当有意思的.</p>
-<p>什么, 你说我为什么用英文写?</p>
-<p>虽然我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
-class="hint--top hint--error hint--medium hint--rounded hint--bounce"
-aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数学及其应用.Eighth edition.">[1]</span></a></sup>,
-考试都是英文, 我的Engilsh very poor,
-用英文写的一大目的就是用来记单词.</p>
-<p>什么, 你问为什么这里面还参杂了中文?</p>
-<p>哈哈, 当然是因为<del>我英语超级烂</del>方便读者观看啦.</p>
-<h1 id="命题逻辑">命题逻辑</h1>
-<p><strong><em>Propositional Logic</em></strong></p>
-<h2 id="命题">命题</h2>
-<p><strong><em>Proposition</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>proposition 命题</strong></p>
-<ul>
-<li>a statement(i.e. a declarative sentence) - with some definite
-meaning, (not vague or ambiguous).</li>
-<li>having a truth value that is either true of false, but not
-both.</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Atoms</strong> <strong>原子命题</strong>: formula with no
-deeper propositional structure, that is, a formula that contains no
-logical connectives or equivalently a formula that has no strict
-subformulas.</li>
-<li><strong>Compound propositions</strong> <strong>复合命题</strong>:
-build up from atoms using operators.</li>
-</ul>
-<p>if <span class="math inline">\(p \to q\)</span>, then</p>
-<ul>
-<li><span class="math inline">\(p \to q\)</span> is the
-<strong>converse(逆命题)</strong> of it.</li>
-<li><span class="math inline">\(\neg q \to \neg p\)</span> is the
-<strong>contrapositive(逆否命题)</strong> of it.</li>
-<li><span class="math inline">\(\neg p \to \neg q\)</span>​ is the
-<strong>inverse(否命题)</strong> of it.</li>
-</ul>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>formula (命题)公式</strong></p>
-<ul>
-<li>All atomes are formulas.</li>
-<li>If <span class="math inline">\(p\)</span> is a formula, then <span
-class="math inline">\(\neg p\)</span> is a formula.</li>
-<li>If <span class="math inline">\(p\)</span> and <span
-class="math inline">\(q\)</span> is a formula, then the following are
-formulas: <span class="math inline">\(p \land q\)</span> <span
-class="math inline">\(p\lor q\)</span> <span class="math inline">\(p
-\oplus q\)</span> <span class="math inline">\(p \to q\)</span> <span
-class="math inline">\(p \leftrightarrow q\)</span> e.g.</li>
-</ul>
-</blockquote>
-<h2 id="命题变量">命题变量</h2>
-<p><strong><em>Propositional variables</em></strong></p>
-<p>We use letters to denote propositional variables (or statement
-variables).The conventional letters used for propositional variables are
-p, q, r, s, ...</p>
-<h2 id="逻辑运算符">逻辑运算符</h2>
-<p><strong><em>Operators / Connectives</em></strong></p>
-<p>An operator or connective combines n operand expressions into a
-larger expression. <strong>Unary</strong> operators take 1 operand while
-<strong>binary</strong> operators take 2 operands.</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Formal Name</th>
-<th style="text-align: center;">Nickname</th>
-<th style="text-align: center;">Arity</th>
-<th style="text-align: center;">Symbol</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Negation operator</td>
-<td style="text-align: center;">NOT</td>
-<td style="text-align: center;">Unary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\neg\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Conjunction operator</td>
-<td style="text-align: center;">AND</td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\land\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Disjunction operator</td>
-<td style="text-align: center;">OR</td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\lor\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Exclusive - OR operator</td>
-<td style="text-align: center;">XOR</td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\oplus\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Implication operator</td>
-<td style="text-align: center;">IMPLIES</td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\to\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Biconditional operator</td>
-<td style="text-align: center;">IFF</td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;"><span
-class="math inline">\(\leftrightarrow\)</span></td>
-</tr>
-</tbody>
-</table>
-<h3 id="否定-非">否定, 非</h3>
-<p><strong><em>The Negation Operator</em></strong></p>
-<p>The unary negation operator transforms a prop. into its negation.</p>
-<blockquote>
-<p><strong><em>E.g.</em></strong></p>
-<p>if <span class="math inline">\(p=\)</span> "I have brown hair."</p>
-<p>then <span class="math inline">\(\neg p=\)</span> "I do
-<strong>not</strong> have brown hair."</p>
-</blockquote>
-<h3 id="合取-与">合取, 与</h3>
-<p><strong><em>The Conjunction Operator</em></strong></p>
-<p>The binary conjunction operator "<span
-class="math inline">\(\land\)</span>"(AND) combines two propositions to
-form their logical conjunction.</p>
-<ul>
-<li><strong>In fact, <span class="math inline">\(\neg\)</span> and <span
-class="math inline">\(\land\)</span> are sufficient to express any
-Boolean truth table.</strong></li>
-</ul>
-<h3 id="析取-或">析取, 或</h3>
-<p><strong><em>The Disjunction Operator</em></strong></p>
-<p>The binary disjunction operator "<span
-class="math inline">\(\lor\)</span>"(OR) conbines two prop. to form
-their logical disjunction.</p>
-<h3 id="异或">异或</h3>
-<p><strong><em>The Exclusive-or Operator</em></strong></p>
-<p>The binary exclusive-or operator "<span
-class="math inline">\(\oplus\)</span>"(XOR) combines two propositions to
-form their logical "exlusive or".</p>
-<blockquote>
-<p><strong><em>E.g.</em></strong></p>
-<p><span class="math inline">\(p=\)</span> "I will earn an A in this
-course,"</p>
-<p><span class="math inline">\(q=\)</span> "I will either earn an A in
-this course,"</p>
-<p><span class="math inline">\(p \oplus q=\)</span> "I will either earn
-an A in this course, or I will drop it(<strong>but not
-both</strong>)."</p>
-</blockquote>
-<p>"Or" in English can be ambiguous regarding the
-"<strong>both</strong>" case.</p>
-<h3 id="蕴涵">蕴涵</h3>
-<p><strong><em>The Implication Operator</em></strong></p>
-<p>The implication <span class="math inline">\(p \to q\)</span> states
-that <span class="math inline">\(p\)</span> implies <span
-class="math inline">\(q\)</span>.</p>
-<p><em>I.e.</em> If <span class="math inline">\(p\)</span> is true then
-<span class="math inline">\(q\)</span> is true. However, if <span
-class="math inline">\(p\)</span> is <strong>not</strong> true, then q
-could be either true or false.</p>
-<ul>
-<li><span class="math inline">\(p \to q\)</span> is flase
-<strong>only</strong> when <span class="math inline">\(p\)</span> is
-true but <span class="math inline">\(q\)</span> is false.</li>
-<li><span class="math inline">\(p \to q\)</span> does not mean that
-<span class="math inline">\(p\)</span> causes <span
-class="math inline">\(q\)</span>.</li>
-</ul>
-<h4 id="different-ways-of-expressing-p-to-q">Different Ways of
-Expressing <span class="math inline">\(p \to q\)</span></h4>
-<ul>
-<li><p><span class="math inline">\(p\)</span> implies <span
-class="math inline">\(q\)</span></p></li>
-<li><p>if <span class="math inline">\(p\)</span>, then <span
-class="math inline">\(q\)</span></p></li>
-<li><p>if <span class="math inline">\(p\)</span>, <span
-class="math inline">\(q\)</span></p></li>
-<li><p>when <span class="math inline">\(p\)</span>, <span
-class="math inline">\(q\)</span></p></li>
-<li><p>whenever <span class="math inline">\(p\)</span>, <span
-class="math inline">\(q\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> if <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> when <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> whenever <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(p\)</span> only if <span
-class="math inline">\(q\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> is necessary for <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> follows from <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> is implied by <span
-class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(q\)</span> unless <span
-class="math inline">\(\neg p\)</span>​</p></li>
-</ul>
-<h3 id="同或-逻辑等价">同或, 逻辑等价</h3>
-<p><strong><em>The Biconditional Operator</em></strong></p>
-<p>The biconditional <span class="math inline">\(p \leftrightarrow
-q\)</span> states that <span class="math inline">\(p\)</span> is true
-<strong>if and only if</strong> q is true.</p>
-<h3 id="真值表汇总">真值表汇总</h3>
-<p><strong><em>The Truth Table of Boolean Operations</em></strong></p>
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 10%" />
-<col style="width: 14%" />
-<col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 11%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(p\)</span></th>
-<th style="text-align: center;"><span
-class="math inline">\(q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\neg
-p\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(p \land
-q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(p\lor
-q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(p \oplus
-q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(p \to
-q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(p
-\leftrightarrow q\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-</tr>
-<tr class="even">
-<td>F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-</tr>
-<tr class="odd">
-<td>T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-</tr>
-<tr class="even">
-<td>T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-</tr>
-</tbody>
-</table>
-<h3 id="优先级">优先级</h3>
-<p><strong><em>Precedence of Logical Operators</em></strong></p>
-<ul>
-<li>It's important to use <strong>parenthesis</strong> to group
-sub_expressions</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">operator</th>
-<th style="text-align: center;">Predence</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(\neg\)</span></td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span
-class="math inline">\(\land\)</span></td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(\lor\)</span></td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span
-class="math inline">\(\to\)</span></td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span
-class="math inline">\(\leftrightarrow\)</span></td>
-<td style="text-align: center;">5</td>
-</tr>
-</tbody>
-</table>
-<h3 id="一致系统规范说明">一致系统规范说明</h3>
-<p><strong><em>Consistent System Specifications</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Consistent System Specifications
-一致系统规范说明</strong></p>
-<ul>
-<li>A list of propositions is <strong>consistent</strong> if it is
-possible to assign truth values to the proposition variables so that
-each proposition is true.</li>
-</ul>
-<p>系统规范说明是<strong>一致的</strong>,
-如果可以为所有的<strong>命题变量</strong>设定真值,
-使得命题变量构成的每一个<strong>命题</strong>均为<strong>真</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>E.g.</em></strong></p>
-<p>Let <span class="math inline">\(p\)</span>:“The diagnostic message is
-stored in the buffer.”</p>
-<p>设 <span class="math inline">\(p\)</span>:
-诊断信息被存储在缓冲区中.</p>
-<p><span class="math inline">\(q\)</span>: “The diagnostic message is
-retransmitted.”</p>
-<p><span class="math inline">\(q\)</span>: 诊断信息被重新发送.</p>
-<p>for <span class="math inline">\(p\lor q\)</span>, <span
-class="math inline">\(p \to q\)</span>, <span class="math inline">\(\neg
-p\)</span>,</p>
-<p>If <span class="math inline">\(p\)</span> is flase while <span
-class="math inline">\(q\)</span> is true, then all three prop. are true,
-so <strong>the specification is consistent</strong>.</p>
-</blockquote>
-<hr />
-<h1 id="命题等价式">命题等价式</h1>
-<p><strong><em>Propositional Equivalences</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Tautology, contradiction, contingency</strong></p>
-<p><strong>永真式, 永假式, 可能式</strong></p>
-<ul>
-<li><p>A compound proposition that is always true, no matter what the
-truth values of the propositional variables that occur in it, is called
-a <strong>tautology(永真式, 或者重言式)</strong>.</p></li>
-<li><p>A compound proposition that is always false is called a
-<strong>contradiction(永假式, 或者矛盾式)</strong>.</p></li>
-<li><p>A compound proposition that is neither a tautology nor a
-contradiction is called a <strong>contingency(可能式)</strong></p></li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>Rule of substitution</strong> <strong>置换规则</strong></p>
-<p>Suppose <span class="math inline">\(P\)</span> is a tautology, if
-<span class="math inline">\(p\)</span> is a primitive statement in <span
-class="math inline">\(P\)</span> and we can replace <span
-class="math inline">\(p\)</span> with the statement <span
-class="math inline">\(q\)</span>, then the new statement <span
-class="math inline">\(P&#39;\)</span> is also a tautology.</p>
-<p>在一个永真公式中, 任何一个命题变元 <span
-class="math inline">\(R\)</span> 出现的每一处, 用另一个命题公式代入,
-所得命题公式仍然是永真式.</p>
-</blockquote>
-<blockquote>
-<p><strong>Rule of replacement</strong> <strong>代入规则</strong></p>
-<p>Within the context of a logical proof, logically equivalent
-expressions may replace each other.</p>
-<p>给定公式 <span class="math inline">\(A\)</span>, 其所有子公式为 <span
-class="math inline">\(a_1,a_2,\dots,a_n\)</span>, 设 <span
-class="math inline">\(a_i \equiv b_i\)</span>, 用 <span
-class="math inline">\(b_i\)</span> 替换 <span
-class="math inline">\(a_i\)</span>, 所得公式为 <span
-class="math inline">\(B\)</span>, 则 <span class="math inline">\(A
-\equiv B\)</span>.</p>
-</blockquote>
-<h2 id="逻辑等价式">逻辑等价式</h2>
-<p><strong><em>Logical Equibalences</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Logical Equibalences 逻辑等价式</strong></p>
-<p>Compound propositions that <strong>have the same truth values in all
-possible cases</strong> are called <strong>logically
-equivalent</strong>. The notation <span class="math display">\[
-p \equiv  q
-\]</span> or <span class="math display">\[
-p \Leftrightarrow q
-\]</span> donates that <span class="math inline">\(p\)</span> and <span
-class="math inline">\(q\)</span> are <strong>logically
-equivalences</strong>.</p>
-</blockquote>
-<ul>
-<li><strong>tips</strong>: We will also say: they express <strong>the
-same truth function</strong> or the same function from values for atoms
-to values for the whole formula.In other words, two syntactically
-compound propositions may be semantically identical.</li>
-<li><strong>tips</strong>: The symbol <span
-class="math inline">\(\equiv\)</span> is <strong>NOT</strong> a logical
-connective, and <span class="math inline">\(p \equiv  q\)</span> is not
-a compound proposition but rather is the statement that <span
-class="math inline">\(p \leftrightarrow q\)</span> is a tautology.</li>
-</ul>
-<h2 id="等价规则">等价规则</h2>
-<p><strong><em>Equivalence Laws</em></strong></p>
-<p>To shorten the length, let's make <span
-class="math inline">\(\mathbf{T}\)</span> short for
-<strong>tautology</strong> and <span
-class="math inline">\(\mathbf{F}\)</span> for
-<strong>contradiction</strong>. There's some logical equibalences.</p>
-<table>
-<colgroup>
-<col style="width: 61%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><em>Equivalence</em></th>
-<th><em>Name</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(p \land \mathbf{T} \equiv
-p\)</span></td>
-<td>Identity laws<br />同一律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \lor \mathbf{F} \equiv p\)</span></td>
-<td>Identity laws<br />同一律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \lor \mathbf{T} \equiv
-\mathbf{T}\)</span></td>
-<td>Domination laws<br />零律, 支配律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \land \mathbf{F} \equiv
-\mathbf{F}\)</span></td>
-<td>Domination laws<br />零律, 支配律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \land p \equiv p\)</span></td>
-<td>Idempotent laws<br />等幂律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \lor p \equiv p\)</span></td>
-<td>Idempotent laws<br />等幂律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\neg (\neg)p \equiv p\)</span></td>
-<td>Double negation law<br />双重否定律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \land q \equiv q \land p\)</span></td>
-<td>Commutativive laws<br />交换律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \lor q \equiv q \lor p\)</span></td>
-<td>Commutativive laws<br />交换律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\((p \lor q) \lor r\equiv q \lor (p \lor
-r)\)</span></td>
-<td>Associative laws<br />结合律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\((p \lor q) \land r\equiv (p \lor q)
-\land (p \lor r)\)</span></td>
-<td>Distributive laws<br />分配律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\((p \land q) \lor r\equiv (p \land q)
-\lor (p \land r)\)</span></td>
-<td>Distributive laws<br />分配律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\neg(p \land q) \equiv \neg q \lor\neg
-p\)</span></td>
-<td>De Morgan's laws<br />德·摩根律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\neg(p \lor q) \equiv \neg q \land\neg
-p\)</span></td>
-<td>De Morgan's laws<br />德·摩根律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \lor (p \land q ) \equiv
-p\)</span></td>
-<td>Absorption laws<br />吸收律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \land (p \lor q ) \equiv
-p\)</span></td>
-<td>Absorption laws<br />吸收律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \lor  \neg p\equiv
-\mathbf{T}\)</span></td>
-<td>Tautology<br />排中律</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \land \neg p\equiv
-\mathbf{F}\)</span></td>
-<td>Contradiction<br />矛盾律</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \to q \equiv \neg p \land
-q\)</span></td>
-<td>Implication<br />蕴涵等价式</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\((p \to q) \land (q \to p) \equiv p
-\leftrightarrow q\)</span></td>
-<td>Equivalence<br />同或等价式</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\((p \to q) \land (p \to \neg q) \equiv
-\neg p\)</span></td>
-<td>Absurdity<br />归谬</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(p \to q \equiv \neg q \to \neg
-p\)</span></td>
-<td>Contrapositive<br />蕴涵逆反式</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p \land q \to r \equiv p \to (q\to
-r)\)</span></td>
-<td>Exportation<br />输出律</td>
-</tr>
-</tbody>
-</table>
-<h2 id="范式的存在性定理">范式的存在性定理</h2>
-<p>这一部分用中文写, 因为原教材和百科中基本没有对这一段的提及,
-或者百科内容与教师讲授内容与原教材内容不一致.
-出于这些原因用中文较好.</p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>基本和(子句)</strong></p>
-<p>由有限个命题变量或其否定析取, 构成的析取式,
-称为<strong>基本和</strong>, 或者<strong>(简单)析取式</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>基本积</strong></p>
-<p>由有限个命题变量或其否定合取, 构成的合取式,
-称为<strong>基本积</strong>, 或者<strong>(简单)合取式</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>E.g.</em></strong> <span class="math inline">\(\neg p
-\lor q \lor p \lor r\)</span>​ 是<strong>简单析取式</strong>.</p>
-</blockquote>
-<p><strong>tips</strong>: 一个变量本身可以看作基本和或者基本积.</p>
-<p>然后, 引入析取范式与合取范式.</p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>析取范式(disjunctive normal form, or DNF)</strong></p>
-<p>A logical formula is considered to be in DNF if it is a disjunction
-of one or more conjunctions of one or more
-<strong>literals</strong>.</p>
-<p>由有限个简单合取式(基本积)析取,构成的析取式,
-称为<strong>析取范式</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>合取范式(consjunctive normal form, or CNF)</strong></p>
-<p>a formula is in CNF if it is a conjunction of one or more clauses,
-where a clause is a disjunction of <strong>literal</strong>s.</p>
-<p>由有限个简单析取式(基本和)合取, 构成的合取式,
-称为<strong>合取范式</strong>.</p>
-</blockquote>
-<p><strong>tips</strong>: Let's add a concept:</p>
-<p>a <strong>literal</strong> is an atomic formula (also known as an
-atom or prime formula) or its negation.</p>
-<p><strong>文字</strong>是一个原子命题或者它的否定.</p>
-<p>"简单析取式"和"简单合取式"这两个概念没有在百科找到.
-这两个概念的作用似乎只是为了定义DNF和CNF. 与"基本和",
-"基本积"相似的概念可以参见<a
-href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句（clause）-
-Wikipedia</em></strong></a>和 <a
-href="https://en.wikipedia.org/wiki/Product_term"><strong><em>Product
-term - Wikipedia</em></strong></a>.</p>
-<blockquote>
-<p><strong><em>Theorem</em></strong></p>
-<p><strong>范式存在定理</strong></p>
-<p>any Boolean function has a CNF, and a DNF form.</p>
-<p>任意的命题公式均存在一个与之等值的析取范式和合取范式.</p>
-</blockquote>
-<p>The proof is very trivial.</p>
-<p><strong>tips</strong>: 析取范式和合取范式不唯一.</p>
-<h2 id="主范式">主范式</h2>
-<p><strong><em>Principal Normal Form</em></strong></p>
-<h3 id="极小项-极大项">极小项, 极大项</h3>
-<p><strong><em>Minterm and Maxterm</em></strong></p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Minterm </strong> <strong>极小项</strong></p>
-<p>For a boolean function of <span class="math inline">\(n\)</span>
-variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a
-product term in which each of the <span class="math inline">\(n\)</span>​
-variables appears once (either in its complemented or uncomplemented
-form) and appears in order is called a <strong>minterm</strong>.</p>
-<p>设简单合取式中有 <span class="math inline">\(n\)</span> 个命题变量
-<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
-并且仅出现一次, 这样的公式称为<strong>极小项</strong>.</p>
-</blockquote>
-<ul>
-<li><p><strong>indexing minterm</strong>
-<strong>极小项的编码</strong></p>
-<p>Minterms are often numbered by a binary encoding of the
-complementation pattern of the variables, where the variables are
-written in a standard order, usually alphabetical.</p>
-<p>极小项的命题变量的常常按下标排列(或者字典序列排列).</p>
-<p>若给变量 <span class="math inline">\(x_i\)</span> 赋值二进制值 <span
-class="math inline">\(1\)</span>, 给 <span class="math inline">\(\neg
-x_i\)</span> 赋值二进制值 <span class="math inline">\(0\)</span>,
-那么可以给出一个 <span class="math inline">\(n\)</span>
-位二进制编码来表示极小项, 比如可以记作 <span
-class="math inline">\(m_{101\dots}\)</span>.</p>
-<blockquote>
-<p><strong><em>E.g.</em></strong> we can notate minterm just like:</p>
-<p><span class="math inline">\(m_0 = m_{00 \dots00}=\neg p_1 \land \neg
-p_2 \land \cdots \land \neg p_n\)</span>​​</p>
-<p><span class="math inline">\(m_3 = m_{0 \dots011}=\neg p_1 \land \neg
-p_2 \land \cdots \land  \neg p_{n-2} \land p_{n-1} \land
-p_n\)</span></p>
-</blockquote>
-<p>显然, 极小式的下标值(十进制)为:</p></li>
-</ul>
-<p><span class="math display">\[
-\sum_{i=1}^{n}2^{i-1}value(x_i)
-\]</span></p>
-<ul>
-<li><strong>极小项的性质</strong>
+    <title>Notes On Linear Algebra - 1</title>
+    <url>/2024/03/03/LA1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
+<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
 <ol type="1">
-<li>每一个<strong>极小项</strong>, 当其赋值与编码相同的时候, 真值为
-<span class="math inline">\(\mathbf{T}\)</span>, 否则一定为 <span
-class="math inline">\(\mathbf{F}\)</span>.</li>
-<li>任意<strong>不同</strong>极小项的<strong>合取永假</strong>.</li>
-<li><strong>所有极小项</strong>的<strong>析取永真</strong>.</li>
-<li>没有两个极小项是等价的.</li>
-</ol></li>
-</ul>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Maxterm</strong> <strong>极大项</strong></p>
-<p>For a boolean function of <span class="math inline">\(n\)</span>
-variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a sum
-term or clause in which each of the <span
-class="math inline">\(n\)</span> variables appears once (either in its
-complemented or uncomplemented form) is called a
-<strong>maxterm</strong>.</p>
-<p>设简单析取式中有 <span class="math inline">\(n\)</span> 个命题变量
-<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
-并且仅出现一次, 这样的公式称为<strong>极大项</strong>.</p>
-</blockquote>
-<ul>
-<li><p><strong>indexing Maxterm</strong> <strong>极大项的编码</strong>
-类似地, 极大项也可以编码, 规则与极小项基本一致. 不同的是将 <span
-class="math inline">\(p_i\)</span> 记为 <span
-class="math inline">\(0\)</span>, 将 <span class="math inline">\(\neg
-p_i\)</span> 记为 <span class="math inline">\(1\)</span>.
-极大项的记法与极小项完全一致.</p></li>
-<li><p><strong>极大项的性质</strong></p>
-<ol type="1">
-<li>每一个<strong>极大项</strong>, 当其赋值与编码相同的时候, 真值为
-<span class="math inline">\(\mathbf{F}\)</span>, 否则一定为 <span
-class="math inline">\(\mathbf{T}\)</span>​.</li>
-<li>任意<strong>不同</strong>极大项的<strong>析取永真</strong>.</li>
-<li><strong>所有极大项</strong>的<strong>合取永假</strong>.</li>
-<li>没有两个极大项是等价的.</li>
-</ol></li>
-</ul>
-<h3 id="主析取范式-主合取范式">主析取范式, 主合取范式</h3>
-<p><strong><em>Principal Disjunctive and Conjunctive Normal
-Forms</em></strong></p>
-<p>Now it's time for our main characters to come on stage!</p>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Principal disjunctive normal form or PDNF</strong></p>
-<p><strong>主析取范式</strong></p>
-<p>A formula is in principal disjunctive normal form if it a disjunction
-of minterns.</p>
-<p>若干个不同的极小项的析取式, 称为<strong>主析取范式</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>Definition</em></strong></p>
-<p><strong>Principal conjunctive normal form or PCNF</strong></p>
-<p><strong>主合取范式</strong></p>
-<p>A formula is in principal disjunctive normal form if it a conjunction
-of maxterns.</p>
-<p>若干个不同的极大项的合取式, 称为<strong>主合取范式</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>Theorem</em></strong></p>
-<p>任何一个公式均存在一个与之等值的<strong>主析取范式</strong>,
-而且是<strong>唯一</strong>的.</p>
-<p>任何一个公式均存在一个与之等值的<strong>主合取范式</strong>,
-而且是<strong>唯一</strong>的.</p>
-</blockquote>
-<p>The proof is very trivial.</p>
-<p><strong>tips</strong>: 不难发现,
-<strong>永假式(controdiction)</strong>的主合取范式含有 <span
-class="math inline">\(\dots\land p \land \cdots \land\neg p\)</span>
-这样的因子. 而<strong>永真式(Tautology)</strong>的主合取范式 <span
-class="math inline">\(\dots\lor p \lor \cdots \lor\neg p\)</span>
-这样的因子.</p>
-<h3 id="求取主范式">求取主范式</h3>
-<p><strong><em>Find The Principal Form</em></strong></p>
-<p>主要有两种方法.</p>
-<h4 id="真值表法">真值表法</h4>
-<p><strong><em>Using the truth table</em></strong></p>
-<ul>
-<li>主析取范式 简而言之, 跟据公式的真值表,
-找出能够使公式为<strong>真</strong>的赋值, 写出对应的极小项,
-然后将它们析取而成即可.</li>
-<li>主合取范式 跟据公式的真值表,
-找出能够使公式为<strong>假</strong>的赋值, 写出对应的极大项,
-然后将它们析取而成即可.</li>
-</ul>
-<p>这样做的主要依据是极小项和极大项的性质, 以及主范式的唯一性.</p>
-<h4 id="等值演算">等值演算</h4>
-<p><strong><em>Reasoning</em></strong></p>
-<p>对于求取<strong>主析取范式(PDNF)</strong>, 主要是以下步骤:</p>
-<ol type="1">
-<li>利用<strong>逻辑等价式</strong>, 将逻辑运算符全部转化为 <span
-class="math inline">\(\neg, \land, \lor\)</span>.</li>
-<li>利用<strong>De Morgan's laws</strong>, 将所有 <span
-class="math inline">\(\neg\)</span> 转移至单个命题变量之前.</li>
-<li>将命题公式转化为析取范式, 例如 <span class="math inline">\(P_1 \land
-P_2 \land P_3 \land \cdots \land P_n\)</span> 的形式, 注意其中的 <span
-class="math inline">\(P_i\)</span> 是简单合取式,
-即仅由<strong>文字</strong>合取而成.</li>
-<li>设 <span class="math inline">\(P_i = p_{i1} \lor p_{i2} \lor \cdots
-\lor p_{im}\)</span>, 其中 <span class="math inline">\(p_{ij}\)</span>
-是<strong>文字(literal)</strong>, 如果某项重复,
-利用<strong>交换律</strong>抵消即可; 如果缺少某一项(设为 <span
-class="math inline">\(p_{ik}\)</span>), 可以在 <span
-class="math inline">\(P_i\)</span> 中添加 <span
-class="math inline">\(p_{ik} \lor \neg p_{ik}\)</span>
-这一<strong>重言式(tautology)</strong>,
-再利用<strong>分配律</strong>展开即可.</li>
-<li>合并重复的极小项.</li>
+<li>交换方程次序.</li>
+<li>以不等于0的数乘某个方程.</li>
+<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
+倍.</li>
 </ol>
+<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
 <blockquote>
-<p><strong><em>E.g.</em></strong></p>
-<p>(等待补充)</p>
+<p><strong>定义</strong> 矩阵</p>
+<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
+排成的 <span class="math inline">\(m\)</span> 行 <span class="math inline">\(n\)</span> 列<strong>数表</strong></p>
+<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
+a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
+\vdots &amp; \vdots &amp; &amp;\vdots  \\
+a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
+\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
+行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span class="math inline">\(m\times n\)</span> 矩阵.</p>
+<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
+<span class="math inline">\(n\)</span> 阶方阵.</p>
 </blockquote>
-<p>对于求取<strong>主合取范式(PCNF)</strong>, 类比即可, 不赘述.</p>
-<hr />
-<h2 id="可满足性">可满足性</h2>
-<p><strong><em>Satisfiability</em></strong></p>
-<p>A compound proposition is <strong>satisfiable</strong> if there is an
-assignment of truth values to its variables that makes it true (that is,
-when it is a tautology or a contingency). When no such assignments
-exists, that is, when the compound proposition is false for all
-assignments of truth values to its variables, the compound proposition
-is <strong>unsatisfiable</strong>.</p>
-<p>复合命题是<strong>可满足的</strong>, 如果能够对其所有命题变量赋真值,
-使得原复合命题为真. (换句话说, 这个复合命题是重言式或可能式).
-若所有真值赋值的情况下, 复合命题均为假,
-则是<strong>不可满足的</strong>.</p>
-<h3 id="n-皇后问题"><span class="math inline">\(n\)</span> 皇后问题</h3>
-<p><strong><em>The <span class="math inline">\(n\)</span>​-Queens
-Problem</em></strong></p>
-<h3 id="数独">数独</h3>
-<p><strong><em>Sudoku</em></strong></p>
-<p>(等待补充<del>我会补充的, 信我</del>)</p>
-<div id="footnotes">
-<hr>
-<div id="footnotelist">
-<ol style="list-style: none; padding-left: 0; margin-left: 40px">
-<li id="fn:1">
-<span
-style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span
-style="display: inline-block; vertical-align: top; margin-left: 10px;">Kenneth
-H. Rosen.Discrete Mathematics and Its
-Applications.离散数学及其应用.Eighth
-edition.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
-</li>
+<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
+某一行构成的行矩阵称为<strong>行向量</strong>.</p>
+<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span class="math inline">\(0,0_{m\times n}\)</span> 或者 <span class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 单位矩阵</p>
+<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
+<span class="math inline">\(I\)</span> 或者 <span class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span class="math inline">\(I_n\)</span> 或者 <span class="math inline">\(E_n\)</span>.</p>
+</blockquote>
+<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
+<blockquote>
+<p><strong>系数矩阵</strong>
+将线性方程组未知量的系数按次序排列得到的矩阵.</p>
+</blockquote>
+<blockquote>
+<p><strong>增广矩阵</strong>
+将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
+</blockquote>
+<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
+<ol type="1">
+<li>交换矩阵的两行.</li>
+<li>以不等于0的数去乘矩阵的某行.</li>
+<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
+倍.</li>
 </ol>
-</div>
-</div>
+<p>同理也有三类<strong>初等列变换</strong>.
+它们统称为矩阵的<strong>初等变换</strong>.</p>
+<p>在化简中将会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
+0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
+0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
+0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
+\end{pmatrix}\)</span></p>
+<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
+一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
+<ol type="1">
+<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
+<li>元素不全为0的行(非零行),
+从左数第一个不为0的元素称为<strong>主元</strong>.
+各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
+</ol>
+<p>在化简中也会遇见如下的矩阵:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+\end{pmatrix}\)</span></p>
+<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
+<ol type="1">
+<li>它是<strong>阶梯形矩阵</strong></li>
+<li>每个<strong>非零行的主元都是1</strong></li>
+<li>每个<strong>主元所在列的其余元素都是0</strong></li>
+</ol>
+<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
+如果作初等变换, 则总可以把矩阵化为诸如:</p>
+<p><span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span></p>
+<p>称为<strong>相抵标准型</strong>. 简记为 <span class="math inline">\(\begin{bmatrix}
+I_3          &amp; O_{3\times2}     \\
+O_{1\times3} &amp; O_{1\times2}
+\end{bmatrix}\)</span> 或者直接写成 <span class="math inline">\(\begin{bmatrix}
+I &amp; O       \\
+O &amp; O
+\end{bmatrix}\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span class="math inline">\(1\)</span>
+的个数称为矩阵的<strong>秩(rank)</strong></p>
+</blockquote>
+<p><strong>注</strong>: 秩是一个非常深刻的概念,
+在之后我们将经常遇到.</p>
+<h2 id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
+<p>线性方程组按照解的多少分为三种情况:</p>
+<ol type="1">
+<li>无解</li>
+<li>有唯一解</li>
+<li>有无穷多组解</li>
+</ol>
+<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
+<ol type="1">
+<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span>
+<strong>无解</strong></p></li>
+<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
+<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
+此时,</p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
+<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span class="math inline">\(\Rightarrow\)</span>
+<strong>有无穷多组解</strong></p></li>
+</ol>
+<p>引入如下概念:</p>
+<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
+常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
+<blockquote>
+<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
+一定有<strong>非零解</strong>.</p>
+</blockquote>
+<h2 id="矩阵的运算">矩阵的运算</h2>
+<p>略.</p>
 ]]></content>
       <tags>
-        <tag>Discrete Mathematics</tag>
+        <tag>Linear Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -822,9 +140,7 @@ edition.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="一些特殊矩阵">一些特殊矩阵</h2>
 <p>方阵是特殊的矩阵.</p>
 <blockquote>
-<p>定义 <strong>对角元</strong> 方阵中第 <span
-class="math inline">\(i\)</span> 行第 <span
-class="math inline">\(i\)</span> 列的元素.</p>
+<p>定义 <strong>对角元</strong> 方阵中第 <span class="math inline">\(i\)</span> 行第 <span class="math inline">\(i\)</span> 列的元素.</p>
 </blockquote>
 <p>所以定义了一些方阵:</p>
 <blockquote>
@@ -893,19 +209,17 @@ a_{n1}      &amp; a_{n2}      &amp; \cdots &amp; a_{nn}
 </blockquote>
 <p><strong>分析</strong> 比较自然的结论.</p>
 <p><strong>证明</strong> 比如两个 <span class="math inline">\(n\)</span>
-阶上三角矩阵相乘. 考虑乘积的第一列, 应该是左乘矩阵的第一列的 <span
-class="math inline">\(k\)</span> 倍, 换言之乘积矩阵第一列不超过1行;
+阶上三角矩阵相乘. 考虑乘积的第一列, 应该是左乘矩阵的第一列的 <span class="math inline">\(k\)</span> 倍, 换言之乘积矩阵第一列不超过1行;
 考虑乘积矩阵的第二列, 应该是左乘矩阵的第一列和第二列的线性组合,
 换言之乘积矩阵的第二列不超过2行, 这是因为左乘矩阵的第一列,
 第二列最多只有两行...以此类推即可证明.</p>
-<hr />
+<hr>
 <h2 id="矩阵的基本运算">矩阵的基本运算</h2>
 <p>矩阵的<strong>加法</strong>和<strong>数乘</strong>运算统称为<strong>线性运算</strong>.
 它们满足:</p>
 <ol type="1">
 <li>加法交换律: <span class="math inline">\(A+B=B+A\)</span></li>
-<li>加法结合律: <span
-class="math inline">\((A+B)+C=A+(B+C)\)</span></li>
+<li>加法结合律: <span class="math inline">\((A+B)+C=A+(B+C)\)</span></li>
 <li><span class="math inline">\(A+O=O+A=A\)</span></li>
 <li>加法消去律: <span class="math inline">\(A+C = B+C \Leftrightarrow
 A=B\)</span></li>
@@ -914,10 +228,8 @@ l(kA)\)</span></li>
 <li>数乘的分配律: <span class="math inline">\(k(A+B)=kA+kB,
 (k+l)A=kA+lA\)</span></li>
 </ol>
-<hr />
-<p>假设有 <span class="math inline">\(m \times n\)</span> 矩阵和 <span
-class="math inline">\(n \times p\)</span> 矩阵, 则可以得到 <span
-class="math inline">\(m \times p\)</span> 的矩阵如下:</p>
+<hr>
+<p>假设有 <span class="math inline">\(m \times n\)</span> 矩阵和 <span class="math inline">\(n \times p\)</span> 矩阵, 则可以得到 <span class="math inline">\(m \times p\)</span> 的矩阵如下:</p>
 <p><span class="math display">\[
 \begin{bmatrix}
 a_{11}  &amp;   \cdots  &amp; a_{1n} \\
@@ -931,30 +243,21 @@ b_{lj} \biggr)_{m\times p}
 \]</span> <strong>注</strong> 矩阵形状适配时相乘, 一般不交换,
 且不满足消去律</p>
 <blockquote>
-<p><strong>定义</strong> 当两个矩阵 <span
-class="math inline">\(A\)</span> 与 <span
-class="math inline">\(B\)</span> 满足 <span
-class="math inline">\(AB=BA\)</span> 时, 称 <span
-class="math inline">\(A\)</span> 与 <span
-class="math inline">\(B\)</span> 可交换. 此时两者必为同阶方阵.</p>
+<p><strong>定义</strong> 当两个矩阵 <span class="math inline">\(A\)</span> 与 <span class="math inline">\(B\)</span> 满足 <span class="math inline">\(AB=BA\)</span> 时, 称 <span class="math inline">\(A\)</span> 与 <span class="math inline">\(B\)</span> 可交换. 此时两者必为同阶方阵.</p>
 </blockquote>
 <p>还可以把方阵代入多项式.</p>
 <blockquote>
 <p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵, <span
-class="math inline">\(f(x)=a_0+a_1x+ \cdots+ a_n x^n\)</span> 为关于
-<span class="math inline">\(x\)</span> 的多项式, 定义 <span
-class="math inline">\(f(A)\)</span> 为 <span
-class="math inline">\(n\)</span> 阶方阵</p>
+<span class="math inline">\(n\)</span> 阶方阵, <span class="math inline">\(f(x)=a_0+a_1x+ \cdots+ a_n x^n\)</span> 为关于
+<span class="math inline">\(x\)</span> 的多项式, 定义 <span class="math inline">\(f(A)\)</span> 为 <span class="math inline">\(n\)</span> 阶方阵</p>
 <p><span class="math display">\[f(A)=a_0I+a_1A+ \cdots+ a_n
 A^n\]</span></p>
 </blockquote>
-<p><strong>注</strong> 一元多项式的恒等式代入 <span
-class="math inline">\(n\)</span> 阶方阵之后也是恒等式,例如</p>
+<p><strong>注</strong> 一元多项式的恒等式代入 <span class="math inline">\(n\)</span> 阶方阵之后也是恒等式,例如</p>
 <p><span class="math display">\[
 (I-A)(I+A+A^2+\cdots+A^{n-1})=I-A^n
 \]</span></p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>定义</strong> 把矩阵 <span class="math inline">\(A\)</span>
 的行与列交换得到的矩阵, 称为矩阵 <span class="math inline">\(A\)</span>
@@ -964,70 +267,50 @@ class="math inline">\(n\)</span> 阶方阵之后也是恒等式,例如</p>
 <ol type="1">
 <li><span class="math inline">\((A^T)^T=A\)</span></li>
 <li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
-<li><span class="math inline">\((kA)^T=kA^T\)</span>, <span
-class="math inline">\(k\)</span> 是实数</li>
+<li><span class="math inline">\((kA)^T=kA^T\)</span>, <span class="math inline">\(k\)</span> 是实数</li>
 </ol>
-<hr />
+<hr>
 <blockquote>
 <p><strong>定义</strong> 设 <span class="math inline">\(A\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵, 如果 <span
-class="math inline">\(A\)</span> 满足 <span
-class="math inline">\(A^T=A\)</span> , 也就是说 <span
-class="math inline">\(A\)</span> 中的元素满足</p>
-<p><span class="math display">\[a_{ij}=a_{ji}\]</span>, <span
-class="math inline">\(i,j=1,2,\cdots,n\)</span></p>
+<span class="math inline">\(n\)</span> 阶方阵, 如果 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(A^T=A\)</span> , 也就是说 <span class="math inline">\(A\)</span> 中的元素满足</p>
+<p><span class="math display">\[a_{ij}=a_{ji}\]</span>, <span class="math inline">\(i,j=1,2,\cdots,n\)</span></p>
 <p>则称 <span class="math inline">\(A\)</span> 是对称矩阵.</p>
 </blockquote>
 <p><strong>注</strong> 如果 <span class="math inline">\(A\)</span> 满足
-<span class="math inline">\(A^T=-A\)</span> , 则称 <span
-class="math inline">\(A\)</span> 是<strong>反对称矩阵</strong>.</p>
+<span class="math inline">\(A^T=-A\)</span> , 则称 <span class="math inline">\(A\)</span> 是<strong>反对称矩阵</strong>.</p>
 <blockquote>
-<p><strong>命题</strong> 任何一个方阵 <span
-class="math inline">\(A\)</span>
+<p><strong>命题</strong> 任何一个方阵 <span class="math inline">\(A\)</span>
 都可以唯一地表示为一个对称矩阵与一个反对称矩阵之和.</p>
 </blockquote>
 <p><strong>证明</strong> 设 <span class="math inline">\(A=X+Y\)</span>,
-其中 <span class="math inline">\(X\)</span> 为对称矩阵, <span
-class="math inline">\(Y\)</span> 为反对称矩阵. 所以 <span
-class="math display">\[
+其中 <span class="math inline">\(X\)</span> 为对称矩阵, <span class="math inline">\(Y\)</span> 为反对称矩阵. 所以 <span class="math display">\[
 A^T = X^T+Y^T=X-Y
-\]</span> 两个矩阵等式联立, 得唯一解, 其中 <span
-class="math inline">\(X\)</span> 是对称矩阵, <span
-class="math inline">\(Y\)</span> 是反对称矩阵. <span
-class="math display">\[
+\]</span> 两个矩阵等式联立, 得唯一解, 其中 <span class="math inline">\(X\)</span> 是对称矩阵, <span class="math inline">\(Y\)</span> 是反对称矩阵. <span class="math display">\[
 X=\frac{1}{2}(A+A^T),\,\, Y=\frac{1}{2}(A-A^T)
 \]</span></p>
 <h2 id="矩阵的分块">矩阵的分块</h2>
 <blockquote>
 <p><strong>定义</strong> (分块对角阵)</p>
-<p>分块对角阵 (partitioned diagonal matrix) 是指形如 <span
-class="math display">\[
+<p>分块对角阵 (partitioned diagonal matrix) 是指形如 <span class="math display">\[
 \begin{pmatrix}
 A_1   &amp;&amp;&amp;&amp;    \\
 &amp; A_2     \\
 &amp;&amp; \ddots \\
 &amp;&amp;&amp;A_S
 \end{pmatrix}
-\]</span> 其中 <span class="math inline">\(A_i\)</span> 是 <span
-class="math inline">\(n\)</span> 阶方阵, <span class="math inline">\(i=
+\]</span> 其中 <span class="math inline">\(A_i\)</span> 是 <span class="math inline">\(n\)</span> 阶方阵, <span class="math inline">\(i=
 1,2,\cdots,s\)</span>, 其它位置上的块都是零矩阵的矩阵.</p>
 </blockquote>
 <p><strong>注</strong> 分块相加就是对应位置相加,
 相乘就是对应位置相乘</p>
 <h2 id="矩阵的初等变换">矩阵的初等变换</h2>
 <blockquote>
-<p><strong>定义</strong> (可逆矩阵) 设 <span
-class="math inline">\(A\)</span> 是一个 <span
-class="math inline">\(n\)</span> 阶<strong>方阵</strong>， 若存在 <span
-class="math inline">\(n\)</span> 阶<strong>方阵</strong> <span
-class="math inline">\(B\)</span> , 使得 <span class="math display">\[
+<p><strong>定义</strong> (可逆矩阵) 设 <span class="math inline">\(A\)</span> 是一个 <span class="math inline">\(n\)</span> 阶<strong>方阵</strong>， 若存在 <span class="math inline">\(n\)</span> 阶<strong>方阵</strong> <span class="math inline">\(B\)</span> , 使得 <span class="math display">\[
 AB=BA=I
 \]</span> 则称 <span class="math inline">\(A\)</span>
 是<strong>可逆矩阵</strong>(或<strong>非奇异矩阵</strong>),
 也称为可逆方阵或者可逆阵, 并称 <span class="math inline">\(B\)</span> 为
-<span class="math inline">\(A\)</span> 的逆矩阵. 若这样的 <span
-class="math inline">\(B\)</span> 不存在, 则称 <span
-class="math inline">\(A\)</span>
+<span class="math inline">\(A\)</span> 的逆矩阵. 若这样的 <span class="math inline">\(B\)</span> 不存在, 则称 <span class="math inline">\(A\)</span>
 为<strong>不可逆矩阵</strong>(或<strong>奇异矩阵</strong>).</p>
 </blockquote>
 <p>下面考虑一系列可逆矩阵的性质.</p>
@@ -1035,28 +318,20 @@ class="math inline">\(A\)</span>
 <p><strong>命题</strong> 可逆矩阵的逆唯一.</p>
 </blockquote>
 <p><strong>证明</strong> 设 <span class="math inline">\(A\)</span>
-的逆是 <span class="math inline">\(B,C\)</span>, 那么 <span
-class="math display">\[
+的逆是 <span class="math inline">\(B,C\)</span>, 那么 <span class="math display">\[
 B=IB=(CA)B=C(AB)=CI=C
-\]</span> 这说明了唯一性. 由于逆是唯一的, 记 <span
-class="math inline">\(A\)</span> 的逆矩阵为 <span
-class="math inline">\(A^{-1}\)</span>.</p>
-<hr />
+\]</span> 这说明了唯一性. 由于逆是唯一的, 记 <span class="math inline">\(A\)</span> 的逆矩阵为 <span class="math inline">\(A^{-1}\)</span>.</p>
+<hr>
 <blockquote>
 <p><strong>命题</strong> 容易证明可逆矩阵有如下的基本性质</p>
 <p>设可逆矩阵 <span class="math inline">\(A,B\)</span> 阶数相同, 常数
 <span class="math inline">\(k \neq 0\)</span>, 则</p>
 <ol type="1">
 <li><p><span class="math inline">\((A^{-1})^{-1}=A\)</span></p></li>
-<li><p><span
-class="math inline">\((kA)^{-1}=\frac{1}{k}A^{-1}\)</span></p></li>
-<li><p><span
-class="math inline">\((A^T)^{-1}=(A^{-1})^{T}\)</span></p></li>
-<li><p><span
-class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span></p></li>
-<li><p>可逆矩阵可以从矩阵等式的同侧消去(此时 <span
-class="math inline">\(A,B\)</span> 不一定可逆), 即若 <span
-class="math inline">\(P\)</span> 可逆, 则</p></li>
+<li><p><span class="math inline">\((kA)^{-1}=\frac{1}{k}A^{-1}\)</span></p></li>
+<li><p><span class="math inline">\((A^T)^{-1}=(A^{-1})^{T}\)</span></p></li>
+<li><p><span class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span></p></li>
+<li><p>可逆矩阵可以从矩阵等式的同侧消去(此时 <span class="math inline">\(A,B\)</span> 不一定可逆), 即若 <span class="math inline">\(P\)</span> 可逆, 则</p></li>
 </ol>
 <p><span class="math display">\[
 PA = PB \Leftrightarrow A=B \\ AP = BP \Leftrightarrow A=B
@@ -1067,13 +342,9 @@ PA = PB \Leftrightarrow A=B \\ AP = BP \Leftrightarrow A=B
 不可逆.</p>
 </blockquote>
 <p><strong>证明</strong> 假设 <span class="math inline">\(A\)</span>
-可逆, 逆矩阵为 <span class="math inline">\(B\)</span>. 设 <span
-class="math inline">\(A\)</span> 的第 <span
-class="math inline">\(i\)</span> 行为零.</p>
-<p>则 <span class="math inline">\(AB\)</span> 的第 <span
-class="math inline">\(i\)</span> 行为零, 与 <span
-class="math inline">\(AB=I\)</span> 矛盾.</p>
-<hr />
+可逆, 逆矩阵为 <span class="math inline">\(B\)</span>. 设 <span class="math inline">\(A\)</span> 的第 <span class="math inline">\(i\)</span> 行为零.</p>
+<p>则 <span class="math inline">\(AB\)</span> 的第 <span class="math inline">\(i\)</span> 行为零, 与 <span class="math inline">\(AB=I\)</span> 矛盾.</p>
+<hr>
 <p>在这里补充介绍一些重要且简单的矩阵——初等矩阵.</p>
 <blockquote>
 <p><strong>定义</strong>(初等矩阵, elementary matrix)</p>
@@ -1084,13 +355,8 @@ class="math inline">\(AB=I\)</span> 矛盾.</p>
 <ol type="1">
 <li>交换矩阵的第 <span class="math inline">\(i,j\)</span> 行或者列, 即
 <span class="math inline">\(P_I(i,j)\)</span>.</li>
-<li>将矩阵的第 <span class="math inline">\(i\)</span> 行或列乘 <span
-class="math inline">\(c \neq0\)</span>, 即 <span
-class="math inline">\(P_{II}(i, c)\)</span>.</li>
-<li>将矩阵的第 <span class="math inline">\(j\)</span> 行或列乘 <span
-class="math inline">\(c \neq0\)</span> 加在第 <span
-class="math inline">\(i\)</span> 行上, 即 <span
-class="math inline">\(P_{III}(i+j \cdot c)\)</span>.</li>
+<li>将矩阵的第 <span class="math inline">\(i\)</span> 行或列乘 <span class="math inline">\(c \neq0\)</span>, 即 <span class="math inline">\(P_{II}(i, c)\)</span>.</li>
+<li>将矩阵的第 <span class="math inline">\(j\)</span> 行或列乘 <span class="math inline">\(c \neq0\)</span> 加在第 <span class="math inline">\(i\)</span> 行上, 即 <span class="math inline">\(P_{III}(i+j \cdot c)\)</span>.</li>
 </ol>
 <blockquote>
 <p><strong>命题</strong> 初等矩阵都是可逆矩阵</p>
@@ -1101,9 +367,7 @@ class="math inline">\(P_{III}(i+j \cdot c)\)</span>.</li>
 <p>我们回到之前对命题的证明.</p>
 <blockquote>
 <p><strong>定理</strong>(相抵标准型定理)</p>
-<p>任意一个 <span class="math inline">\(m \times n\)</span> 矩阵 <span
-class="math inline">\(A\)</span> 都可以通过初等变换化为如下形式: <span
-class="math display">\[
+<p>任意一个 <span class="math inline">\(m \times n\)</span> 矩阵 <span class="math inline">\(A\)</span> 都可以通过初等变换化为如下形式: <span class="math display">\[
 \Lambda = \begin{pmatrix}
 I_r &amp; O \\
 O &amp; O\end{pmatrix}
@@ -1120,382 +384,21 @@ Q\)</span> 使得 <span class="math inline">\(PAQ = \Lambda\)</span>.
       </tags>
   </entry>
   <entry>
-    <title>Notes On Linear Algebra - 1</title>
-    <url>/2024/03/03/LA1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="高斯消元法">高斯消元法</h2>
-<p>高斯消元法可以用来解一般的线性方程组，用到如下三种<strong>同解变换</strong>。</p>
-<ol type="1">
-<li>交换方程次序.</li>
-<li>以不等于0的数乘某个方程.</li>
-<li>一个方程加上另一个方程的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<h2 id="矩阵的定义与初等变换">矩阵的定义与初等变换</h2>
-<blockquote>
-<p><strong>定义</strong> 矩阵</p>
-<p>由 <span class="math inline">\(m \times n\)</span> 个数 <span
-class="math inline">\(a_{ij}(i=1,2,\cdots,m;j=1,2,\cdots,n)\)</span>
-排成的 <span class="math inline">\(m\)</span> 行 <span
-class="math inline">\(n\)</span> 列<strong>数表</strong></p>
-<p><span class="math inline">\(\boldsymbol A = \begin{pmatrix}
-a_{11} &amp; a_{12} &amp;\cdots &amp; a_{1n}\\
-a_{21} &amp; a_{22} &amp;\cdots &amp; a_{2n}\\
-\vdots &amp; \vdots &amp; &amp;\vdots  \\
-a_{m1} &amp; a_{m2} &amp;\cdots &amp; a_{mn}
-\end{pmatrix}\)</span> 称为一个 <span class="math inline">\(m\)</span>
-行 <span class="math inline">\(n\)</span> 列矩阵，简称 <span
-class="math inline">\(m\times n\)</span> 矩阵.</p>
-<p>当 <span class="math inline">\(m=n\)</span> 时, 称 <span
-class="math inline">\(\boldsymbol A=(a_{ij})_{n \times n}\)</span> 为
-<span class="math inline">\(n\)</span> 阶方阵.</p>
-</blockquote>
-<p>矩阵的某一列构成的列矩阵称为<strong>列向量</strong>,
-某一行构成的行矩阵称为<strong>行向量</strong>.</p>
-<p>全体元素否是零的矩阵记为<strong>零矩阵</strong>, 一般记为 <span
-class="math inline">\(0,0_{m\times n}\)</span> 或者 <span
-class="math inline">\(\mit O,O_{m \times n}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 单位矩阵</p>
-<p>对角线元素都是1其余元素都是0的矩阵称为<strong>单位矩阵</strong>.一般记作
-<span class="math inline">\(I\)</span> 或者 <span
-class="math inline">\(E\)</span>. 有时为了强调阶数记作 <span
-class="math inline">\(I_n\)</span> 或者 <span
-class="math inline">\(E_n\)</span>.</p>
-</blockquote>
-<p>为了求解线性方程组, 我们可以仅仅跟据方程组的系数进行运算.</p>
-<blockquote>
-<p><strong>系数矩阵</strong>
-将线性方程组未知量的系数按次序排列得到的矩阵.</p>
-</blockquote>
-<blockquote>
-<p><strong>增广矩阵</strong>
-将线性方程组未知量的系数和常数项的车系数排列在一起得到的矩阵.</p>
-</blockquote>
-<p>与高斯消元法对应, 对于矩阵我们由三类<strong>初等行变换</strong>.</p>
-<ol type="1">
-<li>交换矩阵的两行.</li>
-<li>以不等于0的数去乘矩阵的某行.</li>
-<li>增广矩阵的一行加上另一行的 <span class="math inline">\(k\)</span>
-倍.</li>
-</ol>
-<p>同理也有三类<strong>初等列变换</strong>.
-它们统称为矩阵的<strong>初等变换</strong>.</p>
-<p>在化简中将会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 3 &amp; 1 &amp; 2 &amp; 4   \\
-0 &amp; 1 &amp; -1 &amp; -10 &amp; -13  \\
-0 &amp; 0 &amp; 3 &amp; -17 &amp; 11    \\
-0 &amp; 0 &amp; 0 &amp; -93 &amp; -93
-\end{pmatrix}\)</span></p>
-<p>如此的矩阵为<strong>行阶梯形矩阵</strong>.
-一个矩阵是<strong>行阶梯形矩阵</strong>, 如果:</p>
-<ol type="1">
-<li>元素全为0的一行(称为零行)在下方(如果有的话)</li>
-<li>元素不全为0的行(非零行),
-从左数第一个不为0的元素称为<strong>主元</strong>.
-各个非零行的主元的列指标随着行指标的递增而<strong>严格增大</strong>.</li>
-</ol>
-<p>在化简中也会遇见如下的矩阵:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; -3  \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; -1  \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 2   \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
-\end{pmatrix}\)</span></p>
-<p>矩阵被称为<strong>简化行阶梯形</strong>矩阵, 如果:</p>
-<ol type="1">
-<li>它是<strong>阶梯形矩阵</strong></li>
-<li>每个<strong>非零行的主元都是1</strong></li>
-<li>每个<strong>主元所在列的其余元素都是0</strong></li>
-</ol>
-<p>容易证明, 总可以通过初等行变换把矩阵化为阶梯形或者简化阶梯形.
-如果作初等变换, 则总可以把矩阵化为诸如:</p>
-<p><span class="math inline">\(\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0   \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}\)</span></p>
-<p>称为<strong>相抵标准型</strong>. 简记为 <span
-class="math inline">\(\begin{bmatrix}
-I_3          &amp; O_{3\times2}     \\
-O_{1\times3} &amp; O_{1\times2}
-\end{bmatrix}\)</span> 或者直接写成 <span
-class="math inline">\(\begin{bmatrix}
-I &amp; O       \\
-O &amp; O
-\end{bmatrix}\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 一个矩阵的相抵标准型中 <span
-class="math inline">\(1\)</span>
-的个数称为矩阵的<strong>秩(rank)</strong></p>
-</blockquote>
-<p><strong>注</strong>: 秩是一个非常深刻的概念,
-在之后我们将经常遇到.</p>
-<h2
-id="线性方程组解的情况与阶梯判别法">线性方程组解的情况与阶梯判别法</h2>
-<p>线性方程组按照解的多少分为三种情况:</p>
-<ol type="1">
-<li>无解</li>
-<li>有唯一解</li>
-<li>有无穷多组解</li>
-</ol>
-<p>能够通过阶梯判别法进行上述分类, 这是容易证明的:</p>
-<ol type="1">
-<li><p><strong>增广阶梯阵</strong>的行数大于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span>
-<strong>无解</strong></p></li>
-<li><p><strong>增广阶梯阵</strong>的行数等于<strong>系数阶梯阵</strong>的行数
-<span class="math inline">\(\Rightarrow\)</span> <strong>有解</strong>
-此时,</p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span> <strong>有唯一解</strong></p>
-<p><strong>未知数</strong>的个数大于<strong>阶梯</strong>的行数 <span
-class="math inline">\(\Rightarrow\)</span>
-<strong>有无穷多组解</strong></p></li>
-</ol>
-<p>引入如下概念:</p>
-<p>​ 常数项都是零的线性方程组为称为<strong>齐次线性方程组</strong>,
-常数项不全是零的线性方程组称为<strong>非齐次线性方程组</strong>.齐次线性方程组一定有解.</p>
-<blockquote>
-<p><strong>推论</strong> 未知量个数严格大于方程个数的齐次线性方程,
-一定有<strong>非零解</strong>.</p>
-</blockquote>
-<h2 id="矩阵的运算">矩阵的运算</h2>
-<p>略.</p>
-]]></content>
-      <tags>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes On Linear Algebra - 4</title>
-    <url>/2024/03/05/LA4/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
-<h3 id="幂集">幂集</h3>
-<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span
-class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span
-class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span
-class="math inline">\(A\)</span> 是一个非空集合. 进一步,
-我们可以用空集构造含有 <span
-class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span
-class="math display">\[
-\varnothing, \{\varnothing\}, \{\varnothing,\{\varnothing\} \},
-\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\} \},\cdots
-\]</span> 设 <span class="math inline">\(X\)</span> 是一个集合, 那么考虑
-<span class="math inline">\(X\)</span> 所有可能的子集,
-那么这些自己也构成集合, 记为 <span class="math inline">\(2^X\)</span>
-或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span
-class="math display">\[
-2^X=\{B|B \subset X\},
-\]</span> 称之为<strong>幂集</strong>.</p>
-<blockquote>
-<p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
-正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span
-class="math inline">\(Card(X)\)</span> 表示 <span
-class="math inline">\(X\)</span> 的元素个数.</p>
-</blockquote>
-<h3 id="集合的基本运算">集合的基本运算</h3>
-<p>我们在此补充一些运算.</p>
-<blockquote>
-<p><strong>定义</strong> 差集</p>
-<p>一般地, 由属于集合 <span class="math inline">\(A\)</span>
-并且不属于集合 <span class="math inline">\(B\)</span>
-的所有元素组成的集合, 称为 <span class="math inline">\(A\)</span> 与
-<span class="math inline">\(B\)</span> 的差集, 记作 <span
-class="math inline">\(A-B\)</span> 或者 <span
-class="math inline">\(A\setminus B\)</span></p>
-</blockquote>
-<p>我们接着定义全集和补集.</p>
-<blockquote>
-<p><strong>定义</strong> 全集</p>
-<p>如果一个集合含有我们所研究问题中涉及的所有元素,
-那么就称这个集合为全集, 通常记作 <span
-class="math inline">\(\cal{U}\)</span>.</p>
-</blockquote>
-<blockquote>
-<p><strong>定义</strong> 补集</p>
-<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span
-class="math inline">\(\cal{U}\)</span> 中不属于集合 <span
-class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span
-class="math inline">\(A\)</span> 相对于全集 <span
-class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span
-class="math inline">\(A\)</span> 的补集, 记为 <span
-class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span
-class="math display">\[
-\complement_{\mathcal{U}}A = \{x|x\in \mathcal{U}\;and\;x\notin A\}
-\]</span></p>
-</blockquote>
-<p>因此引出两条性质</p>
-<blockquote>
-<p><strong>德·摩根定律</strong> <span class="math display">\[
-\complement_{\mathcal{U}}(A\cup
-B)=(\complement_{\mathcal{U}}A)\cap(\complement_{\mathcal{U}}B).
-\]</span></p>
-<p><span class="math display">\[
-\complement_{\mathcal{U}}(A\cap
-B)=(\complement_{\mathcal{U}}A)\cup(\complement_{\mathcal{U}}B).
-\]</span></p>
-</blockquote>
-<p>同时不难得到 <span class="math display">\[
-Card(A \cup B) = Card(A)+Card(B)-Card(A \cap B)
-\]</span></p>
-<blockquote>
-<p><strong>定义</strong> 不交并</p>
-<p>设集合 <span class="math inline">\(X\)</span>, <span
-class="math inline">\(A,B\)</span> 为 <span
-class="math inline">\(X\)</span> 的两个子集, 如果 <span
-class="math inline">\(A \cup B=X\)</span> 且 <span
-class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span
-class="math inline">\(X\)</span> 为 <span
-class="math inline">\(A\)</span> 和 <span
-class="math inline">\(B\)</span> 的不交并, 记为 <span
-class="math display">\[
-X=A\sqcup B
-\]</span></p>
-</blockquote>
-<p>另外补充一个重要的概念: <strong>笛卡尔积</strong>.</p>
-<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span
-class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span
-class="math inline">\((x,y)\)</span>
-叫做一个<strong>有序对</strong>.</p>
-<p>两个有序对 <span class="math inline">\((x_1,y_1)=(x_2,y_2) \quad iff
-\quad x_1=x_2,y_1=y_2\)</span>.</p>
-<blockquote>
-<p><strong>定义</strong> 笛卡尔积</p>
-<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span
-class="math display">\[
-X \times Y = \{(x,y)|x \in X, y\in Y\}
-\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span
-class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
-1596-1650).</p>
-</blockquote>
-<p>类似可以定义 <span class="math inline">\(n\)</span> 个集合的笛卡尔积.
-设 <span class="math inline">\(X_1,X_2,\dots,X_n(n\geq 2)\)</span>
-是非空集合, <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>
-的笛卡尔积就是: <span class="math display">\[
-X_1\times X_2\times\cdots\times X_n=\{(x_1, x_2,\cdots, x_n)|x_i \in
-X_i, 1 \le i \le n\}
-\]</span> 特别地, 这些集合都等于同一个集合 <span
-class="math inline">\(X\)</span> 的时候, 记作 <span
-class="math inline">\(X^n\)</span>. 称为集合 <span
-class="math inline">\(X\)</span> 的 <span
-class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
-<p>笛卡尔积集有一些性质：</p>
-<blockquote>
-<ol type="1">
-<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span
-class="math inline">\(X\)</span> 或者 <span
-class="math inline">\(Y\)</span> 为空集.</p></li>
-<li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
-\cup Z) \times Y\)</span>.</p></li>
-<li><p><span class="math inline">\((X \times Y) \cap (X&#39; \times
-Y&#39;) = (X \times X&#39;) \times (Y \times Y&#39;)\)</span>,
-如图</p></li>
-</ol>
-</blockquote>
-<img src="/2024/03/05/LA4/LA4_1.png" class="">
-<hr />
-<h3 id="映射">映射</h3>
-<p>首先是映射的相关定义.</p>
-<blockquote>
-<p><strong>定义</strong> 映射</p>
-<p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
-如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
-,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span
-class="math inline">\(x\)</span>, 在集合 <span
-class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span
-class="math inline">\(y\)</span> 与之对应, 那么称 <span
-class="math inline">\(f:X \to Y\)</span> 为从集合 <span
-class="math inline">\(X\)</span> 到 <span
-class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
-</blockquote>
-<p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
-<span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
-<span class="math inline">\(x \longmapsto y\)</span> 表示 <span
-class="math inline">\(X\)</span> 中的元素 <span
-class="math inline">\(x\)</span> 对应到 <span
-class="math inline">\(Y\)</span> 中的元素 <span
-class="math inline">\(y\)</span>, 这时 <span
-class="math inline">\(y\)</span> 叫作 <span
-class="math inline">\(x\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span
-class="math inline">\(f(x)\)</span>, <span
-class="math inline">\(x\)</span> 叫做 <span
-class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
-<blockquote>
-<p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
-Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span
-class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
-<span class="math inline">\(Y\)</span>​
-叫做<strong>目标域</strong>(target)或者陪域.<span
-class="math inline">\(x\)</span> 的象 <span
-class="math inline">\(y\)</span>, 也写作 <span
-class="math inline">\(f(x)\)</span>,也被叫做 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x\)</span> 处的值. <span
-class="math inline">\(X\)</span> 的所有元素在 <span
-class="math inline">\(f\)</span> 之下的象的集合构成 <span
-class="math inline">\(Y\)</span> 的一个子集, 记作 <span
-class="math display">\[
-Im(f) = \{f(x)|x \in X\} \subseteq Y
-\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span
-class="math inline">\(f\)</span>
-的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
-</blockquote>
-<p>值域是目标域的子集.</p>
-<p><strong>注</strong> 在代数学中, 两个映射被视作相等的映射,
-必须有相同的定义域, 目标域, 以及对应法则. 但是在高等数学中,
-人们称具有相同定义域、值域、对应法则,
-但目标域不一定相同的函数称为相等函数.</p>
-<p><strong>注</strong> 对于对应法则有更加严格的处理方式.
-可以定义对应法则 <span class="math inline">\(f\)</span> 为笛卡尔积集
-<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span
-class="math inline">\((x, y) \in f\)</span>, 那么称 <span
-class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span
-class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
-就需要满足可以多对一, 但不能一对多的条件.</p>
-<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span
-class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span
-class="math inline">\(Y\)</span> 的一个子集, 称为 <span
-class="math inline">\(A\)</span> 在 <span
-class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
-]]></content>
-      <tags>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The Third Blog</title>
-    <url>/2024/03/03/My-third-Blog/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
-]]></content>
-      <tags>
-        <tag>Life</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Notes On Linear Algebra - 3</title>
     <url>/2024/03/04/LA3/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
 <p>这是初学线代时整理的，实践证明，当初学的有多认真，现在忘得就有多快（</p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A\)</span>,
-<span class="math inline">\(B\)</span> 为 <span
-class="math inline">\(n\)</span> 阶方阵，<span
-class="math inline">\(AB=0\)</span> ，则有 <span
-class="math display">\[rank(A) + rank(B)\le n\]</span></p>
+<span class="math inline">\(B\)</span> 为 <span class="math inline">\(n\)</span> 阶方阵，<span class="math inline">\(AB=0\)</span> ，则有 <span class="math display">\[rank(A) + rank(B)\le n\]</span></p>
 </blockquote>
 <p><strong>分析</strong> 线性映射基本定理的简单应用。</p>
 <p><strong>证明</strong> <span class="math inline">\(AB=0\)</span> 说明
-<span class="math inline">\(B\)</span> 的每一列都被 <span
-class="math inline">\(B\)</span> 映成零向量，从而 <span
-class="math inline">\(span(B) \in Ker(A)\)</span> ，那么有 <span
-class="math display">\[rank(B)=dimSpan(B) \leq dimKer(A)\]</span>
+<span class="math inline">\(B\)</span> 的每一列都被 <span class="math inline">\(B\)</span> 映成零向量，从而 <span class="math inline">\(span(B) \in Ker(A)\)</span> ，那么有 <span class="math display">\[rank(B)=dimSpan(B) \leq dimKer(A)\]</span>
 由线性映射基本定理可得 <span class="math display">\[rank(A) + rank(B)\le
 dimSpan(A) +dimKer(A)=n\]</span> 于是得证。</p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A\)</span>,
 <span class="math inline">\(B\)</span> 为 <span class="math inline">\(m
@@ -1507,12 +410,8 @@ rank(B)\}\]</span></p>
 所谓的“秩越乘越小”。可以通过矩阵乘法运算得到这个结论，这里我们考虑另一种办法。</p>
 <p><strong>证明</strong> <span class="math inline">\(AB\)</span>
 乘一个列向量 <span class="math inline">\(\alpha\)</span>
-可以看作两步。第一步， <span class="math inline">\(B\)</span> 乘 <span
-class="math inline">\(\alpha\)</span>；第二步，<span
-class="math inline">\(A\)</span> 再乘 <span
-class="math inline">\(B\alpha\)</span> 。</p>
-<p>第一步可以看作映射： <span
-class="math display">\[\sigma_1:\mathbb{F}^{p}\to\mathbb{F}^{n},
+可以看作两步。第一步， <span class="math inline">\(B\)</span> 乘 <span class="math inline">\(\alpha\)</span>；第二步，<span class="math inline">\(A\)</span> 再乘 <span class="math inline">\(B\alpha\)</span> 。</p>
+<p>第一步可以看作映射： <span class="math display">\[\sigma_1:\mathbb{F}^{p}\to\mathbb{F}^{n},
 \begin{bmatrix}
   x_1\\
   \vdots\\
@@ -1523,9 +422,7 @@ B\begin{bmatrix}
   x_1\\
   \vdots\\
   x_p
-  \end{bmatrix} \]</span> 第二步可以看作映射，这一步的像集也就是 <span
-class="math inline">\(Im(AB)\)</span> ： <span
-class="math display">\[\sigma_2:Span(B)\to\mathbb{F}^{m},
+  \end{bmatrix} \]</span> 第二步可以看作映射，这一步的像集也就是 <span class="math inline">\(Im(AB)\)</span> ： <span class="math display">\[\sigma_2:Span(B)\to\mathbb{F}^{m},
 \begin{bmatrix}
   x_1\\
   \vdots\\
@@ -1536,27 +433,22 @@ A \begin{bmatrix}
   x_1\\
   \vdots\\
   x_m
-  \end{bmatrix} \]</span> 所以 <span
-class="math display">\[rank(AB)=dim(Span(A\big|_{Im(B)}))\]</span></p>
+  \end{bmatrix} \]</span> 所以 <span class="math display">\[rank(AB)=dim(Span(A\big|_{Im(B)}))\]</span></p>
 <p>由于 <span class="math display">\[Span(A\big|_{Im(B)})\in
 Span(A)\]</span> 从而 <span class="math display">\[rank(AB) \leq
-rank(A)\]</span> 由于转置运算不改变矩阵的秩，所以 <span
-class="math display">\[rank(AB)=rank(B^TA^T) \leq
+rank(A)\]</span> 由于转置运算不改变矩阵的秩，所以 <span class="math display">\[rank(AB)=rank(B^TA^T) \leq
 rank(B^T)=rank(B)\]</span> 整理即有 <span class="math inline">\(rank(AB)
 \leq  min\{rank(A), rank(B)\}\)</span></p>
-<hr />
+<hr>
 <blockquote>
-<p><strong>命题(Sylvester不等式)</strong> 设 <span
-class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>
-为 <span class="math inline">\(n\)</span> 阶方阵，<span
-class="math inline">\(AB=0\)</span> ，则有 <span
-class="math display">\[rank(AB) \ge rank(A)+rank(B)-n\]</span></p>
+<p><strong>命题(Sylvester不等式)</strong> 设 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>
+为 <span class="math inline">\(n\)</span> 阶方阵，<span class="math inline">\(AB=0\)</span> ，则有 <span class="math display">\[rank(AB) \ge rank(A)+rank(B)-n\]</span></p>
 </blockquote>
 <p><strong>分析</strong> 与上一个不等式的证明思路类似。</p>
 <p><strong>证明</strong> 即证明 <span class="math display">\[n - rank(A)
 \ge  rank(B) - rank(AB)\]</span> 发现 <span class="math display">\[左边
 = dimKer(A)\geq右边=dimKer(A|_{Im(B)})\]</span> 从而得到了证明。</p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A\)</span>,
 <span class="math inline">\(B\)</span> 为 <span class="math inline">\(m
@@ -1568,14 +460,12 @@ rank(A)+rank(B)\]</span></p>
 <p><strong>证明</strong> 显然 <span class="math inline">\(A+B\)</span>
 的列向量组可以被 <span class="math inline">\(A|B\)</span> 线性表出，故
 <span class="math inline">\(rank(A+B) \leq rank(A|B)\)</span>，</p>
-<p>设 <span class="math inline">\(A,B\)</span> 的极大无关组分别是 <span
-class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_s)\)</span>，<span
-class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span> ，</p>
+<p>设 <span class="math inline">\(A,B\)</span> 的极大无关组分别是 <span class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_s)\)</span>，<span class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span> ，</p>
 <p>那么 <span class="math inline">\(rank(A|B) =
 rank(\alpha_1,\alpha_2,\dots,\alpha_s,\beta_1,\beta_2,\dots,\beta_s)
 \leq s+k=rank(A)+rank(B)\)</span>，</p>
 <p>于是得到了证明。</p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A\)</span>,
 <span class="math inline">\(B\)</span> 为 <span class="math inline">\(s
@@ -1588,9 +478,7 @@ O&amp;B\\
 </blockquote>
 <p><strong>分析</strong> 证明思路与上一题一致</p>
 <p><strong>证明</strong> 设 <span class="math inline">\(A,B\)</span>
-的极大无关组分别是 <span
-class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_j)\)</span>，<span
-class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span> ，所以
+的极大无关组分别是 <span class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_j)\)</span>，<span class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span> ，所以
 <span class="math display">\[rank \begin{pmatrix}
   A&amp;O \\
    O&amp;B\\
@@ -1617,13 +505,12 @@ class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span> ，所以
    0\\
    \beta_k\\
    \end{pmatrix}
-   \end{pmatrix}\]</span> 由定义立得右边的向量组线性无关，所以 <span
-class="math display">\[rank \begin{pmatrix}
+   \end{pmatrix}\]</span> 由定义立得右边的向量组线性无关，所以 <span class="math display">\[rank \begin{pmatrix}
    A&amp;O \\
    O&amp;B\\
    \end{pmatrix}
     = j+k=rank(A)+rank(B)\]</span> 这样就证明了这个等式。</p>
-<hr />
+<hr>
 <blockquote>
 <p><strong>命题</strong> 设 <span class="math inline">\(A,B,C\)</span>
 为 <span class="math inline">\(s \times n,l \times m,s \times m\)</span>
@@ -1635,9 +522,7 @@ C&amp;B\\
 </blockquote>
 <p><strong>分析</strong> 证明思路与上一题没差多少</p>
 <p><strong>证明</strong> 设 <span class="math inline">\(A,B\)</span>
-的极大无关组分别是 <span
-class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_j)\)</span>，<span
-class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span>
+的极大无关组分别是 <span class="math inline">\((\alpha_1,\alpha_2,\dots,\alpha_j)\)</span>，<span class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span>
 ，所以</p>
 <p><span class="math display">\[rank \begin{pmatrix}
   A&amp;O \\
@@ -1679,8 +564,7 @@ class="math inline">\((\beta_1,\beta_2,\dots,\beta_k)\)</span>
    \end{pmatrix})\)</span> 不一定张成 <span class="math inline">\(Span
    \begin{pmatrix}
    A\\C
-   \end{pmatrix}\)</span>，从而就不难得到 <span
-class="math display">\[rank \begin{pmatrix}
+   \end{pmatrix}\)</span>，从而就不难得到 <span class="math display">\[rank \begin{pmatrix}
    A&amp;O \\
    C&amp;B\\
    \end{pmatrix}
@@ -1688,6 +572,909 @@ class="math display">\[rank \begin{pmatrix}
 ]]></content>
       <tags>
         <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Third Blog</title>
+    <url>/2024/03/03/My-third-Blog/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这个blog终于搭好了，配置花了不少时间。暂时计划是用来存一些笔记，记录一下生活，<del>如果我有这个毅力写</del>。</p>
+]]></content>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes On Linear Algebra - 4</title>
+    <url>/2024/03/05/LA4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="集合与映射">集合与映射</h2>
+<h3 id="幂集">幂集</h3>
+<p>定义了空集之后, 可以进行如下的构造: 考虑由空集构成的集合 <span class="math inline">\(A=\{\varnothing\}\)</span>, 这个时候 <span class="math inline">\(A\)</span> 中有了一个元素, 就是空集. 所以 <span class="math inline">\(A\)</span> 是一个非空集合. 进一步,
+我们可以用空集构造含有 <span class="math inline">\(n=0,1,2,3,...\)</span> 个元素的集合, 如 <span class="math display">\[
+\varnothing, \{\varnothing\}, \{\varnothing,\{\varnothing\} \},
+\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\} \},\cdots
+\]</span> 设 <span class="math inline">\(X\)</span> 是一个集合, 那么考虑
+<span class="math inline">\(X\)</span> 所有可能的子集,
+那么这些自己也构成集合, 记为 <span class="math inline">\(2^X\)</span>
+或者 <span class="math inline">\(\mathcal{P}(x)\)</span>: <span class="math display">\[
+2^X=\{B|B \subset X\},
+\]</span> 称之为<strong>幂集</strong>.</p>
+<blockquote>
+<p>有限集 <span class="math inline">\(X\)</span> 的幂集元素个数,
+正好等于 <span class="math inline">\(2^{Card(X)}\)</span>, 其中 <span class="math inline">\(Card(X)\)</span> 表示 <span class="math inline">\(X\)</span> 的元素个数.</p>
+</blockquote>
+<h3 id="集合的基本运算">集合的基本运算</h3>
+<p>我们在此补充一些运算.</p>
+<blockquote>
+<p><strong>定义</strong> 差集</p>
+<p>一般地, 由属于集合 <span class="math inline">\(A\)</span>
+并且不属于集合 <span class="math inline">\(B\)</span>
+的所有元素组成的集合, 称为 <span class="math inline">\(A\)</span> 与
+<span class="math inline">\(B\)</span> 的差集, 记作 <span class="math inline">\(A-B\)</span> 或者 <span class="math inline">\(A\setminus B\)</span></p>
+</blockquote>
+<p>我们接着定义全集和补集.</p>
+<blockquote>
+<p><strong>定义</strong> 全集</p>
+<p>如果一个集合含有我们所研究问题中涉及的所有元素,
+那么就称这个集合为全集, 通常记作 <span class="math inline">\(\cal{U}\)</span>.</p>
+</blockquote>
+<blockquote>
+<p><strong>定义</strong> 补集</p>
+<p>对于一个集合 <span class="math inline">\(A\)</span> , 由全集 <span class="math inline">\(\cal{U}\)</span> 中不属于集合 <span class="math inline">\(A\)</span> 的所有元素组成的集合称为集合 <span class="math inline">\(A\)</span> 相对于全集 <span class="math inline">\(\mathcal{U}\)</span> 的补集, 简称为集合 <span class="math inline">\(A\)</span> 的补集, 记为 <span class="math display">\[\complement_{\mathcal{U}}A\]</span> 即有 <span class="math display">\[
+\complement_{\mathcal{U}}A = \{x|x\in \mathcal{U}\;and\;x\notin A\}
+\]</span></p>
+</blockquote>
+<p>因此引出两条性质</p>
+<blockquote>
+<p><strong>德·摩根定律</strong> <span class="math display">\[
+\complement_{\mathcal{U}}(A\cup
+B)=(\complement_{\mathcal{U}}A)\cap(\complement_{\mathcal{U}}B).
+\]</span></p>
+<p><span class="math display">\[
+\complement_{\mathcal{U}}(A\cap
+B)=(\complement_{\mathcal{U}}A)\cup(\complement_{\mathcal{U}}B).
+\]</span></p>
+</blockquote>
+<p>同时不难得到 <span class="math display">\[
+Card(A \cup B) = Card(A)+Card(B)-Card(A \cap B)
+\]</span></p>
+<blockquote>
+<p><strong>定义</strong> 不交并</p>
+<p>设集合 <span class="math inline">\(X\)</span>, <span class="math inline">\(A,B\)</span> 为 <span class="math inline">\(X\)</span> 的两个子集, 如果 <span class="math inline">\(A \cup B=X\)</span> 且 <span class="math inline">\(A \cap B = \varnothing\)</span>, 则称 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 的不交并, 记为 <span class="math display">\[
+X=A\sqcup B
+\]</span></p>
+</blockquote>
+<p>另外补充一个重要的概念: <strong>笛卡尔积</strong>.</p>
+<p>设 <span class="math inline">\(X,Y\)</span> 是任意两个非空集合, <span class="math inline">\(x \in X, y \in Y\)</span>, 给定顺序的元素对 <span class="math inline">\((x,y)\)</span>
+叫做一个<strong>有序对</strong>.</p>
+<p>两个有序对 <span class="math inline">\((x_1,y_1)=(x_2,y_2) \quad iff
+\quad x_1=x_2,y_1=y_2\)</span>.</p>
+<blockquote>
+<p><strong>定义</strong> 笛卡尔积</p>
+<p>全体有序数对 <span class="math inline">\((x,y)\)</span> 的集合 <span class="math display">\[
+X \times Y = \{(x,y)|x \in X, y\in Y\}
+\]</span> 称为 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的笛卡尔积(R. Descartes,
+1596-1650).</p>
+</blockquote>
+<p>类似可以定义 <span class="math inline">\(n\)</span> 个集合的笛卡尔积.
+设 <span class="math inline">\(X_1,X_2,\dots,X_n(n\geq 2)\)</span>
+是非空集合, <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>
+的笛卡尔积就是: <span class="math display">\[
+X_1\times X_2\times\cdots\times X_n=\{(x_1, x_2,\cdots, x_n)|x_i \in
+X_i, 1 \le i \le n\}
+\]</span> 特别地, 这些集合都等于同一个集合 <span class="math inline">\(X\)</span> 的时候, 记作 <span class="math inline">\(X^n\)</span>. 称为集合 <span class="math inline">\(X\)</span> 的 <span class="math inline">\(n\)</span> 次笛卡尔方幂.</p>
+<p>笛卡尔积集有一些性质：</p>
+<blockquote>
+<ol type="1">
+<li><p>笛卡尔积集 $X Y $ 为空集, 当且仅当集合 <span class="math inline">\(X\)</span> 或者 <span class="math inline">\(Y\)</span> 为空集.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cup (Z \times Y) = (X
+\cup Z) \times Y\)</span>.</p></li>
+<li><p><span class="math inline">\((X \times Y) \cap (X' \times
+Y') = (X \times X') \times (Y \times Y')\)</span>,
+如图</p></li>
+</ol>
+</blockquote>
+<img src="/2024/03/05/LA4/LA4_1.png" class="">
+<hr>
+<h3 id="映射">映射</h3>
+<p>首先是映射的相关定义.</p>
+<blockquote>
+<p><strong>定义</strong> 映射</p>
+<p>设 <span class="math inline">\(X, Y\)</span> 是两个非空的集合,
+如果按一个确定的对应关系 <span class="math inline">\(f\)</span>
+,使对于集合 <span class="math inline">\(X\)</span> 中任意一个元素 <span class="math inline">\(x\)</span>, 在集合 <span class="math inline">\(Y\)</span> 中都有唯一确定的元素 <span class="math inline">\(y\)</span> 与之对应, 那么称 <span class="math inline">\(f:X \to Y\)</span> 为从集合 <span class="math inline">\(X\)</span> 到 <span class="math inline">\(Y\)</span> 的一个<strong>映射</strong>.</p>
+</blockquote>
+<p>映射通常使用符号 <span class="math inline">\(f:X \to Y\)</span> 或者
+<span class="math inline">\(X \xrightarrow[]{f} Y\)</span> 表示, 而
+<span class="math inline">\(x \longmapsto y\)</span> 表示 <span class="math inline">\(X\)</span> 中的元素 <span class="math inline">\(x\)</span> 对应到 <span class="math inline">\(Y\)</span> 中的元素 <span class="math inline">\(y\)</span>, 这时 <span class="math inline">\(y\)</span> 叫作 <span class="math inline">\(x\)</span> 在 <span class="math inline">\(f\)</span> 下的<strong>象</strong>, 记作 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(x\)</span> 叫做 <span class="math inline">\(y\)</span> 的一个<strong>原象</strong>.</p>
+<blockquote>
+<p><strong>定义</strong> 对于映射 <span class="math inline">\(f:X \to
+Y\)</span> , <span class="math inline">\(X\)</span> 一般叫作映射 <span class="math inline">\(f\)</span> 的<strong>定义域</strong>(domain),
+<span class="math inline">\(Y\)</span>​
+叫做<strong>目标域</strong>(target)或者陪域.<span class="math inline">\(x\)</span> 的象 <span class="math inline">\(y\)</span>, 也写作 <span class="math inline">\(f(x)\)</span>,也被叫做 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x\)</span> 处的值. <span class="math inline">\(X\)</span> 的所有元素在 <span class="math inline">\(f\)</span> 之下的象的集合构成 <span class="math inline">\(Y\)</span> 的一个子集, 记作 <span class="math display">\[
+Im(f) = \{f(x)|x \in X\} \subseteq Y
+\]</span> 或者 <span class="math inline">\(f(X)\)</span>, 称为映射 <span class="math inline">\(f\)</span>
+的<strong>象集</strong>(image)或者<strong>值域</strong>(range).</p>
+</blockquote>
+<p>值域是目标域的子集.</p>
+<p><strong>注</strong> 在代数学中, 两个映射被视作相等的映射,
+必须有相同的定义域, 目标域, 以及对应法则. 但是在高等数学中,
+人们称具有相同定义域、值域、对应法则,
+但目标域不一定相同的函数称为相等函数.</p>
+<p><strong>注</strong> 对于对应法则有更加严格的处理方式.
+可以定义对应法则 <span class="math inline">\(f\)</span> 为笛卡尔积集
+<span class="math inline">\(X \times Y\)</span> 的子集, 并且如果 <span class="math inline">\((x, y) \in f\)</span>, 那么称 <span class="math inline">\(x \in X \ and \;y \in Y\)</span> 在法则 <span class="math inline">\(f\)</span> 下对应. 而可以构成映射对应法则,
+就需要满足可以多对一, 但不能一对多的条件.</p>
+<p>若 <span class="math inline">\(A \subset X\)</span> 为子集, 记 <span class="math inline">\(f(A) := \{f(x)\,|\,X \in a\}\)</span>, 是 <span class="math inline">\(Y\)</span> 的一个子集, 称为 <span class="math inline">\(A\)</span> 在 <span class="math inline">\(f\)</span> 下的<strong>象</strong>(image)</p>
+]]></content>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes On Discrete Mathematics - 1</title>
+    <url>/2024/03/09/DM1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="前言">前言</h1>
+<p>这是离散数学的笔记. 实际上这一部分还是相当有意思的.</p>
+<p>什么, 你说我为什么用英文写?</p>
+<p>虽然我校所用教材<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Kenneth H. Rosen.Discrete Mathematics and Its Applications.离散数学及其应用.Eighth edition.">[1]</span></a></sup>,
+考试都是英文, 我的Engilsh very poor,
+用英文写的一大目的就是用来记单词.</p>
+<p>什么, 你问为什么这里面还参杂了中文?</p>
+<p>哈哈, 当然是因为<del>我英语超级烂</del>方便读者观看啦.</p>
+<h1 id="命题逻辑">命题逻辑</h1>
+<p><strong><em>Propositional Logic</em></strong></p>
+<h2 id="命题">命题</h2>
+<p><strong><em>Proposition</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>proposition 命题</strong></p>
+<ul>
+<li>a statement(i.e. a declarative sentence) - with some definite
+meaning, (not vague or ambiguous).</li>
+<li>having a truth value that is either true of false, but not
+both.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Atoms</strong> <strong>原子命题</strong>: formula with no
+deeper propositional structure, that is, a formula that contains no
+logical connectives or equivalently a formula that has no strict
+subformulas.</li>
+<li><strong>Compound propositions</strong> <strong>复合命题</strong>:
+build up from atoms using operators.</li>
+</ul>
+<p>if <span class="math inline">\(p \to q\)</span>, then</p>
+<ul>
+<li><span class="math inline">\(p \to q\)</span> is the
+<strong>converse(逆命题)</strong> of it.</li>
+<li><span class="math inline">\(\neg q \to \neg p\)</span> is the
+<strong>contrapositive(逆否命题)</strong> of it.</li>
+<li><span class="math inline">\(\neg p \to \neg q\)</span>​ is the
+<strong>inverse(否命题)</strong> of it.</li>
+</ul>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>formula (命题)公式</strong></p>
+<ul>
+<li>All atomes are formulas.</li>
+<li>If <span class="math inline">\(p\)</span> is a formula, then <span class="math inline">\(\neg p\)</span> is a formula.</li>
+<li>If <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> is a formula, then the following are
+formulas: <span class="math inline">\(p \land q\)</span> <span class="math inline">\(p\lor q\)</span> <span class="math inline">\(p
+\oplus q\)</span> <span class="math inline">\(p \to q\)</span> <span class="math inline">\(p \leftrightarrow q\)</span> e.g.</li>
+</ul>
+</blockquote>
+<h2 id="命题变量">命题变量</h2>
+<p><strong><em>Propositional variables</em></strong></p>
+<p>We use letters to denote propositional variables (or statement
+variables).The conventional letters used for propositional variables are
+p, q, r, s, ...</p>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<p><strong><em>Operators / Connectives</em></strong></p>
+<p>An operator or connective combines n operand expressions into a
+larger expression. <strong>Unary</strong> operators take 1 operand while
+<strong>binary</strong> operators take 2 operands.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Formal Name</th>
+<th style="text-align: center;">Nickname</th>
+<th style="text-align: center;">Arity</th>
+<th style="text-align: center;">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Negation operator</td>
+<td style="text-align: center;">NOT</td>
+<td style="text-align: center;">Unary</td>
+<td style="text-align: center;"><span class="math inline">\(\neg\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Conjunction operator</td>
+<td style="text-align: center;">AND</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span class="math inline">\(\land\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Disjunction operator</td>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span class="math inline">\(\lor\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Exclusive - OR operator</td>
+<td style="text-align: center;">XOR</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span class="math inline">\(\oplus\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Implication operator</td>
+<td style="text-align: center;">IMPLIES</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span class="math inline">\(\to\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Biconditional operator</td>
+<td style="text-align: center;">IFF</td>
+<td style="text-align: center;">Binary</td>
+<td style="text-align: center;"><span class="math inline">\(\leftrightarrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="否定-非">否定, 非</h3>
+<p><strong><em>The Negation Operator</em></strong></p>
+<p>The unary negation operator transforms a prop. into its negation.</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>if <span class="math inline">\(p=\)</span> "I have brown hair."</p>
+<p>then <span class="math inline">\(\neg p=\)</span> "I do
+<strong>not</strong> have brown hair."</p>
+</blockquote>
+<h3 id="合取-与">合取, 与</h3>
+<p><strong><em>The Conjunction Operator</em></strong></p>
+<p>The binary conjunction operator "<span class="math inline">\(\land\)</span>"(AND) combines two propositions to
+form their logical conjunction.</p>
+<ul>
+<li><strong>In fact, <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\land\)</span> are sufficient to express any
+Boolean truth table.</strong></li>
+</ul>
+<h3 id="析取-或">析取, 或</h3>
+<p><strong><em>The Disjunction Operator</em></strong></p>
+<p>The binary disjunction operator "<span class="math inline">\(\lor\)</span>"(OR) conbines two prop. to form
+their logical disjunction.</p>
+<h3 id="异或">异或</h3>
+<p><strong><em>The Exclusive-or Operator</em></strong></p>
+<p>The binary exclusive-or operator "<span class="math inline">\(\oplus\)</span>"(XOR) combines two propositions to
+form their logical "exlusive or".</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p><span class="math inline">\(p=\)</span> "I will earn an A in this
+course,"</p>
+<p><span class="math inline">\(q=\)</span> "I will either earn an A in
+this course,"</p>
+<p><span class="math inline">\(p \oplus q=\)</span> "I will either earn
+an A in this course, or I will drop it(<strong>but not
+both</strong>)."</p>
+</blockquote>
+<p>"Or" in English can be ambiguous regarding the
+"<strong>both</strong>" case.</p>
+<h3 id="蕴涵">蕴涵</h3>
+<p><strong><em>The Implication Operator</em></strong></p>
+<p>The implication <span class="math inline">\(p \to q\)</span> states
+that <span class="math inline">\(p\)</span> implies <span class="math inline">\(q\)</span>.</p>
+<p><em>I.e.</em> If <span class="math inline">\(p\)</span> is true then
+<span class="math inline">\(q\)</span> is true. However, if <span class="math inline">\(p\)</span> is <strong>not</strong> true, then q
+could be either true or false.</p>
+<ul>
+<li><span class="math inline">\(p \to q\)</span> is flase
+<strong>only</strong> when <span class="math inline">\(p\)</span> is
+true but <span class="math inline">\(q\)</span> is false.</li>
+<li><span class="math inline">\(p \to q\)</span> does not mean that
+<span class="math inline">\(p\)</span> causes <span class="math inline">\(q\)</span>.</li>
+</ul>
+<h4 id="different-ways-of-expressing-p-to-q">Different Ways of
+Expressing <span class="math inline">\(p \to q\)</span></h4>
+<ul>
+<li><p><span class="math inline">\(p\)</span> implies <span class="math inline">\(q\)</span></p></li>
+<li><p>if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></p></li>
+<li><p>if <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span></p></li>
+<li><p>when <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span></p></li>
+<li><p>whenever <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> if <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> when <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> whenever <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(p\)</span> only if <span class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> is necessary for <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> follows from <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> is implied by <span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span> unless <span class="math inline">\(\neg p\)</span>​</p></li>
+</ul>
+<h3 id="同或-逻辑等价">同或, 逻辑等价</h3>
+<p><strong><em>The Biconditional Operator</em></strong></p>
+<p>The biconditional <span class="math inline">\(p \leftrightarrow
+q\)</span> states that <span class="math inline">\(p\)</span> is true
+<strong>if and only if</strong> q is true.</p>
+<h3 id="真值表汇总">真值表汇总</h3>
+<p><strong><em>The Truth Table of Boolean Operations</em></strong></p>
+<table>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg
+p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \land
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p\lor
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \oplus
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \to
+q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p
+\leftrightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>Besides, we have two more operators.</p>
+<h3 id="与非">与非</h3>
+<p><strong><em>NAND</em></strong></p>
+<p>The proposition <span class="math inline">\(p \ N\!A\!N\!D \
+q\)</span> is true when either <span class="math inline">\(p\)</span> or
+<span class="math inline">\(q\)</span>, or both, are flash;and it is
+false when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true.</p>
+<p><span class="math inline">\(p \ N\!A\!N\!D \ q\)</span> is denoted by
+<span class="math inline">\(p \ | \ q\)</span>.</p>
+<h3 id="或非">或非</h3>
+<p><strong><em>NOR</em></strong></p>
+<p>The proposition <span class="math inline">\(p \ N\!O\!R \ q\)</span>
+is true when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are false, and it is false
+otherwise.</p>
+<p><span class="math inline">\(p \ N\!O\!R \ q\)</span> is denoted by
+<span class="math inline">\(p\downarrow q\)</span>.</p>
+<h3 id="优先级">优先级</h3>
+<p><strong><em>Precedence of Logical Operators</em></strong></p>
+<ul>
+<li>It's important to use <strong>parenthesis</strong> to group
+sub-expressions</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">operator</th>
+<th style="text-align: center;">Predence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\neg\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\land\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\lor\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\to\)</span></td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\leftrightarrow\)</span></td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一致系统规范说明">一致系统规范说明</h3>
+<p><strong><em>Consistent System Specifications</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Consistent System Specifications
+一致系统规范说明</strong></p>
+<ul>
+<li>A list of propositions is <strong>consistent</strong> if it is
+possible to assign truth values to the proposition variables so that
+each proposition is true.</li>
+</ul>
+<p>系统规范说明是<strong>一致的</strong>,
+如果可以为所有的<strong>命题变量</strong>设定真值,
+使得命题变量构成的每一个<strong>命题</strong>均为<strong>真</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>Let <span class="math inline">\(p\)</span>:“The diagnostic message is
+stored in the buffer.”</p>
+<p>设 <span class="math inline">\(p\)</span>:
+诊断信息被存储在缓冲区中.</p>
+<p><span class="math inline">\(q\)</span>: “The diagnostic message is
+retransmitted.”</p>
+<p><span class="math inline">\(q\)</span>: 诊断信息被重新发送.</p>
+<p>for <span class="math inline">\(p\lor q\)</span>, <span class="math inline">\(p \to q\)</span>, <span class="math inline">\(\neg
+p\)</span>,</p>
+<p>If <span class="math inline">\(p\)</span> is flase while <span class="math inline">\(q\)</span> is true, then all three prop. are true,
+so <strong>the specification is consistent</strong>.</p>
+</blockquote>
+<hr>
+<h1 id="命题等价式">命题等价式</h1>
+<p><strong><em>Propositional Equivalences</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Tautology, contradiction, contingency</strong></p>
+<p><strong>永真式, 永假式, 可能式</strong></p>
+<ul>
+<li><p>A compound proposition that is always true, no matter what the
+truth values of the propositional variables that occur in it, is called
+a <strong>tautology(永真式, 或者重言式)</strong>.</p></li>
+<li><p>A compound proposition that is always false is called a
+<strong>contradiction(永假式, 或者矛盾式)</strong>.</p></li>
+<li><p>A compound proposition that is neither a tautology nor a
+contradiction is called a <strong>contingency(可能式)</strong></p></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Rule of substitution</strong> <strong>置换规则</strong></p>
+<p>Suppose <span class="math inline">\(P\)</span> is a tautology, if
+<span class="math inline">\(p\)</span> is a primitive statement in <span class="math inline">\(P\)</span> and we can replace <span class="math inline">\(p\)</span> with the statement <span class="math inline">\(q\)</span>, then the new statement <span class="math inline">\(P'\)</span> is also a tautology.</p>
+<p>在一个永真公式中, 任何一个命题变元 <span class="math inline">\(R\)</span> 出现的每一处, 用另一个命题公式代入,
+所得命题公式仍然是永真式.</p>
+</blockquote>
+<blockquote>
+<p><strong>Rule of replacement</strong> <strong>代入规则</strong></p>
+<p>Within the context of a logical proof, logically equivalent
+expressions may replace each other.</p>
+<p>给定公式 <span class="math inline">\(A\)</span>, 其所有子公式为 <span class="math inline">\(a_1,a_2,\dots,a_n\)</span>, 设 <span class="math inline">\(a_i \equiv b_i\)</span>, 用 <span class="math inline">\(b_i\)</span> 替换 <span class="math inline">\(a_i\)</span>, 所得公式为 <span class="math inline">\(B\)</span>, 则 <span class="math inline">\(A
+\equiv B\)</span>.</p>
+</blockquote>
+<h2 id="逻辑等价式">逻辑等价式</h2>
+<p><strong><em>Logical Equibalences</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Logical Equibalences 逻辑等价式</strong></p>
+<p>Compound propositions that <strong>have the same truth values in all
+possible cases</strong> are called <strong>logically
+equivalent</strong>. The notation <span class="math display">\[
+p \equiv  q
+\]</span> or <span class="math display">\[
+p \Leftrightarrow q
+\]</span> donates that <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are <strong>logically
+equivalences</strong>.</p>
+</blockquote>
+<ul>
+<li><strong>tips</strong>: We will also say: they express <strong>the
+same truth function</strong> or the same function from values for atoms
+to values for the whole formula.In other words, two syntactically
+compound propositions may be semantically identical.</li>
+<li><strong>tips</strong>: The symbol <span class="math inline">\(\equiv\)</span> is <strong>NOT</strong> a logical
+connective, and <span class="math inline">\(p \equiv  q\)</span> is not
+a compound proposition but rather is the statement that <span class="math inline">\(p \leftrightarrow q\)</span> is a tautology.</li>
+</ul>
+<h2 id="等价规则">等价规则</h2>
+<p><strong><em>Equivalence Laws</em></strong></p>
+<p>To shorten the length, let's make <span class="math inline">\(\mathbf{T}\)</span> short for
+<strong>tautology</strong> and <span class="math inline">\(\mathbf{F}\)</span> for
+<strong>contradiction</strong>. There's some logical equibalences.</p>
+<table>
+<colgroup>
+<col style="width: 61%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Equivalence</em></th>
+<th><em>Name</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p \land \mathbf{T} \equiv
+p\)</span></td>
+<td>Identity laws<br>同一律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \lor \mathbf{F} \equiv p\)</span></td>
+<td>Identity laws<br>同一律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor \mathbf{T} \equiv
+\mathbf{T}\)</span></td>
+<td>Domination laws<br>零律, 支配律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land \mathbf{F} \equiv
+\mathbf{F}\)</span></td>
+<td>Domination laws<br>零律, 支配律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \land p \equiv p\)</span></td>
+<td>Idempotent laws<br>等幂律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \lor p \equiv p\)</span></td>
+<td>Idempotent laws<br>等幂律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\neg (\neg)p \equiv p\)</span></td>
+<td>Double negation law<br>双重否定律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land q \equiv q \land p\)</span></td>
+<td>Commutativive laws<br>交换律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor q \equiv q \lor p\)</span></td>
+<td>Commutativive laws<br>交换律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \lor q) \lor r\equiv q \lor (p \lor
+r)\)</span></td>
+<td>Associative laws<br>结合律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((p \lor q) \land r\equiv (p \lor q)
+\land (p \lor r)\)</span></td>
+<td>Distributive laws<br>分配律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \land q) \lor r\equiv (p \land q)
+\lor (p \land r)\)</span></td>
+<td>Distributive laws<br>分配律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\neg(p \land q) \equiv \neg q \lor\neg
+p\)</span></td>
+<td>De Morgan's laws<br>德·摩根律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\neg(p \lor q) \equiv \neg q \land\neg
+p\)</span></td>
+<td>De Morgan's laws<br>德·摩根律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor (p \land q ) \equiv
+p\)</span></td>
+<td>Absorption laws<br>吸收律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land (p \lor q ) \equiv
+p\)</span></td>
+<td>Absorption laws<br>吸收律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \lor  \neg p\equiv
+\mathbf{T}\)</span></td>
+<td>Tautology<br>排中律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \land \neg p\equiv
+\mathbf{F}\)</span></td>
+<td>Contradiction<br>矛盾律</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \to q \equiv \neg p \lor
+q\)</span></td>
+<td>Implication<br>蕴涵等价式</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((p \to q) \land (q \to p) \equiv p
+\leftrightarrow q\)</span></td>
+<td>Equivalence<br>同或等价式</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((p \to q) \land (p \to \neg q) \equiv
+\neg p\)</span></td>
+<td>Absurdity<br>归谬</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \to q \equiv \neg q \to \neg
+p\)</span></td>
+<td>Contrapositive<br>蕴涵逆反式</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p \land q \to r \equiv p \to (q\to
+r)\)</span></td>
+<td>Exportation<br>输出律</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p \to q \equiv \neg q \to \neg
+p\)</span></td>
+<td>假言易位</td>
+</tr>
+</tbody>
+</table>
+<h2 id="范式的存在性定理">范式的存在性定理</h2>
+<p>这一部分用中文写, 因为原教材和百科中基本没有对这一段的提及,
+或者百科内容与教师讲授内容与原教材内容不一致.
+出于这些原因用中文较好.</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>基本和(子句)</strong></p>
+<p>由有限个命题变量或其否定析取, 构成的析取式,
+称为<strong>基本和</strong>, 或者<strong>(简单)析取式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>基本积</strong></p>
+<p>由有限个命题变量或其否定合取, 构成的合取式,
+称为<strong>基本积</strong>, 或者<strong>(简单)合取式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>E.g.</em></strong> <span class="math inline">\(\neg p
+\lor q \lor p \lor r\)</span>​ 是<strong>简单析取式</strong>.</p>
+</blockquote>
+<p><strong>tips</strong>: 一个变量本身可以看作基本和或者基本积.</p>
+<p>然后, 引入析取范式与合取范式.</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>析取范式(disjunctive normal form, or DNF)</strong></p>
+<p>A logical formula is considered to be in DNF if it is a disjunction
+of one or more conjunctions of one or more
+<strong>literals</strong>.</p>
+<p>由有限个简单合取式(基本积)析取,构成的析取式,
+称为<strong>析取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>合取范式(consjunctive normal form, or CNF)</strong></p>
+<p>A formula is in CNF if it is a conjunction of one or more clauses,
+where a clause is a disjunction of <strong>literal</strong>s.</p>
+<p>由有限个简单析取式(基本和)合取, 构成的合取式,
+称为<strong>合取范式</strong>.</p>
+</blockquote>
+<p><strong>tips</strong>: Let's add a concept:</p>
+<blockquote>
+<p>A <strong>literal</strong> is an atomic formula (also known as an
+atom or prime formula) or its negation.</p>
+<p><strong>文字</strong>是一个原子命题或者它的否定.</p>
+</blockquote>
+<p>"简单析取式"和"简单合取式"这两个概念没有在百科找到.
+这两个概念的作用似乎只是为了定义DNF和CNF. 与"基本和",
+"基本积"相似的概念可以参见<a href="https://en.wikipedia.org/wiki/Clause_(logic)"><strong><em>子句（clause）-
+Wikipedia</em></strong></a>和 <a href="https://en.wikipedia.org/wiki/Product_term"><strong><em>Product
+term - Wikipedia</em></strong></a>.</p>
+<blockquote>
+<p><strong><em>Theorem</em></strong></p>
+<p><strong>范式存在定理</strong></p>
+<p>Any Boolean function has a CNF, and a DNF form.</p>
+<p>任意的命题公式均存在一个与之等值的析取范式和合取范式.</p>
+</blockquote>
+<p>The proof is very trivial.</p>
+<p><strong>tips</strong>: 析取范式和合取范式不唯一.</p>
+<h2 id="主范式">主范式</h2>
+<p><strong><em>Principal Normal Form</em></strong></p>
+<h3 id="极小项-极大项">极小项, 极大项</h3>
+<p><strong><em>Minterm and Maxterm</em></strong></p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Minterm </strong> <strong>极小项</strong></p>
+<p>For a boolean function of <span class="math inline">\(n\)</span>
+variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a
+product term in which each of the <span class="math inline">\(n\)</span>​
+variables appears once (either in its complemented or uncomplemented
+form) and appears in order is called a <strong>minterm</strong>.</p>
+<p>设简单合取式中有 <span class="math inline">\(n\)</span> 个命题变量
+<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
+并且仅出现一次, 这样的公式称为<strong>极小项</strong>.</p>
+</blockquote>
+<ul>
+<li><p><strong>indexing minterm</strong>
+<strong>极小项的编码</strong></p>
+<p>Minterms are often numbered by a binary encoding of the
+complementation pattern of the variables, where the variables are
+written in a standard order, usually alphabetical.</p>
+<p>极小项的命题变量的常常按下标排列(或者字典序列排列).</p>
+<p>若给变量 <span class="math inline">\(x_i\)</span> 赋值二进制值 <span class="math inline">\(1\)</span>, 给 <span class="math inline">\(\neg
+x_i\)</span> 赋值二进制值 <span class="math inline">\(0\)</span>,
+那么可以给出一个 <span class="math inline">\(n\)</span>
+位二进制编码来表示极小项, 比如可以记作 <span class="math inline">\(m_{101\dots}\)</span>.</p>
+<blockquote>
+<p><strong><em>E.g.</em></strong> we can notate minterm just like:</p>
+<p><span class="math inline">\(m_0 = m_{00 \dots00}=\neg p_1 \land \neg
+p_2 \land \cdots \land \neg p_n\)</span>​​</p>
+<p><span class="math inline">\(m_3 = m_{0 \dots011}=\neg p_1 \land \neg
+p_2 \land \cdots \land  \neg p_{n-2} \land p_{n-1} \land
+p_n\)</span></p>
+</blockquote>
+<p>显然, 极小式的下标值(十进制)为:</p></li>
+</ul>
+<p><span class="math display">\[
+\sum_{i=1}^{n}2^{i-1}value(x_i)
+\]</span></p>
+<ul>
+<li><strong>极小项的性质</strong>
+<ol type="1">
+<li>每一个<strong>极小项</strong>, 当其赋值与编码相同的时候, 真值为
+<span class="math inline">\(\mathbf{T}\)</span>, 否则一定为 <span class="math inline">\(\mathbf{F}\)</span>.</li>
+<li>任意<strong>不同</strong>极小项的<strong>合取永假</strong>.</li>
+<li><strong>所有极小项</strong>的<strong>析取永真</strong>.</li>
+<li>没有两个极小项是等价的.</li>
+</ol></li>
+</ul>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Maxterm</strong> <strong>极大项</strong></p>
+<p>For a boolean function of <span class="math inline">\(n\)</span>
+variables <span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, a sum
+term or clause in which each of the <span class="math inline">\(n\)</span> variables appears once (either in its
+complemented or uncomplemented form) is called a
+<strong>maxterm</strong>.</p>
+<p>设简单析取式中有 <span class="math inline">\(n\)</span> 个命题变量
+<span class="math inline">\(x_1,x_2,\dots,x_n\)</span>, 每个文字都出现,
+并且仅出现一次, 这样的公式称为<strong>极大项</strong>.</p>
+</blockquote>
+<ul>
+<li><p><strong>indexing Maxterm</strong> <strong>极大项的编码</strong>
+类似地, 极大项也可以编码, 规则与极小项基本一致. 不同的是将 <span class="math inline">\(p_i\)</span> 记为 <span class="math inline">\(0\)</span>, 将 <span class="math inline">\(\neg
+p_i\)</span> 记为 <span class="math inline">\(1\)</span>.
+极大项的记法与极小项完全一致.</p></li>
+<li><p><strong>极大项的性质</strong></p>
+<ol type="1">
+<li>每一个<strong>极大项</strong>, 当其赋值与编码相同的时候, 真值为
+<span class="math inline">\(\mathbf{F}\)</span>, 否则一定为 <span class="math inline">\(\mathbf{T}\)</span>​.</li>
+<li>任意<strong>不同</strong>极大项的<strong>析取永真</strong>.</li>
+<li><strong>所有极大项</strong>的<strong>合取永假</strong>.</li>
+<li>没有两个极大项是等价的.</li>
+</ol></li>
+</ul>
+<h3 id="主析取范式-主合取范式">主析取范式, 主合取范式</h3>
+<p><strong><em>Principal Disjunctive Form and Conjunctive Normal
+Form</em></strong></p>
+<p>Now it's time for our main characters to come on stage!</p>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Principal disjunctive normal form or PDNF</strong></p>
+<p><strong>主析取范式</strong></p>
+<p>A formula is in principal disjunctive normal form if it a disjunction
+of minterns.</p>
+<p>若干个不同的极小项的析取式, 称为<strong>主析取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Principal conjunctive normal form or PCNF</strong></p>
+<p><strong>主合取范式</strong></p>
+<p>A formula is in principal disjunctive normal form if it a conjunction
+of maxterns.</p>
+<p>若干个不同的极大项的合取式, 称为<strong>主合取范式</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Theorem</em></strong></p>
+<p>任何一个公式均存在一个与之等值的<strong>主析取范式</strong>,
+而且是<strong>唯一</strong>的.</p>
+<p>任何一个公式均存在一个与之等值的<strong>主合取范式</strong>,
+而且是<strong>唯一</strong>的.</p>
+</blockquote>
+<p>The proof is very trivial.</p>
+<p><strong>tips</strong>: 不难发现,
+<strong>永假式(controdiction)</strong>的主合取范式含有 <span class="math inline">\(\dots\land p \land \cdots \land\neg p\)</span>
+这样的因子. 而<strong>永真式(Tautology)</strong>的主合取范式 <span class="math inline">\(\dots\lor p \lor \cdots \lor\neg p\)</span>
+这样的因子.</p>
+<h3 id="求取主范式">求取主范式</h3>
+<p><strong><em>Find The Principal Form</em></strong></p>
+<p>主要有两种方法.</p>
+<h4 id="真值表法">真值表法</h4>
+<p><strong><em>Using the truth table</em></strong></p>
+<ul>
+<li>主析取范式 简而言之, 跟据公式的真值表,
+找出能够使公式为<strong>真</strong>的赋值, 写出对应的极小项,
+然后将它们析取而成即可.</li>
+<li>主合取范式 跟据公式的真值表,
+找出能够使公式为<strong>假</strong>的赋值, 写出对应的极大项,
+然后将它们合取而成即可.</li>
+</ul>
+<p>这样做的主要依据是极小项和极大项的性质, 以及主范式的唯一性.</p>
+<h4 id="等值演算">等值演算</h4>
+<p><strong><em>Reasoning</em></strong></p>
+<p>对于求取<strong>主析取范式(PDNF)</strong>, 主要是以下步骤:</p>
+<ol type="1">
+<li>利用<strong>逻辑等价式</strong>, 将逻辑运算符全部转化为 <span class="math inline">\(\neg, \land, \lor\)</span>.</li>
+<li>利用<strong>De Morgan's laws</strong>, 将所有 <span class="math inline">\(\neg\)</span> 转移至单个命题变量之前.</li>
+<li>将命题公式转化为析取范式, 例如 <span class="math inline">\(P_1 \land
+P_2 \land P_3 \land \cdots \land P_n\)</span> 的形式, 注意其中的 <span class="math inline">\(P_i\)</span> 是简单合取式,
+即仅由<strong>文字(literal)</strong>合取而成.</li>
+<li>设 <span class="math inline">\(P_i = p_{i1} \lor p_{i2} \lor \cdots
+\lor p_{im}\)</span>, 其中 <span class="math inline">\(p_{ij}\)</span>
+是<strong>文字(literal)</strong>, 如果某项重复,
+利用<strong>交换律</strong>抵消即可; 如果缺少某一项(设为 <span class="math inline">\(p_{ik}\)</span>), 可以在 <span class="math inline">\(P_i\)</span> 中合取 <span class="math inline">\(p_{ik} \lor \neg p_{ik}\)</span>
+这一<strong>重言式(tautology)</strong>,
+再利用<strong>分配律</strong>展开即可(若求取<strong>主合取范式(PCNF)</strong>,
+则析取 <span class="math inline">\(p_{ik} \land \neg
+p_{ik}\)</span>)</li>
+<li>合并重复的极小项.</li>
+</ol>
+<blockquote>
+<p><strong><em>E.g.</em></strong></p>
+<p>(等待补充)</p>
+</blockquote>
+<p>对于求取<strong>主合取范式(PCNF)</strong>, 类比即可, 不赘述.</p>
+<hr>
+<h2 id="可满足性">可满足性</h2>
+<p><strong><em>Satisfiability</em></strong></p>
+<p>A compound proposition is <strong>satisfiable</strong> if there is an
+assignment of truth values to its variables that makes it true (that is,
+when it is a tautology or a contingency). When no such assignments
+exists, that is, when the compound proposition is false for all
+assignments of truth values to its variables, the compound proposition
+is <strong>unsatisfiable</strong>.</p>
+<p>复合命题是<strong>可满足的</strong>, 如果能够对其所有命题变量赋真值,
+使得原复合命题为真. (换句话说, 这个复合命题是重言式或可能式).
+若所有真值赋值的情况下, 复合命题均为假,
+则是<strong>不可满足的</strong>.</p>
+<h3 id="n-皇后问题"><span class="math inline">\(n\)</span> 皇后问题</h3>
+<p><strong><em>The <span class="math inline">\(n\)</span>​-Queens
+Problem</em></strong></p>
+<h3 id="数独">数独</h3>
+<p><strong><em>Sudoku</em></strong></p>
+<p>(等待补充<del>我会补充的, 信我</del>)</p>
+<div id="footnotes">
+<hr>
+<div id="footnotelist">
+<ol style="list-style: none; padding-left: 0; margin-left: 40px">
+<li id="fn:1">
+<span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Kenneth
+H. Rosen.Discrete Mathematics and Its
+Applications.离散数学及其应用.Eighth
+edition.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
+</li>
+</ol>
+</div>
+</div>
+]]></content>
+      <tags>
+        <tag>Discrete Mathematics</tag>
       </tags>
   </entry>
 </search>
